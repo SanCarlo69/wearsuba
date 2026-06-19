@@ -357,18 +357,51 @@ footer{background:#0a0b0d;padding:38px 56px;display:flex;justify-content:space-b
       <div class="contact-promise"><div class="cp-text"><strong>Unser Versprechen:</strong> Jede Anfrage wird persönlich beantwortet. Ein echter Ansprechpartner – kein Chatbot.</div></div>
     </div>
     <div class="reveal">
-      <div class="form-row">
-        <div class="form-g"><label>Vorname</label><input type="text" placeholder="Ihr Vorname"></div>
-        <div class="form-g"><label>Nachname</label><input type="text" placeholder="Ihr Nachname"></div>
+      <form id="contactForm" action="https://formspree.io/f/mzdqnbly" method="POST">
+        <div class="form-row">
+          <div class="form-g"><label>Vorname</label><input type="text" name="Vorname" placeholder="Ihr Vorname" required></div>
+          <div class="form-g"><label>Nachname</label><input type="text" name="Nachname" placeholder="Ihr Nachname" required></div>
+        </div>
+        <div class="form-g"><label>Firma / Verein / Event</label><input type="text" name="Firma" placeholder="Ihre Organisation"></div>
+        <div class="form-g"><label>E-Mail</label><input type="email" name="Email" placeholder="ihre@email.ch" required></div>
+        <div class="form-g"><label>Ich interessiere mich für</label>
+          <select name="Interesse"><option value="">Produkt auswählen</option><option>T-Shirts & Tops</option><option>Caps & Kopfbedeckungen</option><option>Sportswear & Trikots</option><option>Corporate & Work Wear</option><option>Mugs & Drinkware</option><option>Souvenirs & Geschenkartikel</option><option>Komplettes Merch-Paket</option><option>Sonstiges</option></select>
+        </div>
+        <div class="form-g"><label>Ihr Projekt</label><textarea name="Nachricht" placeholder="Menge, Design-Idee, Deadline – je mehr Details, desto besser..." required></textarea></div>
+        <input type="hidden" name="_subject" value="Neue Anfrage über WearSuba.com">
+        <button class="btn-send" type="submit" id="submitBtn">Anfrage absenden →</button>
+      </form>
+      <div id="formSuccess" style="display:none;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);padding:24px;text-align:center;margin-top:16px">
+        <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:8px">Danke für Ihre Anfrage!</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.6)">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</div>
       </div>
-      <div class="form-g"><label>Firma / Verein / Event</label><input type="text" placeholder="Ihre Organisation"></div>
-      <div class="form-g"><label>E-Mail</label><input type="email" placeholder="ihre@email.ch"></div>
-      <div class="form-g"><label>Ich interessiere mich für</label>
-        <select><option value="">Produkt auswählen</option><option>T-Shirts & Tops</option><option>Caps & Kopfbedeckungen</option><option>Sportswear & Trikots</option><option>Corporate & Work Wear</option><option>Mugs & Drinkware</option><option>Souvenirs & Geschenkartikel</option><option>Komplettes Merch-Paket</option><option>Sonstiges</option></select>
-      </div>
-      <div class="form-g"><label>Ihr Projekt</label><textarea placeholder="Menge, Design-Idee, Deadline – je mehr Details, desto besser..."></textarea></div>
-      <button class="btn-send" type="button">Anfrage absenden →</button>
     </div>
+
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = e.target;
+      var btn = document.getElementById('submitBtn');
+      btn.textContent = 'Wird gesendet...';
+      btn.disabled = true;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          btn.textContent = 'Fehler – bitte erneut versuchen';
+          btn.disabled = false;
+        }
+      }).catch(function() {
+        btn.textContent = 'Fehler – bitte erneut versuchen';
+        btn.disabled = false;
+      });
+    });
+    </script>
   </div>
 </section>
 
