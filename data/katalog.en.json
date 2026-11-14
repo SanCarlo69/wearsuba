@@ -1,0 +1,4003 @@
+{
+  "_hinweis": "English version of katalog.json. Same structure and ids; only texts are translated.",
+  "konfiguratoren_sichtbar": false,
+  "kategorien_ausgeblendet": [
+    "gastro"
+  ],
+  "bereiche": [
+    {
+      "id": "sportswear",
+      "name": "Sportswear & Merchandise",
+      "kurz": "Clubs · Teams · Fans",
+      "bild": "img/site/panel-sportswear.jpg",
+      "status": "aktiv",
+      "text": "Jerseys, scarves, socks, pennants, balls and fan merchandise for clubs, teams and events. Much of it you can design yourself.",
+      "typ": "katalog"
+    },
+    {
+      "id": "workwear",
+      "name": "Workwear & Corporate",
+      "kurz": "Hotels · Hospitality · Companies",
+      "bild": "img/site/panel-workwear.jpg",
+      "status": "aktiv",
+      "text": "Corporate wear, hotel textiles, ceramics and mugs with your signature. From the decorated mug to handmade tableware from Colombia.",
+      "typ": "corporate",
+      "bilder_hero": [
+        "img/site/panel-workwear.jpg",
+        "img/keramik/bowl-pinselstrich.jpg"
+      ]
+    },
+    {
+      "id": "retail",
+      "name": "Retail",
+      "kurz": "Souvenirs · City merchandise · Retail",
+      "bild": "img/site/panel-retail-handel.jpg",
+      "status": "aktiv",
+      "text": "Souvenir textiles and merchandise for shops and retail: developed, produced and delivered retail-ready. Quick to follow trends, even in small quantities.",
+      "typ": "retail",
+      "bilder_hero": [
+        "img/retail/lugano-shop.jpg",
+        "img/retail/lugano-display.jpg"
+      ]
+    },
+    {
+      "id": "personal-brand",
+      "name": "Personal Brand",
+      "kurz": "Your own logo · Your own brand · Your own collection",
+      "bild": "img/site/panel-personal-brand.jpg",
+      "status": "aktiv",
+      "text": "We develop the products of your brand with you: from the first idea through cut, design and sampling to finished production.",
+      "typ": "showcase",
+      "bilder_hero": [
+        "img/referenzen/nido55-strand-partnerlook.jpg",
+        "img/site/panel-personal-brand.jpg"
+      ]
+    }
+  ],
+  "kategorien": [
+    {
+      "id": "textilien",
+      "name": "Textiles",
+      "bild": "img/kategorien/kat-corporate.jpg",
+      "text": "From quick decoration to fully custom development: three ways to your garment.",
+      "bild_sportswear": "img/kategorien/sw-textilien.jpg"
+    },
+    {
+      "id": "sportbekleidung",
+      "name": "Sportswear",
+      "bild": "img/kategorien/kat-sportbekleidung.jpg",
+      "text": "Jerseys, shorts, jackets and more, sublimated in your own design.",
+      "bild_sportswear": "img/kategorien/sw-sportbekleidung.jpg"
+    },
+    {
+      "id": "kopfbedeckung",
+      "name": "Headwear",
+      "bild": "img/kategorien/kat-kopfbedeckung.jpg",
+      "text": "Caps, beanies and bucket hats, custom-made and decorated. More models and designs on request.",
+      "mehr": {
+        "titel": "More beanie models",
+        "text": "Over 30 more knit types, yarns and shapes on request."
+      },
+      "bild_sportswear": "img/kategorien/sw-kopfbedeckung.jpg"
+    },
+    {
+      "id": "schals",
+      "name": "Scarves",
+      "bild": "img/kategorien/kat-schals.jpg",
+      "text": "Knitted, woven or sublimated: scarves for fans, clubs, companies and events. More models and designs on request.",
+      "mehr": {
+        "titel": "More scarf models",
+        "text": "For example rib knit, oversize or with braided fringes. On request."
+      },
+      "bild_sportswear": "img/kategorien/sw-schals.jpg"
+    },
+    {
+      "id": "socken",
+      "name": "Socks",
+      "bild": "img/kategorien/kat-socken.jpg",
+      "text": "Custom socks for companies, clubs and events, from 50 pairs per design.",
+      "bild_sportswear": "img/kategorien/sw-socken.jpg"
+    },
+    {
+      "id": "wimpel",
+      "name": "Pennants",
+      "bild": "img/produkte/wimpel-4.jpg",
+      "text": "Pennants for clubs, companies and events, custom-made from 30 pieces."
+    },
+    {
+      "id": "accessoires",
+      "name": "Lanyards & Accessories",
+      "bild": "img/kategorien/kat-accessoires.jpg",
+      "text": "Lanyards, keyrings, wristbands, mugs, towels and more."
+    },
+    {
+      "id": "kissen",
+      "name": "Cushions & Comfort",
+      "bild": "img/kategorien/kat-kissen.jpg",
+      "text": "Jersey, logo, seat and neck cushions, all-over printed from 50 pieces."
+    },
+    {
+      "id": "taschen",
+      "name": "Bags & Luggage",
+      "bild": "img/kategorien/kat-taschen.jpg",
+      "text": "Three ways to your bag: quick branding, full sublimation or full custom."
+    },
+    {
+      "id": "baelle",
+      "name": "Balls",
+      "bild": "img/kategorien/kat-baelle.jpg",
+      "text": "Custom-designed balls for sport, training and promotion, from 300 pieces."
+    },
+    {
+      "id": "schuhe",
+      "name": "Sneaker",
+      "bild": "img/kategorien/kat-schuhe.jpg",
+      "text": "Sneakers in your own design, designed and made in the EU."
+    },
+    {
+      "id": "gastro",
+      "name": "Hospitality & Display",
+      "bild": "img/kategorien/kat-gastro.jpg",
+      "text": "Signs, menus, table accessories and wooden serving boards with your logo. No minimum order."
+    }
+  ],
+  "veredelungen": {
+    "dtf": "DTF",
+    "flex": "Flex",
+    "flock": "Flock",
+    "transfer": "Transfer",
+    "siebdruck": "Screen printing",
+    "stick": "Embroidery",
+    "3d-stick": "3D embroidery",
+    "sublimation": "Sublimation",
+    "patch": "Patch",
+    "jacquard": "Jacquard (knitted in)",
+    "praegung": "Embossing",
+    "gravur": "Engraving",
+    "druck": "Print"
+  },
+  "konfiguratoren": [
+    {
+      "id": "schal",
+      "name": "Scarf configurator",
+      "aktiv": true,
+      "url": "schal-konfigurator.html",
+      "text": "Choose scarf and quantity, pick a template, set yarn colours, text and logo, request without obligation.",
+      "bild": "img/produkte/schal-hd-jacquard.jpg"
+    },
+    {
+      "id": "trikot",
+      "name": "Jersey configurator",
+      "aktiv": false,
+      "url": "https://claude.ai/artifact/CE1Psxutmdi9jZJFEEApv4",
+      "text": "Choose your sport, design colours and pattern, upload a team list with names, numbers and sizes.",
+      "bild": "img/produkte/trikot-full-custom.jpg"
+    },
+    {
+      "id": "beanie",
+      "name": "Beanie configurator",
+      "aktiv": false,
+      "url": "https://claude.ai/artifact/1FJFCdbkdBm4WVjoSDb9BZ",
+      "text": "Colours, knitted-in text and an optional patch, with 3D view.",
+      "bild": "img/produkte/beanie.jpg"
+    },
+    {
+      "id": "tasse",
+      "name": "Mug configurator",
+      "aktiv": false,
+      "url": "https://claude.ai/artifact/2Rbr7PeqTanoTWbsZTNWCM",
+      "text": "Design a sublimation mug all around, with 3D view and proof.",
+      "bild": "img/produkte/tasse-sublimation.jpg"
+    },
+    {
+      "id": "handtuch",
+      "name": "Towel configurator",
+      "aktiv": false,
+      "url": "https://claude.ai/artifact/SBVQkZQaznzfWWHQd49vV9",
+      "text": "Design a towel in landscape or portrait, front freely printable.",
+      "bild": "img/produkte/handtuch-sublimation.jpg"
+    }
+  ],
+  "produkte": [
+    {
+      "id": "t-shirts",
+      "name": "T-Shirts & Tops",
+      "kategorie": "textilien",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "All cuts and qualities, decorated from 30 pieces.",
+      "bilder": [
+        "img/produkte/textil-quick.jpg",
+        "img/produkte/textil-serie.jpg"
+      ],
+      "mindestmenge": "30 pcs",
+      "daten": [
+        {
+          "label": "Blanks",
+          "wert": "Existing blanks from our wide supplier network"
+        },
+        {
+          "label": "Decoration",
+          "wert": "In our own production in Germany"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Production route",
+          "optionen": [
+            "Fast & flexible: decoration from 30 pieces, express from 72 hours",
+            "The series: professional decoration from 100 pieces",
+            "Your product: full custom from 300 pieces"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "flex",
+        "flock",
+        "transfer",
+        "siebdruck",
+        "stick"
+      ],
+      "text": "For events, teams, retail and private labels. We decorate existing blanks or develop your shirt entirely to your ideas.",
+      "konfigurator": null,
+      "highlights": [
+        "From 30 pcs",
+        "Own decoration in Germany",
+        "Express from 72 hours possible"
+      ]
+    },
+    {
+      "id": "hoodies",
+      "name": "Hoodies & Sweatshirts",
+      "kategorie": "textilien",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "From the decorated hoodie to your own development with your own label.",
+      "bilder": [
+        "img/produkte/textil-full-custom.jpg",
+        "img/produkte/textil-serie.jpg"
+      ],
+      "mindestmenge": "30 pcs",
+      "daten": [
+        {
+          "label": "Blanks",
+          "wert": "Existing blanks from our wide supplier network"
+        },
+        {
+          "label": "Full Custom",
+          "wert": "Material, cut, colour, label and packaging to your ideas"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Production route",
+          "optionen": [
+            "Fast & flexible: decoration from 30 pieces, express from 72 hours",
+            "The series: professional decoration from 100 pieces",
+            "Your product: full custom from 300 pieces"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "flex",
+        "flock",
+        "transfer",
+        "siebdruck",
+        "stick"
+      ],
+      "text": "Ideal for merchandise lines, teams and companies. From 300 pieces we develop your product from idea through sampling to the finished piece.",
+      "konfigurator": null,
+      "highlights": [
+        "From 30 pcs",
+        "Own decoration in Germany",
+        "Express from 72 hours possible"
+      ]
+    },
+    {
+      "id": "poloshirts",
+      "name": "Polo Shirts & Corporate Fashion",
+      "kategorie": "textilien",
+      "bereiche": [
+        "sportswear",
+        "workwear"
+      ],
+      "kurz": "A professional look for your team.",
+      "bilder": [
+        "img/produkte/textil-serie.jpg"
+      ],
+      "mindestmenge": "1 pc",
+      "daten": [
+        {
+          "label": "Blanks",
+          "wert": "Existing blanks from our wide supplier network"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Production route",
+          "optionen": [
+            "Fast & flexible: decoration from 1 piece, express from 72 hours",
+            "The series: professional decoration from 100 pieces",
+            "Your product: full custom from 300 pieces"
+          ]
+        }
+      ],
+      "veredelung": [
+        "stick",
+        "dtf",
+        "transfer",
+        "siebdruck"
+      ],
+      "text": "Polo shirts and corporate fashion with embroidery or print, for reception, service and field staff.",
+      "konfigurator": null,
+      "highlights": [
+        "From 1 pc",
+        "Own decoration in Germany",
+        "Express from 72 hours possible"
+      ]
+    },
+    {
+      "id": "workwear-jacken",
+      "name": "Workwear & Jackets",
+      "kategorie": "textilien",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Workwear and jackets with your logo.",
+      "bilder": [
+        "img/produkte/textil-serie.jpg"
+      ],
+      "mindestmenge": "1 pc",
+      "daten": [
+        {
+          "label": "Blanks",
+          "wert": "Existing blanks from our wide supplier network"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Production route",
+          "optionen": [
+            "Fast & flexible: decoration from 1 piece, express from 72 hours",
+            "The series: professional decoration from 100 pieces",
+            "Your product: full custom from 300 pieces"
+          ]
+        }
+      ],
+      "veredelung": [
+        "stick",
+        "transfer",
+        "dtf",
+        "flex"
+      ],
+      "text": "Robust workwear, vests and jackets, decorated with embroidery or transfer.",
+      "konfigurator": null,
+      "highlights": [
+        "From 1 pc",
+        "Own decoration in Germany",
+        "Express from 72 hours possible"
+      ]
+    },
+    {
+      "id": "trikot-full-custom",
+      "name": "Full Custom Jersey",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Fully customised by sublimation. Your design, your colours, your style.",
+      "bilder": [
+        "img/produkte/trikot-full-custom.jpg",
+        "img/produkte/trikot-fussball.jpg",
+        "img/produkte/trikot-handball.jpg",
+        "img/produkte/trikot-basketball.jpg",
+        "img/produkte/trikot-eishockey.jpg",
+        "img/produkte/trikot-detail-kragen.jpg",
+        "img/produkte/trikot-detail-stoff.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print"
+        },
+        {
+          "label": "Sizes",
+          "wert": "98 to 5XL"
+        },
+        {
+          "label": "Production",
+          "wert": "Made in Europe"
+        },
+        {
+          "label": "Design",
+          "wert": "No design limits"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Sport",
+          "optionen": [
+            "Football",
+            "Handball",
+            "Basketball",
+            "Ice hockey",
+            "Volleyball",
+            "Darts",
+            "Running",
+            "and much more"
+          ]
+        },
+        {
+          "name": "Options",
+          "optionen": [
+            "Custom collar shapes",
+            "High-quality performance fabrics",
+            "Custom decoration"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Simply send us your own design or your ideas. Our designers develop your fully customised jersey, for sports clubs, companies or private use.",
+      "konfigurator": "trikot",
+      "highlights": [
+        "100% custom",
+        "Sizes 98 to 5XL",
+        "Made in Europe"
+      ]
+    },
+    {
+      "id": "trikot-basic",
+      "name": "Basic Jersey (Stock)",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Basic jerseys from stock in various colours and cuts, decorated as you wish.",
+      "bilder": [
+        "img/produkte/trikot-basic.jpg"
+      ],
+      "mindestmenge": "30 pcs",
+      "daten": [
+        {
+          "label": "Decoration",
+          "wert": "As you wish, in our own production in Germany"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Colours",
+          "optionen": [
+            "Black",
+            "Navy",
+            "Red",
+            "White",
+            "Green"
+          ]
+        }
+      ],
+      "veredelung": [
+        "flock",
+        "flex",
+        "stick"
+      ],
+      "text": "Ideal for reorders and small quantities: numbers, names and sponsors are decorated quickly in Germany.",
+      "konfigurator": null,
+      "highlights": [
+        "Numbers, names, sponsors",
+        "Fast decoration in Germany",
+        "Personal advice"
+      ]
+    },
+    {
+      "id": "caps",
+      "name": "Caps",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Quick branding with DTF or embroidery, or entirely to your ideas.",
+      "bilder": [
+        "img/produkte/cap.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Quick Branding",
+          "wert": "DTF or embroidery decoration"
+        },
+        {
+          "label": "Full Custom",
+          "wert": "Your own colours and fabrics, choice of inner tape"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Decoration (full custom)",
+          "optionen": [
+            "Patch (woven, PVC, leather …)",
+            "3D embroidery",
+            "Standard embroidery",
+            "Foil decoration",
+            "Print on the sides"
+          ]
+        },
+        {
+          "name": "Closure",
+          "optionen": [
+            "Velcro closure",
+            "Metal buckle",
+            "Plastic closure (snapback)"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "stick",
+        "3d-stick",
+        "patch"
+      ],
+      "text": "For every brand, for every appearance.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-casual",
+      "name": "Casual Socks",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Everyday sock with your design.",
+      "bilder": [
+        "img/produkte/socken-casual.jpg"
+      ],
+      "mindestmenge": "50 pairs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "80% cotton, 15% polypropylene, 5% Lycra"
+        },
+        {
+          "label": "Sizes",
+          "wert": "35/37 – 38/40 – 41/43 – 44/46"
+        },
+        {
+          "label": "Design",
+          "wert": "Up to 5 colours"
+        },
+        {
+          "label": "Delivery",
+          "wert": "Production and delivery in approx. 2–3 weeks"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "All socks can be fully customised: colours, logos, patterns, lengths, labels and packaging.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-sport",
+      "name": "Sports Socks",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Classic sports sock.",
+      "bilder": [
+        "img/produkte/socken-sport.jpg"
+      ],
+      "mindestmenge": "50 pairs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "80% cotton, 15% polypropylene, 5% Lycra"
+        },
+        {
+          "label": "Sizes",
+          "wert": "35/37 – 38/40 – 41/43 – 44/46"
+        },
+        {
+          "label": "Design",
+          "wert": "Up to 5 colours"
+        },
+        {
+          "label": "Delivery",
+          "wert": "Production and delivery in approx. 2–3 weeks"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "All socks can be fully customised: colours, logos, patterns, lengths, labels and packaging.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-fussball",
+      "name": "Football Socks",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Football socks for your team.",
+      "bilder": [
+        "img/produkte/socken-fussball.jpg"
+      ],
+      "mindestmenge": "50 pairs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "70% polyester, 25% cotton, 5% elastane"
+        },
+        {
+          "label": "Sizes",
+          "wert": "35/37 – 38/40 – 41/43 – 44/46"
+        },
+        {
+          "label": "Design",
+          "wert": "Up to 5 colours"
+        },
+        {
+          "label": "Delivery",
+          "wert": "Production and delivery in approx. 2–3 weeks"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "All socks can be fully customised: colours, logos, patterns, lengths, labels and packaging.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-sneaker",
+      "name": "Sneaker Socks",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Short sock for sneakers.",
+      "bilder": [
+        "img/produkte/socken-sneaker.jpg"
+      ],
+      "mindestmenge": "50 pairs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "80% cotton, 15% polypropylene, 5% Lycra"
+        },
+        {
+          "label": "Sizes",
+          "wert": "35/37 – 38/40 – 41/43 – 44/46"
+        },
+        {
+          "label": "Design",
+          "wert": "Up to 5 colours"
+        },
+        {
+          "label": "Delivery",
+          "wert": "Production and delivery in approx. 2–3 weeks"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "All socks can be fully customised: colours, logos, patterns, lengths, labels and packaging.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-full-terry",
+      "name": "Full Terry Socks",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Fully cushioned terry sock.",
+      "bilder": [
+        "img/produkte/socken-full-terry.jpg"
+      ],
+      "mindestmenge": "50 pairs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "80% cotton, 15% polypropylene, 5% Lycra"
+        },
+        {
+          "label": "Sizes",
+          "wert": "35/37 – 38/40 – 41/43 – 44/46"
+        },
+        {
+          "label": "Design",
+          "wert": "Up to 5 colours"
+        },
+        {
+          "label": "Delivery",
+          "wert": "Production and delivery in approx. 2–3 weeks"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "All socks can be fully customised: colours, logos, patterns, lengths, labels and packaging.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-cycling",
+      "name": "Cycling Socks",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Lightweight sock for cycling.",
+      "bilder": [
+        "img/produkte/socken-cycling.jpg"
+      ],
+      "mindestmenge": "50 pairs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "95% polypropylene, 5% elastane"
+        },
+        {
+          "label": "Sizes",
+          "wert": "35/37 – 38/40 – 41/43 – 44/46"
+        },
+        {
+          "label": "Design",
+          "wert": "Up to 5 colours"
+        },
+        {
+          "label": "Delivery",
+          "wert": "Production and delivery in approx. 2–3 weeks"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "All socks can be fully customised: colours, logos, patterns, lengths, labels and packaging.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-kinder",
+      "name": "Kids' Socks",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Socks for children.",
+      "bilder": [
+        "img/produkte/socken-kinder.jpg"
+      ],
+      "mindestmenge": "50 pairs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "80% cotton, 15% polypropylene, 5% Lycra"
+        },
+        {
+          "label": "Sizes",
+          "wert": "23/25 – 26/28 – 29/31 – 32/34"
+        },
+        {
+          "label": "Design",
+          "wert": "Up to 5 colours"
+        },
+        {
+          "label": "Delivery",
+          "wert": "Production and delivery in approx. 2–3 weeks"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "All socks can be fully customised: colours, logos, patterns, lengths, labels and packaging.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "wimpel",
+      "name": "Pennants",
+      "kategorie": "wimpel",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Custom-made, double-sided, from 30 pieces.",
+      "bilder": [
+        "img/produkte/wimpel-4.jpg",
+        "img/produkte/wimpel-1.jpg",
+        "img/produkte/wimpel-2.jpg",
+        "img/produkte/wimpel-5.jpg",
+        "img/produkte/wimpel-6.jpg",
+        "img/produkte/wimpel-3.jpg"
+      ],
+      "mindestmenge": "30 pcs",
+      "daten": [
+        {
+          "label": "Print",
+          "wert": "Sublimation for brilliant colours and top quality"
+        },
+        {
+          "label": "Sides",
+          "wert": "Front and back included"
+        },
+        {
+          "label": "Special versions",
+          "wert": "Also available in cotton and other formats"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Size",
+          "optionen": [
+            "10 × 14 cm",
+            "14 × 20 cm",
+            "20.5 × 28 cm",
+            "26.5 × 37 cm"
+          ]
+        },
+        {
+          "name": "Shape",
+          "optionen": [
+            "Triangle",
+            "Pentagonal"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Our pennants stand for tradition, belonging and pride, perfect for clubs, companies, events and special occasions. More sizes, shapes and versions on request.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "lanyards",
+      "name": "Lanyards",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Material, width, print, closures and extras: you decide every detail.",
+      "bilder": [
+        "img/produkte/lanyard.jpg"
+      ],
+      "mindestmenge": "100 pcs",
+      "daten": [
+        {
+          "label": "Print",
+          "wert": "One-sided or double-sided, sublimated"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Material",
+          "optionen": [
+            "Polyester",
+            "Cotton",
+            "Organic Cotton",
+            "RPET",
+            "Cord"
+          ]
+        },
+        {
+          "name": "Width",
+          "optionen": [
+            "10 mm",
+            "15 mm",
+            "20 mm",
+            "25 mm",
+            "30 mm"
+          ]
+        },
+        {
+          "name": "Extras",
+          "optionen": [
+            "Safety Clip",
+            "Detachable buckle",
+            "Key holder",
+            "Bottle holder"
+          ]
+        },
+        {
+          "name": "Packaging",
+          "optionen": [
+            "Individually packed",
+            "Pack of 10",
+            "Pack of 50",
+            "Pack of 100"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "keyring-pvc",
+      "name": "2D PVC Keyrings",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Free shapes, bold colours.",
+      "bilder": [
+        "img/produkte/keyring-pvc.jpg"
+      ],
+      "mindestmenge": "100 pcs",
+      "daten": [],
+      "varianten": [],
+      "veredelung": [],
+      "text": "Custom 2D PVC keyrings in almost any shape and colour. Ideal for logos, lettering, mascots and creative designs.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "keyring-leder",
+      "name": "Leather Keyrings",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Classic and high-quality.",
+      "bilder": [
+        "img/produkte/keyring-leder.jpg"
+      ],
+      "mindestmenge": "100 pcs",
+      "daten": [],
+      "varianten": [],
+      "veredelung": [
+        "praegung",
+        "gravur",
+        "druck"
+      ],
+      "text": "Made of genuine leather or leather look, with embossing, engraving or print for a refined appearance.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "keyring-gewebt",
+      "name": "Woven Keyrings",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Textile, custom, detailed.",
+      "bilder": [
+        "img/produkte/keyring-gewebt.jpg"
+      ],
+      "mindestmenge": "100 pcs",
+      "daten": [],
+      "varianten": [],
+      "veredelung": [],
+      "text": "Woven keyrings with your design, lettering or even as a mini jersey. Perfect for clubs, events and fans.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "armbaender",
+      "name": "Wristbands",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "For every use, in various materials, colours and versions.",
+      "bilder": [
+        "img/produkte/armband-silikon.jpg",
+        "img/produkte/armband-vinyl.jpg",
+        "img/produkte/armband-tyvek.jpg",
+        "img/produkte/armband-sublimation.jpg"
+      ],
+      "mindestmenge": "100 pcs",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Material",
+          "optionen": [
+            "Silicone: soft, durable, in many colours, with embossing",
+            "Vinyl: flexible, light, waterproof, ideal for short campaigns",
+            "Tyvek: light, tear-resistant, with security closure, for entry control",
+            "Sublimation (event): all-over printed for events, festivals and promotion"
+          ]
+        }
+      ],
+      "veredelung": [
+        "praegung",
+        "sublimation"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "brillenputztuch",
+      "name": "Lens Cleaning Cloths",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Microfibre cleaning cloths with all-over print.",
+      "bilder": [
+        "img/produkte/brillenputztuch.jpg"
+      ],
+      "mindestmenge": "100 pcs",
+      "daten": [
+        {
+          "label": "Property",
+          "wert": "Soft and scratch-free"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Size",
+          "optionen": [
+            "10 × 15 cm",
+            "15 × 15 cm",
+            "15 × 21 cm",
+            "17 × 18 cm",
+            "18 × 30 cm",
+            "20 × 20 cm",
+            "25 × 25 cm",
+            "30 × 30 cm"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Perfect for glasses, displays, cameras and more.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "schweissband",
+      "name": "Sweatbands",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "High-quality terry sweatbands with your logo.",
+      "bilder": [
+        "img/produkte/schweissband.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "High-quality terry, absorbent and comfortable"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "stick"
+      ],
+      "text": "Ideal for sport, fitness and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "tasse",
+      "name": "Sublimation Mug",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Classic ceramic mug with all-over sublimation print.",
+      "bilder": [
+        "img/produkte/tasse-sublimation.jpg"
+      ],
+      "mindestmenge": "24 pcs",
+      "daten": [
+        {
+          "label": "Volume",
+          "wert": "11 oz (330 ml)"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over"
+        },
+        {
+          "label": "Care",
+          "wert": "Dishwasher-safe"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "",
+      "konfigurator": "tasse",
+      "highlights": []
+    },
+    {
+      "id": "handtuch",
+      "name": "Sublimation Towel",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "High-quality towels with all-over one-sided print.",
+      "bilder": [
+        "img/produkte/handtuch-sublimation.jpg"
+      ],
+      "mindestmenge": "30 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "400 g/m², 60% cotton, 40% polyester"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Size",
+          "optionen": [
+            "50 × 70 cm",
+            "50 × 100 cm",
+            "70 × 140 cm"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Ideal for sport, events and promotion.",
+      "konfigurator": "handtuch",
+      "highlights": []
+    },
+    {
+      "id": "kissen-trikot",
+      "name": "Jersey Cushion",
+      "kategorie": "kissen",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Cushion in jersey shape with name and number.",
+      "bilder": [
+        "img/produkte/kissen-trikot.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "Polyester or cotton"
+        },
+        {
+          "label": "Shape",
+          "wert": "Custom jersey shape"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over printable"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Comfort, quality and custom design, for clubs, companies, events and promotion.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "kissen-logo",
+      "name": "Logo Cushion",
+      "kategorie": "kissen",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Your logo as a cushion.",
+      "bilder": [
+        "img/produkte/kissen-logo.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "Polyester or cotton"
+        },
+        {
+          "label": "Shape",
+          "wert": "Round, square or special shape"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over printable"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Comfort, quality and custom design, for clubs, companies, events and promotion.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "kissen-sitz",
+      "name": "Seat Cushion",
+      "kategorie": "kissen",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Foldable seat cushion for the stadium.",
+      "bilder": [
+        "img/produkte/kissen-sitz.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "Polyester or cotton"
+        },
+        {
+          "label": "Shape",
+          "wert": "Foldable"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over printable"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Comfort, quality and custom design, for clubs, companies, events and promotion.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "kissen-nacken",
+      "name": "Neck Pillow",
+      "kategorie": "kissen",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "U-shaped neck pillow.",
+      "bilder": [
+        "img/produkte/kissen-nacken.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "Polyester or cotton"
+        },
+        {
+          "label": "Shape",
+          "wert": "Neck pillow (U-shape)"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over printable"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Comfort, quality and custom design, for clubs, companies, events and promotion.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "baumwolltasche",
+      "name": "Cotton Bags",
+      "kategorie": "taschen",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Classic, sustainable and versatile. Ideal for everyday use, events and promotion.",
+      "bilder": [
+        "img/produkte/tasche-baumwolle.jpg"
+      ],
+      "mindestmenge": "10 pcs (depending on print method)",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Production route",
+          "optionen": [
+            "Quick branding: decoration of existing blanks from small quantities",
+            "Full custom: developed entirely to your specifications"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "transfer",
+        "stick"
+      ],
+      "text": "Whether a small quantity or fully custom: we find the right solution. We are happy to make samples to your wishes.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gymbag",
+      "name": "Gym Bags",
+      "kategorie": "taschen",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Light, practical and all-over printable.",
+      "bilder": [
+        "img/produkte/gymbag.jpg",
+        "img/produkte/gymbag-sublimation.jpg"
+      ],
+      "mindestmenge": "10 pcs (depending on print method)",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Production route",
+          "optionen": [
+            "Quick branding: decoration of existing blanks from small quantities",
+            "Full sublimation: all-over print, your own colours, from 50 pieces",
+            "Full custom: developed entirely to your specifications"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "transfer",
+        "sublimation"
+      ],
+      "text": "Whether a small quantity or fully custom: we find the right solution. We are happy to make samples to your wishes.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "shopper",
+      "name": "Shopper Bags",
+      "kategorie": "taschen",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Spacious and sturdy, the perfect companion for every day.",
+      "bilder": [
+        "img/produkte/shopper.jpg"
+      ],
+      "mindestmenge": "10 pcs (depending on print method)",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Production route",
+          "optionen": [
+            "Quick branding: decoration of existing blanks from small quantities",
+            "Full custom: developed entirely to your specifications"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "transfer",
+        "stick"
+      ],
+      "text": "Whether a small quantity or fully custom: we find the right solution. We are happy to make samples to your wishes.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "sporttasche",
+      "name": "Sports Bags",
+      "kategorie": "taschen",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Robust and functional. Ideal for sport, leisure and travel.",
+      "bilder": [
+        "img/produkte/tasche-sport.jpg",
+        "img/produkte/tasche-full-custom.jpg"
+      ],
+      "mindestmenge": "10 pcs (depending on print method)",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Production route",
+          "optionen": [
+            "Quick branding: decoration of existing blanks from small quantities",
+            "Full custom: developed entirely to your specifications"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "transfer",
+        "stick"
+      ],
+      "text": "Whether a small quantity or fully custom: we find the right solution. We are happy to make samples to your wishes.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "reisetasche",
+      "name": "Travel Bags",
+      "kategorie": "taschen",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Plenty of space and great carrying comfort for every trip.",
+      "bilder": [
+        "img/produkte/tasche-reise.jpg",
+        "img/produkte/tasche-full-custom.jpg"
+      ],
+      "mindestmenge": "10 pcs (depending on print method)",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Production route",
+          "optionen": [
+            "Quick branding: decoration of existing blanks from small quantities",
+            "Full custom: developed entirely to your specifications"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "transfer",
+        "stick"
+      ],
+      "text": "Whether a small quantity or fully custom: we find the right solution. We are happy to make samples to your wishes.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "rucksack",
+      "name": "Backpacks",
+      "kategorie": "taschen",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Comfortable and durable. For school, work and on the go.",
+      "bilder": [
+        "img/produkte/rucksack.jpg"
+      ],
+      "mindestmenge": "10 pcs (depending on print method)",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Production route",
+          "optionen": [
+            "Quick branding: decoration of existing blanks from small quantities",
+            "Full custom: developed entirely to your specifications"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "transfer",
+        "stick"
+      ],
+      "text": "Whether a small quantity or fully custom: we find the right solution. We are happy to make samples to your wishes.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "ball-profi",
+      "name": "Professional Match Ball",
+      "kategorie": "baelle",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "For competition and demanding match play.",
+      "bilder": [
+        "img/produkte/ball-profi.jpg"
+      ],
+      "mindestmenge": "300 pcs",
+      "daten": [
+        {
+          "label": "Lead time",
+          "wert": "Approx. 3–4 months after final design approval"
+        },
+        {
+          "label": "Production",
+          "wert": "FIFA-certified production facility"
+        },
+        {
+          "label": "Size",
+          "wert": "5"
+        },
+        {
+          "label": "Quality",
+          "wert": "High-quality match ball standard"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "druck"
+      ],
+      "text": "High quality, precise workmanship and 100% custom design.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "ball-training",
+      "name": "Training Ball",
+      "kategorie": "baelle",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "The robust all-rounder for everyday training.",
+      "bilder": [
+        "img/produkte/ball-training.jpg"
+      ],
+      "mindestmenge": "300 pcs",
+      "daten": [
+        {
+          "label": "Lead time",
+          "wert": "Approx. 3–4 months after final design approval"
+        },
+        {
+          "label": "Production",
+          "wert": "FIFA-certified production facility"
+        },
+        {
+          "label": "Size",
+          "wert": "5"
+        },
+        {
+          "label": "Quality",
+          "wert": "Hard-wearing and durable"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "druck"
+      ],
+      "text": "High quality, precise workmanship and 100% custom design.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "ball-promo",
+      "name": "Promo Ball",
+      "kategorie": "baelle",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "For sponsors, events, giveaways and fan campaigns.",
+      "bilder": [
+        "img/produkte/ball-promo.jpg"
+      ],
+      "mindestmenge": "300 pcs",
+      "daten": [
+        {
+          "label": "Lead time",
+          "wert": "Approx. 3–4 months after final design approval"
+        },
+        {
+          "label": "Production",
+          "wert": "FIFA-certified production facility"
+        },
+        {
+          "label": "Size",
+          "wert": "Various sizes available"
+        },
+        {
+          "label": "Quality",
+          "wert": "Price-optimised version"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "druck"
+      ],
+      "text": "High quality, precise workmanship and 100% custom design.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "ball-handball",
+      "name": "Handball",
+      "kategorie": "baelle",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "For competition and demanding match play.",
+      "bilder": [
+        "img/produkte/ball-handball.jpg"
+      ],
+      "mindestmenge": "300 pcs",
+      "daten": [
+        {
+          "label": "Lead time",
+          "wert": "Approx. 3–4 months after final design approval"
+        },
+        {
+          "label": "Production",
+          "wert": "FIFA-certified production facility"
+        },
+        {
+          "label": "Size",
+          "wert": "Various sizes available"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "druck"
+      ],
+      "text": "High quality, precise workmanship and 100% custom design.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "ball-volleyball",
+      "name": "Volleyball",
+      "kategorie": "baelle",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "For competition and demanding match play.",
+      "bilder": [
+        "img/produkte/ball-volleyball.jpg"
+      ],
+      "mindestmenge": "300 pcs",
+      "daten": [
+        {
+          "label": "Lead time",
+          "wert": "Approx. 3–4 months after final design approval"
+        },
+        {
+          "label": "Production",
+          "wert": "FIFA-certified production facility"
+        },
+        {
+          "label": "Size",
+          "wert": "Standard size"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "druck"
+      ],
+      "text": "High quality, precise workmanship and 100% custom design.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "ball-basketball",
+      "name": "Basketball",
+      "kategorie": "baelle",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "For competition and demanding match play.",
+      "bilder": [
+        "img/produkte/ball-basketball.jpg"
+      ],
+      "mindestmenge": "300 pcs",
+      "daten": [
+        {
+          "label": "Lead time",
+          "wert": "Approx. 3–4 months after final design approval"
+        },
+        {
+          "label": "Production",
+          "wert": "FIFA-certified production facility"
+        },
+        {
+          "label": "Size",
+          "wert": "Various sizes available"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "druck"
+      ],
+      "text": "High quality, precise workmanship and 100% custom design.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "beanie-13",
+      "name": "Beanie 13",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Soft-touch beanie with stripe pattern.",
+      "bilder": [
+        "img/produkte/beanie-13.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Beanie 13"
+        },
+        {
+          "label": "Material",
+          "wert": "95% polyacrylic · 5% Lycra"
+        },
+        {
+          "label": "Colours",
+          "wert": "up to 8 colours"
+        },
+        {
+          "label": "Yarn colours",
+          "wert": "Polyacrylic, wool blend or organic cotton, see yarn colour chart"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "stick",
+        "patch",
+        "jacquard"
+      ],
+      "text": "You choose colours, logo and design, we make it happen. More models and designs on request.",
+      "konfigurator": "beanie",
+      "highlights": []
+    },
+    {
+      "id": "beanie-16",
+      "name": "Beanie 16",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Reversible knit beanie, available in adult and kids' sizes.",
+      "bilder": [
+        "img/produkte/beanie-16.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Beanie 16"
+        },
+        {
+          "label": "Material",
+          "wert": "90% polyacrylic · 10% elastane"
+        },
+        {
+          "label": "Colours",
+          "wert": "4 to 8 colours"
+        },
+        {
+          "label": "Yarn colours",
+          "wert": "Polyacrylic, wool blend or organic cotton, see yarn colour chart"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Version",
+          "optionen": [
+            "Pompom",
+            "Cuff",
+            "Embroidery or patch"
+          ]
+        }
+      ],
+      "veredelung": [
+        "stick",
+        "patch",
+        "jacquard"
+      ],
+      "text": "You choose colours, logo and design, we make it happen. More models and designs on request.",
+      "konfigurator": "beanie",
+      "highlights": []
+    },
+    {
+      "id": "beanie-38",
+      "name": "Beanie 38",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Knit beanie with ribbed fold.",
+      "bilder": [
+        "img/produkte/beanie-38.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Beanie 38"
+        },
+        {
+          "label": "Material",
+          "wert": "100% polyacrylic"
+        },
+        {
+          "label": "Colours",
+          "wert": "up to 3 colours"
+        },
+        {
+          "label": "Yarn colours",
+          "wert": "Polyacrylic, wool blend or organic cotton, see yarn colour chart"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Version",
+          "optionen": [
+            "Pompom",
+            "Embroidery or patch",
+            "Cuff"
+          ]
+        }
+      ],
+      "veredelung": [
+        "stick",
+        "patch",
+        "jacquard"
+      ],
+      "text": "You choose colours, logo and design, we make it happen. More models and designs on request.",
+      "konfigurator": "beanie",
+      "highlights": []
+    },
+    {
+      "id": "beanie-40",
+      "name": "Beanie 40",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Rib beanie with elastic jacquard.",
+      "bilder": [
+        "img/produkte/beanie-40.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Beanie 40"
+        },
+        {
+          "label": "Material",
+          "wert": "100% polyacrylic"
+        },
+        {
+          "label": "Colours",
+          "wert": "up to 3 colours"
+        },
+        {
+          "label": "Yarn colours",
+          "wert": "Polyacrylic, wool blend or organic cotton, see yarn colour chart"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Version",
+          "optionen": [
+            "Cuff",
+            "Pompom",
+            "Embroidery or patch"
+          ]
+        }
+      ],
+      "veredelung": [
+        "stick",
+        "patch",
+        "jacquard"
+      ],
+      "text": "You choose colours, logo and design, we make it happen. More models and designs on request.",
+      "konfigurator": "beanie",
+      "highlights": []
+    },
+    {
+      "id": "bucket-hat-93",
+      "name": "Bucket Hat 93",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Smooth, sublimated bucket hat.",
+      "bilder": [
+        "img/produkte/bucket-hat-93.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Bucket Hat 93"
+        },
+        {
+          "label": "Material",
+          "wert": "100% polyester"
+        },
+        {
+          "label": "Design",
+          "wert": "All-over in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Bucket hat in your own design, sublimated or made of organic cotton.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "bucket-hat-94",
+      "name": "Bucket Hat 94",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear"
+      ],
+      "kurz": "Sublimated bucket hat with reinforced premium seams.",
+      "bilder": [
+        "img/produkte/bucket-hat-94.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Bucket Hat 94"
+        },
+        {
+          "label": "Material",
+          "wert": "100% polyester"
+        },
+        {
+          "label": "Design",
+          "wert": "All-over in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Bucket hat in your own design, sublimated or made of organic cotton.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "bucket-hat-96",
+      "name": "Bucket Hat 96",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Smooth, sublimated bucket hat.",
+      "bilder": [
+        "img/produkte/bucket-hat-96.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Bucket Hat 96"
+        },
+        {
+          "label": "Material",
+          "wert": "100% polyester"
+        },
+        {
+          "label": "Design",
+          "wert": "All-over in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Bucket hat in your own design, sublimated or made of organic cotton.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "bucket-hat-97",
+      "name": "Bucket Hat 97",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear"
+      ],
+      "kurz": "Smooth, sublimated bucket hat.",
+      "bilder": [
+        "img/produkte/bucket-hat-97.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Bucket Hat 97"
+        },
+        {
+          "label": "Material",
+          "wert": "100% polyester"
+        },
+        {
+          "label": "Design",
+          "wert": "All-over in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Bucket hat in your own design, sublimated or made of organic cotton.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "bucket-hat-98",
+      "name": "Bucket Hat 98",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear"
+      ],
+      "kurz": "Sublimated bucket hat made of textured fabric.",
+      "bilder": [
+        "img/produkte/bucket-hat-98.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Bucket Hat 98"
+        },
+        {
+          "label": "Material",
+          "wert": "100% polyester"
+        },
+        {
+          "label": "Design",
+          "wert": "All-over in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Bucket hat in your own design, sublimated or made of organic cotton.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "bucket-hat-99",
+      "name": "Bucket Hat 99",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Heavy organic cotton bucket hat, decorated with transfer print.",
+      "bilder": [
+        "img/produkte/bucket-hat-99.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Bucket Hat 99"
+        },
+        {
+          "label": "Material",
+          "wert": "Organic cotton"
+        },
+        {
+          "label": "Design",
+          "wert": "Transfer print"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "transfer"
+      ],
+      "text": "Bucket hat in your own design, sublimated or made of organic cotton.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "schal-10",
+      "name": "HD Scarf",
+      "kategorie": "schals",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Knitted scarf made of two layers that can be designed differently.",
+      "bilder": [
+        "img/produkte/schal-10.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Scarf 10"
+        },
+        {
+          "label": "Material",
+          "wert": "95% polyacrylic · 5% elastane"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "140 × 18 cm"
+        },
+        {
+          "label": "Colours",
+          "wert": "up to 8 colours"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "You choose colours, logo and design, we make it happen. More models and designs on request.",
+      "konfigurator": "schal",
+      "highlights": []
+    },
+    {
+      "id": "schal-15",
+      "name": "Classic Scarf",
+      "kategorie": "schals",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Jacquard knitted scarf made of two parts that can be designed differently.",
+      "bilder": [
+        "img/produkte/schal-15.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Scarf 15"
+        },
+        {
+          "label": "Material",
+          "wert": "100% polyacrylic"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "140 × 18 cm"
+        },
+        {
+          "label": "Colours",
+          "wert": "up to 8 colours"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "You choose colours, logo and design, we make it happen. More models and designs on request.",
+      "konfigurator": "schal",
+      "highlights": []
+    },
+    {
+      "id": "schal-45",
+      "name": "Woven Scarf",
+      "kategorie": "schals",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Single-layer, high-definition woven scarf with fringes and side seam.",
+      "bilder": [
+        "img/produkte/schal-45.jpg"
+      ],
+      "mindestmenge": "200 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Scarf 45"
+        },
+        {
+          "label": "Material",
+          "wert": "100% polyacrylic"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "130 × 20 cm"
+        },
+        {
+          "label": "Colours",
+          "wert": "up to 8 colours"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "You choose colours, logo and design, we make it happen. More models and designs on request.",
+      "konfigurator": "schal",
+      "highlights": []
+    },
+    {
+      "id": "schal-75",
+      "name": "Polyester Scarf",
+      "kategorie": "schals",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Scarf sublimated on both sides. Available in various fabrics, including SEAQUAL-certified material.",
+      "bilder": [
+        "img/produkte/schal-75.jpg"
+      ],
+      "mindestmenge": "50 pcs",
+      "daten": [
+        {
+          "label": "Item no.",
+          "wert": "Scarf 75"
+        },
+        {
+          "label": "Material",
+          "wert": "100% polyester"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "140 × 18 cm"
+        },
+        {
+          "label": "Colours",
+          "wert": "no colour limit"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "You choose colours, logo and design, we make it happen. More models and designs on request.",
+      "konfigurator": "schal",
+      "highlights": []
+    },
+    {
+      "id": "fussballtrikot",
+      "name": "Football Jersey",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated short-sleeve football jersey with crew neck. Choice of V-neck or crew neck, raglan or set-in sleeves. Also available as a women's version.",
+      "bilder": [
+        "img/produkte/fussballtrikot.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100% polyester"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 56 × 73 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Neckline",
+          "optionen": [
+            "Crew neck",
+            "V-neck"
+          ]
+        },
+        {
+          "name": "Sleeves",
+          "optionen": [
+            "Raglan sleeves",
+            "Set-in sleeves"
+          ]
+        },
+        {
+          "name": "Cut",
+          "optionen": [
+            "Men",
+            "Women"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": "trikot",
+      "highlights": []
+    },
+    {
+      "id": "fussballshorts",
+      "name": "Football Shorts",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated football shorts with elastic waistband and drawstring.",
+      "bilder": [
+        "img/produkte/fussballshorts.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100% polyester"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 55 × 56 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "rugbytrikot",
+      "name": "Rugby Jersey",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated short-sleeve rugby jersey. Choice of raglan or set-in sleeves, V-neck or crew neck.",
+      "bilder": [
+        "img/produkte/rugbytrikot.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "235 g/m² · 100% polyester"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 54 × 70 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Neckline",
+          "optionen": [
+            "Crew neck",
+            "V-neck"
+          ]
+        },
+        {
+          "name": "Sleeves",
+          "optionen": [
+            "Raglan sleeves",
+            "Set-in sleeves"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "rugbyshorts",
+      "name": "Rugby Shorts",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated rugby shorts with elastic waistband and drawstring.",
+      "bilder": [
+        "img/produkte/rugbyshorts.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "235 g/m² · 100% polyester"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 60 × 47 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "basketballtrikot",
+      "name": "Basketball Jersey",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sleeveless sublimated basketball jersey with crew neck. Also available with V-neck and as a reversible jersey.",
+      "bilder": [
+        "img/produkte/basketballtrikot.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100% polyester"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 56 × 73 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Neckline",
+          "optionen": [
+            "Crew neck",
+            "V-neck"
+          ]
+        },
+        {
+          "name": "Version",
+          "optionen": [
+            "One-sided",
+            "Reversible jersey"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "basketballshorts",
+      "name": "Basketball Shorts",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Wide, long sublimated basketball shorts with elastic waistband and drawstring.",
+      "bilder": [
+        "img/produkte/basketballshorts.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100% polyester"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 57 × 65 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "leichtathletik-top",
+      "name": "Athletics Top",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Lined top with elastic band under the bust. Sublimatable, with or without cups.",
+      "bilder": [
+        "img/produkte/leichtathletik-top.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "300 g/m² · 85% polyester · 15% elastane"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 44 × 35 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Cups",
+          "optionen": [
+            "With cups",
+            "Without cups"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "leichtathletik-shorts",
+      "name": "Athletics Shorts",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated shorts with inner lining, elastic waistband and side slit. Waistband sublimated on request.",
+      "bilder": [
+        "img/produkte/leichtathletik-shorts.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100% polyester"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 54 × 35 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "tennis-top",
+      "name": "Tennis Top",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated sleeveless top with binding. Available for women and men.",
+      "bilder": [
+        "img/produkte/tennis-top.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "215 g/m² · 97% polyester · 3% elastane"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 55 × 75 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Cut",
+          "optionen": [
+            "Men",
+            "Women"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "tennisrock",
+      "name": "Tennis Skirt",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Short sublimated tennis skirt with elastic waistband.",
+      "bilder": [
+        "img/produkte/tennisrock.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "215 g/m² · 97% polyester · 3% elastane"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 56 × 44 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "leibchen",
+      "name": "Training Bib",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated bib to tell teams apart. Sleeveless, with binding at armholes and hem.",
+      "bilder": [
+        "img/produkte/leibchen.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "100 g/m² · 100% polyester"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 54 × 70 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "halswaermer",
+      "name": "Neck Warmer",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated neck warmer as a tube scarf.",
+      "bilder": [
+        "img/produkte/halswaermer.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "215 g/m² · 97% polyester · 3% elastane"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 27 × 30 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "langarmshirt",
+      "name": "Long-Sleeve Shirt",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated long-sleeve shirt with raglan sleeves and crew neck. Choice of V-neck, set-in sleeves or zip at the collar.",
+      "bilder": [
+        "img/produkte/langarmshirt.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "300 g/m² · 85% polyester · 15% elastane"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 56 × 73 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Neckline",
+          "optionen": [
+            "Crew neck",
+            "V-neck",
+            "Zip at the collar"
+          ]
+        },
+        {
+          "name": "Sleeves",
+          "optionen": [
+            "Raglan sleeves",
+            "Set-in sleeves"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "sportshorts",
+      "name": "Shorts",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated sports shorts with inner lining, elastic waistband and side slit.",
+      "bilder": [
+        "img/produkte/sportshorts.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100% polyester"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 54 × 35 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "trainingsjacke",
+      "name": "Training Jacket",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated training jacket with raglan sleeves, full-length zip and two zipped side pockets. Optionally with hood, set-in sleeves, cuffs or drawstring.",
+      "bilder": [
+        "img/produkte/trainingsjacke.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "280 g/m² · 97% polyester · 3% elastane"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 55 × 75 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Options",
+          "optionen": [
+            "With hood",
+            "Set-in sleeves",
+            "Cuffs",
+            "Drawstring"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "leggings-herren",
+      "name": "Men's Leggings",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated leggings for men.",
+      "bilder": [
+        "img/produkte/leggings-herren.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "300 g/m² · 85% polyester · 15% elastane"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size L: 49 × 102 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "leggings-damen",
+      "name": "Women's Leggings",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimated women's leggings with elastic mesh waistband, also sublimated.",
+      "bilder": [
+        "img/produkte/leggings-damen.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "300 g/m² · 85% polyester · 15% elastane"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size S: 49 × 102 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "basic-t-shirt",
+      "name": "Basic T-Shirt",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Short-sleeve T-shirt with sewn-on patch. Choice of crew or V-neck, raglan or set-in sleeves. Also available as a women's version.",
+      "bilder": [
+        "img/produkte/basic-t-shirt.jpg"
+      ],
+      "mindestmenge": "10 pcs",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100% polyester"
+        },
+        {
+          "label": "Dimensions",
+          "wert": "Size M: 55 × 73 cm"
+        },
+        {
+          "label": "Print",
+          "wert": "All-over sublimation print in your own design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Neckline",
+          "optionen": [
+            "Crew neck",
+            "V-neck"
+          ]
+        },
+        {
+          "name": "Sleeves",
+          "optionen": [
+            "Raglan sleeves",
+            "Set-in sleeves"
+          ]
+        },
+        {
+          "name": "Cut",
+          "optionen": [
+            "Men",
+            "Women"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation",
+        "patch"
+      ],
+      "text": "Sublimated in your own design, for clubs, teams and events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gastro-aufsteller",
+      "name": "Signs & Boards",
+      "kategorie": "gastro",
+      "bereiche": [
+        "workwear"
+      ],
+      "kurz": "Solid wood chalkboards, engraved or printed with your logo.",
+      "bilder": [
+        "img/produkte/gastro-kundenstopper.jpg",
+        "img/produkte/gastro-tischaufsteller.jpg"
+      ],
+      "mindestmenge": "1 pc",
+      "daten": [
+        {
+          "label": "Logo",
+          "wert": "Engraved or printed"
+        },
+        {
+          "label": "Frame",
+          "wert": "Wood stain or 8 RAL colours"
+        },
+        {
+          "label": "Use",
+          "wert": "Also weatherproof for outdoors"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Model",
+          "optionen": [
+            "Pavement sign: solid wood with logo header, writable on both sides",
+            "Table sign: chalkboard in A4 or A5 with wooden base"
+          ]
+        }
+      ],
+      "veredelung": [
+        "gravur",
+        "druck"
+      ],
+      "text": "The first impression in front of the door and on the table.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gastro-speisekarten",
+      "name": "Menus",
+      "kategorie": "gastro",
+      "bereiche": [
+        "workwear"
+      ],
+      "kurz": "Menus that match your venue: reclaimed wood, plywood or printed, with leather spine and engraved logo.",
+      "bilder": [
+        "img/produkte/gastro-speisekarten-mappen.jpg",
+        "img/produkte/gastro-speisekarten-altholz.jpg",
+        "img/produkte/gastro-klemmbretter.jpg"
+      ],
+      "mindestmenge": "1 pc",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "Reclaimed wood, plywood or printed folders"
+        },
+        {
+          "label": "Wood tones",
+          "wert": "Choice of 6 wood tones"
+        },
+        {
+          "label": "Format",
+          "wert": "A4 or as desired"
+        },
+        {
+          "label": "Logo",
+          "wert": "Laser engraving"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Model",
+          "optionen": [
+            "Menu folder",
+            "Reclaimed wood with leather spine",
+            "Clipboard for daily menu and bill"
+          ]
+        }
+      ],
+      "veredelung": [
+        "gravur",
+        "druck"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gastro-tisch",
+      "name": "Table Signs & Table Numbers",
+      "kategorie": "gastro",
+      "bereiche": [
+        "workwear"
+      ],
+      "kurz": "Reservation signs, reserved signs and table numbers in your own design.",
+      "bilder": [
+        "img/produkte/gastro-reservierungsschild.jpg",
+        "img/produkte/gastro-reserved.jpg",
+        "img/produkte/gastro-tischnummern.jpg"
+      ],
+      "mindestmenge": "1 pc",
+      "daten": [
+        {
+          "label": "Language",
+          "wert": "Possible in any language"
+        },
+        {
+          "label": "Chalk field",
+          "wert": "For writing on, e.g. the time"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Model",
+          "optionen": [
+            "Reservation sign with chalk field",
+            "Table sign “Reserved”",
+            "Table numbers"
+          ]
+        }
+      ],
+      "veredelung": [
+        "gravur",
+        "druck"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gastro-besteckboxen",
+      "name": "Cutlery Boxes",
+      "kategorie": "gastro",
+      "bereiche": [
+        "workwear"
+      ],
+      "kurz": "Cutlery baskets, cutlery boxes and table caddies in the shape and colour you want.",
+      "bilder": [
+        "img/produkte/gastro-besteckbox.jpg",
+        "img/produkte/gastro-besteckkorb.jpg",
+        "img/produkte/gastro-tischboxen.jpg"
+      ],
+      "mindestmenge": "1 pc",
+      "daten": [
+        {
+          "label": "Logo",
+          "wert": "Engraved"
+        },
+        {
+          "label": "Shape and colour",
+          "wert": "As desired"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Model",
+          "optionen": [
+            "Cutlery basket with handles and compartments",
+            "Cutlery box with engraved logo",
+            "Table caddy for cutlery, napkins and menus"
+          ]
+        }
+      ],
+      "veredelung": [
+        "gravur"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gastro-servierbretter",
+      "name": "Serving and Tasting Boards",
+      "kategorie": "gastro",
+      "bereiche": [
+        "workwear"
+      ],
+      "kurz": "Serving boards, pizza boards and tasting boards with your logo branded in.",
+      "bilder": [
+        "img/produkte/gastro-servierbrett.jpg",
+        "img/produkte/gastro-pizzabrett.jpg",
+        "img/produkte/gastro-sonderform.jpg",
+        "img/produkte/gastro-probierbrett.jpg",
+        "img/produkte/gastro-langes-servierbrett.jpg"
+      ],
+      "mindestmenge": "1 pc",
+      "daten": [
+        {
+          "label": "Wood",
+          "wert": "Beech, oak or acacia"
+        },
+        {
+          "label": "Logo",
+          "wert": "Laser engraving"
+        },
+        {
+          "label": "Shape and size",
+          "wert": "As desired, any contour possible"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Model",
+          "optionen": [
+            "Serving board with juice groove",
+            "Pizza and bread board with handle",
+            "Board in a special shape",
+            "Tasting board for beer, wine and shots",
+            "Long serving board for tapas and antipasti"
+          ]
+        }
+      ],
+      "veredelung": [
+        "gravur"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gastro-flaschentraeger",
+      "name": "Bottle Carriers & Wine Crates",
+      "kategorie": "gastro",
+      "bereiche": [
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Wooden bottle carriers and wine crates, for the bar and as a gift.",
+      "bilder": [
+        "img/produkte/gastro-weinkiste.jpg",
+        "img/produkte/gastro-flaschentraeger.jpg"
+      ],
+      "mindestmenge": "1 pc",
+      "daten": [
+        {
+          "label": "Logo",
+          "wert": "Laser engraving"
+        },
+        {
+          "label": "Use",
+          "wert": "Also as gift packaging"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Model",
+          "optionen": [
+            "Bottle carrier with bottle opener",
+            "Wine crate made of flamed wood"
+          ]
+        }
+      ],
+      "veredelung": [
+        "gravur"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "smart-armbaender",
+      "name": "Smart Wristbands",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "workwear"
+      ],
+      "kurz": "Ticket, advertising space and ID in one: with RFID, barcode or serial number.",
+      "bilder": [
+        "img/produkte/smart-armband-rfid.jpg",
+        "img/produkte/smart-armband-barcode.jpg",
+        "img/produkte/smart-armband-gumring.jpg",
+        "img/produkte/smart-armband-rfid-tag.jpg",
+        "img/produkte/smart-armband-barcode-tag.jpg",
+        "img/produkte/smart-armband-seriennummer.jpg",
+        "img/produkte/smart-armband-verschluss.jpg"
+      ],
+      "mindestmenge": null,
+      "daten": [
+        {
+          "label": "Use",
+          "wert": "Access control, promotion, identification"
+        },
+        {
+          "label": "Closure",
+          "wert": "Patented closures made in Portugal"
+        },
+        {
+          "label": "Design",
+          "wert": "Band colour, print and closure to your corporate design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Variant",
+          "optionen": [
+            "Seamless RFID: tag seamlessly on the back of the band",
+            "Seamless barcode: barcode transferred directly onto the band",
+            "Smart Gumring: elastic with RFID, also in kids' size",
+            "RFID tag: plastic tag with chip",
+            "Barcode tag: plastic tag with barcode",
+            "Serial number: printed consecutively on the band"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation",
+        "transfer"
+      ],
+      "text": "For festivals, concerts, trade fairs and sports events. We choose the right technology with you, design the band in your style and deliver in good time before your event.",
+      "konfigurator": null,
+      "highlights": [
+        "RFID, barcode or serial number",
+        "Secure closure",
+        "Large choice of band colours"
+      ]
+    },
+    {
+      "id": "sneaker-kick-off",
+      "name": "Sneaker Kick Off",
+      "kategorie": "schuhe",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "personal-brand"
+      ],
+      "kurz": "The classic low-top sneaker as the basis for your design, designed and made in the EU.",
+      "bilder": [
+        "img/produkte/sneaker-kick-off.jpg",
+        "img/produkte/sneaker-kick-off-zunge.jpg",
+        "img/produkte/sneaker-kick-off-ferse.jpg",
+        "img/produkte/sneaker-farben.jpg"
+      ],
+      "mindestmenge": null,
+      "daten": [
+        {
+          "label": "Colours",
+          "wert": "Over 250 combinations possible"
+        },
+        {
+          "label": "Branding",
+          "wert": "Logo on side, tongue and heel"
+        },
+        {
+          "label": "Production",
+          "wert": "Design and production in the EU"
+        },
+        {
+          "label": "Material",
+          "wert": "With environmental and health certifications"
+        },
+        {
+          "label": "Use",
+          "wert": "Team, staff, fans, events, merchandise shop"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Freely combinable",
+          "optionen": [
+            "Upper",
+            "Heel counter",
+            "Laces"
+          ]
+        }
+      ],
+      "veredelung": [],
+      "text": "You tell us what the sneaker is for. Together we define colours, materials and logo positions and create a visualisation. After your approval, with a sample if you wish, it is produced in the EU and delivered to the address of your choice.",
+      "konfigurator": null,
+      "highlights": [
+        "Over 250 colour combinations",
+        "Made in the EU",
+        "Certified materials"
+      ]
+    }
+  ],
+  "referenzen": [
+    {
+      "id": "brandrise",
+      "name": "BRANDRISE",
+      "url": "https://brandrise.ch",
+      "bereich": "personal-brand",
+      "claim": "Swiss streetwear. Honest. Limited. Real.",
+      "text": "Brandrise is Swiss streetwear: T-shirts with sentences you think yourself every day, in Swiss German and with plenty of humour. Every drop is deliberately kept small.",
+      "fakten": [
+        [
+          "Founded",
+          "2026"
+        ],
+        [
+          "Products",
+          "T-shirts in limited drops"
+        ],
+        [
+          "Special feature",
+          "Sayings in Swiss German, 100% organic cotton"
+        ]
+      ],
+      "bilder": [
+        "img/site/panel-retail.jpg",
+        "img/site/panel-personal-brand.jpg",
+        "https://brandrise.ch/cdn/shop/files/USADO_hf_20260807_165146_8b5b567b-c70d-45e7-afc5-2e1da5004dd0_800x.png?v=1789142249",
+        "https://brandrise.ch/cdn/shop/files/2_6b28a7b2-ff1c-4bef-8ff2-e8edfacd5caf_800x.png?v=1789377155",
+        "https://brandrise.ch/cdn/shop/files/3_5706da0c-5cd6-4f8d-a219-8796f6e4986e_800x.png?v=1789377155"
+      ],
+      "logo": null,
+      "suba": "Advice on the idea, product development, workshops and production"
+    },
+    {
+      "id": "nido55",
+      "name": "NIDO55",
+      "url": "https://nido55.com",
+      "bereich": "personal-brand",
+      "claim": "Partner looks, kids' and adult fashion & accessories.",
+      "text": "Nido55 is the creative nest of two friends and mums: their own motifs on partner looks, kids' and adult fashion, city shirts and accessories. Nido means nest in Spanish, the 55 stands for Mainz.",
+      "fakten": [
+        [
+          "Founded",
+          "2025"
+        ],
+        [
+          "Products",
+          "Partner looks, baby, kids' and adult fashion, bags"
+        ],
+        [
+          "Special feature",
+          "Their own hand-drawn motifs"
+        ]
+      ],
+      "bilder": [
+        "img/referenzen/nido55-strand-partnerlook.jpg",
+        "img/referenzen/nido55-weck-worscht-milch.jpg",
+        "img/referenzen/nido55-bajo-el-mar.jpg",
+        "img/referenzen/nido55-turnbeutel-woi.jpg",
+        "img/referenzen/nido55-tasche-tukan.jpg"
+      ],
+      "logo": null,
+      "suba": "Our production network, workshops on products and decoration, production"
+    }
+  ],
+  "personal_brand_schritte": [
+    [
+      "Idea and concept",
+      "We listen, sharpen your idea and work out together what your brand should stand for."
+    ],
+    [
+      "Design and branding",
+      "Logo, motifs, colours: our designers bring your ideas to life or prepare your drafts for print."
+    ],
+    [
+      "Preview & approval",
+      "Depending on the project, you receive a technical drawing, a photo of the sample or a physical sample, and you approve it."
+    ],
+    [
+      "Production",
+      "Decoration in our own production or full custom with our partners, from small quantities."
+    ],
+    [
+      "Label and packaging",
+      "Your own labels, hangtags and packaging turn a shirt into your brand."
+    ],
+    [
+      "Delivery to you",
+      "The finished goods come to you. If a product sells well, we reproduce quickly."
+    ]
+  ],
+  "corporate": {
+    "intro": {
+      "titel": "Your brand in every detail",
+      "text": "Your guests and customers don't experience your brand only through the logo. They feel it in the shirt at reception, in the towel in the room and in the cup at breakfast. We equip hotels, restaurants and companies with everything they wear, touch and use. All from a single source, with one contact person."
+    },
+    "sortiment": [
+      {
+        "titel": "Corporate Wear",
+        "text": "Polo shirts, shirts, jackets, aprons and uniforms for reception, service, kitchen and team. With embroidery or print.",
+        "bild": "img/site/co-corporate-wear.jpg",
+        "link": "produkt.html?id=poloshirts&bereich=workwear",
+        "linktext": "View polo shirts"
+      },
+      {
+        "titel": "Hotel and Spa Textiles",
+        "text": "Towels, bath towels and cushions with your logo, woven, embroidered or printed. For rooms, spa and pool.",
+        "bild": "img/site/co-hotel-textilien.jpg",
+        "link": "produkt.html?id=handtuch&bereich=workwear",
+        "linktext": "View towel"
+      },
+      {
+        "titel": "Ceramics and Mugs",
+        "text": "From the decorated standard mug and special productions from Portugal to handmade tableware from Colombia.",
+        "bild": "img/site/co-keramik.jpg",
+        "link": "#keramik",
+        "linktext": "To ceramics"
+      },
+      {
+        "titel": "Hospitality and Display",
+        "text": "Pavement signs, menus, table numbers, cutlery boxes and wooden serving boards with your logo. On request.",
+        "bild": "img/site/co-gastro.jpg",
+        "link": "#anfrage",
+        "linktext": "Enquire"
+      }
+    ],
+    "keramik_wege": [
+      {
+        "titel": "Decorated blanks",
+        "ort": "From our range",
+        "text": "Existing mugs and cups, decorated with engraving, print or sublimation. The quick and affordable solution, even for small quantities.",
+        "punkte": [
+          "Engraving, print or sublimation",
+          "Short lead time",
+          "From small quantities"
+        ]
+      },
+      {
+        "titel": "Special production",
+        "ort": "Portugal",
+        "text": "Mugs and tableware to your specifications, made by our partner in Portugal. Your own shape, colour and glaze, consistent across the series.",
+        "punkte": [
+          "Your own shape and colour",
+          "Logo in the glaze",
+          "Consistent series quality"
+        ]
+      },
+      {
+        "titel": "Handmade",
+        "ort": "Colombia",
+        "text": "Every piece is hand-thrown and hand-painted in a ceramics studio in Bogotá. For hotels and restaurants that want to put something special on their guests' table.",
+        "punkte": [
+          "Hand-thrown and hand-painted",
+          "Every piece unique",
+          "Your own shapes and shades"
+        ]
+      }
+    ],
+    "manufaktur": {
+      "titel": "Handmade in Colombia",
+      "kicker": "Ceramics studio · Bogotá",
+      "text": "Our partner studio in Bogotá combines traditional craftsmanship with modern design. Plates, cups, bowls and vases are made from natural materials, hand-thrown and hand-painted. This makes every piece part of your story. When a guest holds handmade tableware, it stays in their memory.",
+      "bilder": [
+        "img/keramik/bowl-pinselstrich.jpg",
+        "img/keramik/schale-welle.jpg",
+        "img/keramik/leuchte.jpg"
+      ],
+      "fakten": [
+        [
+          "Origin",
+          "Studio in Bogotá, Colombia"
+        ],
+        [
+          "Manufacture",
+          "Hand-thrown and hand-painted"
+        ],
+        [
+          "Shapes",
+          "Plates, cups, bowls, vases or any shape you want"
+        ],
+        [
+          "Finish",
+          "Matt or glossy, single colour or combined"
+        ],
+        [
+          "Your own shades",
+          "On request, with test firing"
+        ]
+      ],
+      "designs": [
+        {
+          "name": "Half landscape",
+          "text": "Brushstrokes reminiscent of Colombia's mountains, sky and nature.",
+          "bild": "img/keramik/design-landschaft-halb.jpg"
+        },
+        {
+          "name": "Half cloud",
+          "text": "Soft, organic shapes inspired by clouds and ocean waves.",
+          "bild": "img/keramik/design-wolke-halb.jpg"
+        },
+        {
+          "name": "Double landscape blue",
+          "text": "Cool tones and fine lines, inspired by glaciers and mountains.",
+          "bild": "img/keramik/design-doppelte-landschaft-blau.jpg"
+        },
+        {
+          "name": "Double landscape green",
+          "text": "Green layers like Colombia's mountain and forest landscapes.",
+          "bild": "img/keramik/design-doppelte-landschaft-gruen.jpg"
+        },
+        {
+          "name": "Brushstroke blue",
+          "text": "Minimalist, a single stroke in the Japanese technique.",
+          "bild": "img/keramik/design-pinselstrich-blau.jpg"
+        },
+        {
+          "name": "Brushstroke black",
+          "text": "Free, bold stroke. Elegant and contemporary.",
+          "bild": "img/keramik/design-pinselstrich-schwarz.jpg"
+        }
+      ],
+      "kombis": [
+        [
+          "Landscape in colour",
+          "img/keramik/kombi-landschaft-tasse.jpg"
+        ],
+        [
+          "Half and half, speckled",
+          "img/keramik/kombi-halb-gesprenkelt.jpg"
+        ],
+        [
+          "Half and half, straight",
+          "img/keramik/kombi-halb-gerade.jpg"
+        ],
+        [
+          "Full landscape",
+          "img/keramik/kombi-landschaft-ganz.jpg"
+        ],
+        [
+          "Spots",
+          "img/keramik/kombi-flecken.jpg"
+        ],
+        [
+          "Full cloud",
+          "img/keramik/kombi-wolke-ganz.jpg"
+        ]
+      ],
+      "farben": [
+        [
+          "Yellow",
+          "matt",
+          "img/keramik/farbe-gelb-matt.jpg"
+        ],
+        [
+          "Light sand",
+          "matt",
+          "img/keramik/farbe-sand-hell-matt.jpg"
+        ],
+        [
+          "Natural",
+          "matt",
+          "img/keramik/farbe-natur-matt.jpg"
+        ],
+        [
+          "Mustard",
+          "matt",
+          "img/keramik/farbe-senf-matt.jpg"
+        ],
+        [
+          "Green grey",
+          "matt",
+          "img/keramik/farbe-gruengrau-matt.jpg"
+        ],
+        [
+          "Black",
+          "matt",
+          "img/keramik/farbe-schwarz-matt.jpg"
+        ],
+        [
+          "Blue",
+          "matt",
+          "img/keramik/farbe-blau-matt.jpg"
+        ],
+        [
+          "Wine red",
+          "matt",
+          "img/keramik/farbe-weinrot-matt.jpg"
+        ],
+        [
+          "Red brown",
+          "matt",
+          "img/keramik/farbe-rotbraun-matt.jpg"
+        ],
+        [
+          "Speckled coffee",
+          "matt",
+          "img/keramik/farbe-kaffee-gesprenkelt-matt.jpg"
+        ],
+        [
+          "Aquamarine",
+          "matt",
+          "img/keramik/farbe-aquamarin-matt.jpg"
+        ],
+        [
+          "Deep black",
+          "matt",
+          "img/keramik/farbe-schwarz-d17-matt.jpg"
+        ],
+        [
+          "Chocolate",
+          "",
+          "img/keramik/farbe-schokolade.jpg"
+        ],
+        [
+          "White",
+          "glossy",
+          "img/keramik/farbe-weiss-glaenzend.jpg"
+        ],
+        [
+          "Wine red",
+          "glossy",
+          "img/keramik/farbe-weinrot-glaenzend.jpg"
+        ],
+        [
+          "Blue",
+          "glossy",
+          "img/keramik/farbe-blau-glaenzend.jpg"
+        ],
+        [
+          "Salmon",
+          "glossy",
+          "img/keramik/farbe-lachs-glaenzend.jpg"
+        ]
+      ],
+      "hinweis": "Every glaze reacts a little differently in the kiln. Green tones can drift slightly towards blue, and small differences in tone and texture make every piece unique. Matt white is somewhat more sensitive to scratches. The colours here are just the beginning: with a test firing we get close to the shade you want."
+    }
+  },
+  "retail": {
+    "intro": {
+      "titel": "From trend to shelf",
+      "text": "In souvenirs, our strength is above all textiles: T-shirts, hoodies, caps, beanies, bags and socks with motifs for cities and regions. Because we produce ourselves, design ourselves and have a large European network, we react quickly, even for small quantities."
+    },
+    "staerken": [
+      [
+        "Own production in Germany",
+        "In our own production facility we decorate quickly and flexibly. Samples and reproductions without long distances."
+      ],
+      [
+        "European production network",
+        "Partners in Poland, Portugal and Turkey. This lets us find the right manufacturing for every product and every quantity."
+      ],
+      [
+        "Quick to follow trends",
+        "New motifs and products are implemented quickly. You can react to trends, seasons and events instead of planning a year ahead."
+      ],
+      [
+        "Small quantities",
+        "Test instead of filling the warehouse: we also produce small series and restock when a motif sells."
+      ],
+      [
+        "Own design and product development",
+        "Our designers and product developers create motifs, collections and products with you or for you."
+      ],
+      [
+        "Retail-ready to all requirements",
+        "Textile labelling, care labels, EAN barcodes, hangtags and packaging: your goods arrive the way retail and the law require."
+      ]
+    ],
+    "ablauf": [
+      [
+        "Idea or trend",
+        "You bring a theme, a city or a trend. Or we suggest motifs."
+      ],
+      [
+        "Design and product",
+        "We develop motifs and choose products, colours and qualities with you."
+      ],
+      [
+        "Preview & approval",
+        "Depending on the project, you receive a technical drawing, a photo of the sample or a physical sample."
+      ],
+      [
+        "Production",
+        "In our production in Germany or with our European partners, matched to quantity and deadline."
+      ],
+      [
+        "Retail-ready",
+        "Labels, EAN barcodes, hangtags and packaging according to legal requirements and the needs of your retail business."
+      ],
+      [
+        "Delivery",
+        "To your warehouse or directly to your points of sale. If a motif sells, we reproduce quickly."
+      ]
+    ],
+    "galerie": [
+      {
+        "bild": "img/retail/schwiiz-26-produktentwicklung.jpg",
+        "titel": "Product development: Schwiiz 26",
+        "text": "From concept to technical data sheet: design, Pantone colours, placement, material, sizes and print method.",
+        "weit": true
+      },
+      {
+        "bild": "img/retail/el-burro-mainz-shirts.jpg",
+        "titel": "Merchandise for El Burro in Mainz",
+        "text": "Team and retail shirts made of organic cotton, sold directly at the venue."
+      },
+      {
+        "bild": "img/retail/tassen-handelsfertig-ean.jpg",
+        "titel": "Packed retail-ready",
+        "text": "Every mug with item description and EAN barcode, safely packed in divided cartons."
+      },
+      {
+        "bild": "img/retail/eigene-produktion-brandrise.jpg",
+        "titel": "From our production",
+        "text": "Decorated in our own production in Germany, here a shirt for Brandrise."
+      },
+      {
+        "bild": "img/referenzen/nido55-turnbeutel-woi.jpg",
+        "titel": "City motifs for Mainz",
+        "text": "Own motifs such as “Weck, Worscht & Woi” for NIDO55, on gym bags, sweatshirts and bodysuits."
+      }
+    ],
+    "motive": [
+      {
+        "bild": "img/retail/motive/burro-family-tee.jpg",
+        "ort": "El Burro Mainz"
+      },
+      {
+        "bild": "img/retail/motive/austria-foto.jpg",
+        "ort": "Austria"
+      },
+      {
+        "bild": "img/retail/motive/austria-flagge-tee.jpg",
+        "ort": "Austria"
+      },
+      {
+        "bild": "img/retail/motive/berlin-baer-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/berlin-script-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/berg-lugano-tee.jpg",
+        "ort": "Lugano"
+      },
+      {
+        "bild": "img/retail/motive/i-love-wien-tee.jpg",
+        "ort": "Vienna"
+      },
+      {
+        "bild": "img/retail/motive/vienna-illustration.jpg",
+        "ort": "Vienna"
+      },
+      {
+        "bild": "img/retail/motive/university-hamburg-hoodie.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/kuh-switzerland-hoodie.jpg",
+        "ort": "Switzerland"
+      },
+      {
+        "bild": "img/retail/motive/moin-moin-anker.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/trabi-tee.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/zuerich-gold-hoodie.jpg",
+        "ort": "Zurich"
+      },
+      {
+        "bild": "img/retail/motive/vienna-college-hoodie.jpg",
+        "ort": "Vienna"
+      },
+      {
+        "bild": "img/retail/motive/germany-90-tee.jpg",
+        "ort": "Germany"
+      },
+      {
+        "bild": "img/retail/motive/vienna-university-hoodie.jpg",
+        "ort": "Vienna"
+      },
+      {
+        "bild": "img/retail/motive/hh-040.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/lugano-herz-tee.jpg",
+        "ort": "Lugano"
+      },
+      {
+        "bild": "img/retail/motive/brandenburger-tor-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/berlin-baer-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/i-love-austria-tee.jpg",
+        "ort": "Austria"
+      },
+      {
+        "bild": "img/retail/motive/moin-tee.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/currywurst-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/university-muenchen-tee.jpg",
+        "ort": "Munich"
+      },
+      {
+        "bild": "img/retail/motive/team-suisse-tee.jpg",
+        "ort": "Switzerland"
+      },
+      {
+        "bild": "img/retail/motive/austria-gold-hoodie.jpg",
+        "ort": "Austria"
+      },
+      {
+        "bild": "img/retail/motive/hamburg-streifen-tee.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/i-love-switzerland-hoodie.jpg",
+        "ort": "Switzerland"
+      },
+      {
+        "bild": "img/retail/motive/wien-prater-tee.jpg",
+        "ort": "Vienna"
+      },
+      {
+        "bild": "img/retail/motive/berlin-gold-tee.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/burro-con-amor-hoodie.jpg",
+        "ort": "El Burro Mainz"
+      },
+      {
+        "bild": "img/retail/motive/blau-weiss-garde-tee.jpg",
+        "ort": "Club"
+      },
+      {
+        "bild": "img/retail/motive/i-love-muenchen-hoodie.jpg",
+        "ort": "Munich"
+      },
+      {
+        "bild": "img/retail/motive/mzrt-tee.jpg",
+        "ort": "Salzburg"
+      },
+      {
+        "bild": "img/retail/motive/brezel-tee.jpg",
+        "ort": "Bavaria"
+      },
+      {
+        "bild": "img/retail/motive/i-love-hamburg-tee.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/vienna-skyline.jpg",
+        "ort": "Vienna"
+      },
+      {
+        "bild": "img/retail/motive/hamburg-skyline.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/i-love-berlin-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/austria-ski.jpg",
+        "ort": "Austria"
+      },
+      {
+        "bild": "img/retail/motive/berlin-skyline-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/vienna-script-hoodie.jpg",
+        "ort": "Vienna"
+      },
+      {
+        "bild": "img/retail/motive/moin-anker.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/anker.jpg",
+        "ort": "Hamburg"
+      }
+    ]
+  }
+}

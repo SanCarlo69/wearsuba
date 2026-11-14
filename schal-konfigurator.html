@@ -1,0 +1,1201 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Schal-Konfigurator – WearSuba | SUBA Group AG</title><meta name="description" content="Gestalte deinen Fanschal online: Modell und Menge wählen, Vorlage aussuchen, Farben und Text anpassen, unverbindlich anfragen. SUBA Group AG, Zürich und Wiesbaden."><link rel="icon" href="img/site/favicon.png"><meta name="robots" content="noindex"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="stylesheet" href="assets/fonts.css">
+</head><body>
+<style>
+/* Layout: links die Werkbank in 5 Schritten (Modell, Wunsch, Vorschläge, Feinschliff, Anfrage), rechts ein fixierter Musterbogen mit Vorschau, Garnfarben und Richtpreis. Gleiche Tokens wie der SUBA Merch-Kalkulator. */
+:root{
+  --bg:#EDF0F3; --surface:#FFFFFF; --surface-2:#F5F7F9; --line:#D8DEE5; --line-strong:#B9C2CC;
+  --fg:#13171C; --muted:#5A6470; --accent:#C2005F; --accent-fg:#FFFFFF; --accent-soft:#FBE6F0;
+  --good:#1D8A55; --good-soft:#E3F4EB; --warn:#A86E12; --warn-soft:#FBF0DC; --bad:#BF3129; --bad-soft:#FBE5E3;
+  --stage:#E4E8EC;
+  --f-display:"Futura PT","Futura","Jost","Century Gothic",sans-serif;
+  --f-body:"Futura PT","Futura","Jost","Century Gothic",sans-serif;
+  --r:10px; --r-sm:7px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0E1115; --surface:#161A20; --surface-2:#1C2128; --line:#29313B; --line-strong:#3A4552;
+  --fg:#E7ECF1; --muted:#93A0AD; --accent:#FF4FA3; --accent-fg:#1A0010; --accent-soft:#3A1428;
+  --good:#3DC283; --good-soft:#12301F; --warn:#E6AA42; --warn-soft:#33270F; --bad:#F2655C; --bad-soft:#3A1715;
+  --stage:#232A33; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0E1115; --surface:#161A20; --surface-2:#1C2128; --line:#29313B; --line-strong:#3A4552;
+  --fg:#E7ECF1; --muted:#93A0AD; --accent:#FF4FA3; --accent-fg:#1A0010; --accent-soft:#3A1428;
+  --good:#3DC283; --good-soft:#12301F; --warn:#E6AA42; --warn-soft:#33270F; --bad:#F2655C; --bad-soft:#3A1715;
+  --stage:#232A33; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.45}
+.app{max-width:1320px;margin:0 auto;padding-inline:clamp(16px,3vw,32px);padding-block:20px 48px}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.num,.tbl td,.tbl th{font-variant-numeric:tabular-nums}
+
+.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.brand{display:flex;gap:18px;align-items:center}
+.logo{flex:none;color:var(--fg);height:40px;width:auto}
+.brand-t{border-left:1.5px solid var(--line-strong);padding-left:18px}
+.eyebrow{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:800;font-stretch:118%;letter-spacing:-.01em;line-height:1.05}
+.tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;flex-wrap:wrap}
+.tab{border:0;background:transparent;padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;color:var(--muted)}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--bg)}
+@media (max-width:560px){.logo{height:30px}.brand-t{padding-left:12px}.brand{gap:12px}}
+
+.calc-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:24px;align-items:start}
+.inputs{display:flex;flex-direction:column;gap:16px;min-width:0}
+.block{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;min-width:0}
+.block-h{display:flex;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.step{font-family:var(--f-display);font-weight:800;font-stretch:125%;font-size:13px;color:var(--muted);border:1.5px solid var(--line-strong);border-radius:50%;width:26px;height:26px;display:inline-grid;place-items:center;flex:none;transform:translateY(-2px)}
+.block-h h2{font-size:1.15rem;font-weight:700;font-stretch:108%}
+.block-h .sub{color:var(--muted);font-size:13px;margin-left:auto;text-align:right}
+.hint{color:var(--muted);font-size:13px;margin:0}
+.note{font-size:12.5px;color:var(--muted);line-height:1.4}
+
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);background:var(--surface);border-radius:999px;padding:8px 15px;font-weight:600;font-size:13.5px}
+.btn:hover{border-color:var(--fg)}
+.btn.primary{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+.btn.accent{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.btn.ghost{border-color:transparent;background:transparent;color:var(--muted)}
+.btn.ghost:hover{color:var(--fg)}
+.btn:disabled{opacity:.5;cursor:default}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700}
+.pill.good{background:var(--good-soft);color:var(--good)} .pill.warn{background:var(--warn-soft);color:var(--warn)} .pill.ex{background:var(--accent-soft);color:var(--accent)}
+
+/* Modelle */
+.models{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.model{display:flex;flex-direction:column;gap:8px;text-align:left;border:1px solid var(--line);background:var(--surface-2);border-radius:var(--r);padding:12px;min-width:0}
+.model[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:var(--surface)}
+.model .m-n{font-family:var(--f-display);font-weight:800;font-stretch:112%;font-size:1.05rem;letter-spacing:-.01em}
+.model .m-d{font-size:12.5px;color:var(--muted);min-height:2.9em}
+.model .m-s{font-size:12px;font-weight:600;display:flex;flex-wrap:wrap;gap:4px 10px}
+.stage{background:var(--stage);border-radius:var(--r-sm);padding:10px 6px;display:block}
+.stage svg{display:block;width:100%;height:auto}
+
+/* Wunsch */
+textarea,.inp input,.inp select{font:inherit;color:var(--fg)}
+textarea{width:100%;min-height:128px;resize:vertical;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 14px;line-height:1.5}
+textarea:focus{outline:none;border-color:var(--accent);background:var(--surface)}
+.uploads{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.up{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:var(--r-sm);padding:5px 8px;background:var(--surface-2);font-size:12.5px;max-width:100%}
+.up img{height:28px;width:auto;max-width:60px;object-fit:contain}
+.up span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:140px}
+.x{border:0;background:transparent;color:var(--muted);font-size:13px;padding:4px 6px;border-radius:6px}
+.x:hover{color:var(--bad);background:var(--bad-soft)}
+.prog{height:4px;border-radius:2px;background:var(--surface-2);overflow:hidden;margin-top:12px}
+.prog i{display:block;height:100%;width:35%;background:var(--accent);border-radius:2px;animation:slide 1.3s ease-in-out infinite}
+@keyframes slide{0%{transform:translateX(-100%)}100%{transform:translateX(290%)}}
+@media (prefers-reduced-motion:reduce){.prog i{animation:none;width:100%;opacity:.5}}
+.status{font-size:13px;color:var(--muted);min-height:1.3em;margin-top:8px}
+.status.err{color:var(--bad)}
+
+/* Vorschläge */
+.tpls{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:8px;margin-top:14px}
+.tpl{display:flex;flex-direction:column;gap:6px;text-align:left;border:1px solid var(--line);background:var(--surface-2);border-radius:var(--r-sm);padding:8px;font-size:12.5px;font-weight:600;min-width:0}
+.tpl[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:var(--surface)}
+.tpl .stage{padding:6px 3px}
+.steps{display:flex;gap:6px;flex-wrap:wrap}
+.steps button{flex:1 1 150px;display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px 7px 8px;font-weight:600;font-size:13.5px;color:var(--muted);text-align:left}
+.steps button b{font-family:var(--f-display);width:24px;height:24px;border-radius:50%;display:inline-grid;place-items:center;border:1.5px solid var(--line-strong);font-size:12.5px;flex:none}
+.steps button[aria-current="step"]{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+.steps button[aria-current="step"] b{border-color:var(--bg)}
+.stagebar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 8px);z-index:20;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--r);padding:12px 14px;box-shadow:0 8px 22px rgba(0,0,0,.10);max-height:72vh;overflow:auto}
+.stagebar .stage{padding:12px 8px}
+.stagebar .pal{margin-top:10px}
+.stagebar .pal-g{grid-template-columns:repeat(auto-fill,minmax(24px,1fr));gap:5px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin-top:8px}
+.fgrid button{border:1px solid var(--line);border-radius:7px;background:var(--surface-2);padding:8px 6px 5px;display:flex;flex-direction:column;gap:3px;align-items:center;min-width:0}
+.fgrid button.on{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:var(--surface)}
+.fgrid b{font-size:21px;line-height:1.2;white-space:nowrap;overflow:hidden;max-width:100%}
+.fgrid small{font-size:11px;color:var(--muted);font-family:var(--f-body);font-weight:500}
+.how{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 14px;margin-bottom:16px;font-size:13.5px}
+.how ol{margin:6px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:3px}
+.sub-h{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:6px}
+.chk{flex-direction:row;align-items:center;gap:8px;font-size:14px;cursor:pointer}
+.chk input{width:18px;height:18px;accent-color:var(--accent)}
+.bs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;width:100%;padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:2px}
+.bsb{padding:6px 11px;font-size:12.5px}
+.bsb svg{width:14px;height:14px;flex:none}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+.viewbar{gap:8px;margin-bottom:8px}
+.viewbar .seg button{padding:5px 12px;font-size:12.5px}
+.stage.zoom{overflow-x:auto;overscroll-behavior-x:contain}
+.stage.zoom svg{width:calc(100% * var(--z,1));max-width:none}
+.seg.al button{padding:5px 9px;display:inline-grid;place-items:center}
+.seg.al svg{width:16px;height:16px}
+.tg{display:inline-flex;flex-wrap:wrap;gap:6px}
+#tools .btn{padding:6px 12px;font-size:12.5px}
+.grp.sel,.grp.lays{grid-column:1/-1}
+.grp h3 .lh{text-transform:none;letter-spacing:0;font-weight:500;font-size:11.5px}
+.laylist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.lay{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:3px 6px;min-width:0}
+.lay.on{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.lay.off .ln{opacity:.5;text-decoration:line-through}
+.lay.over{border-style:dashed;border-color:var(--accent)}
+.lay.drag{opacity:.5}
+.lay.base{background:var(--surface-2);color:var(--muted);font-size:12.5px;padding-block:7px}
+.lay .grip{cursor:grab;color:var(--muted);width:14px;text-align:center;flex:none;user-select:none}
+.lay .ln{flex:1;min-width:0;display:flex;align-items:center;gap:7px;border:0;background:transparent;text-align:left;font-size:13px;font-weight:600;padding:3px 2px}
+.lay .ln svg{width:14px;height:14px;flex:none}
+.lay .ln span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.lay .ln small{font-weight:500;color:var(--muted)}
+.lay .li{border:1px solid transparent;background:transparent;border-radius:6px;width:28px;height:28px;display:inline-grid;place-items:center;color:var(--muted);flex:none;padding:0}
+.lay .li:hover:not(:disabled){border-color:var(--line-strong);color:var(--fg)}
+.lay .li:disabled{opacity:.3;cursor:default}
+.lay .li svg{width:15px;height:15px}
+.lay .li[data-lock][aria-pressed="true"]{color:var(--accent)}
+.fl textarea{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:5px 8px;font:inherit;font-size:13px;color:var(--fg);resize:vertical;min-height:34px}
+.chip.on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.fl input.nb{flex:0 0 62px;width:62px;text-align:right;font-variant-numeric:tabular-nums}
+.fl .cmu{font-size:12px;flex:none}
+.el{cursor:move;touch-action:none}
+.lib{margin-top:14px;border:1.5px dashed var(--line-strong);border-radius:var(--r-sm);padding:12px}
+.lib .up{cursor:grab}
+.lib .up .btn{padding:4px 10px;font-size:12.5px}
+.model .m-p{font-family:var(--f-display);font-weight:800;font-stretch:108%;font-size:1.05rem;color:var(--accent)}
+.grp.sel{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.hit{cursor:pointer}
+.hit:hover{opacity:.82}
+.props{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.prop{display:flex;flex-direction:column;gap:8px;text-align:left;border:1px solid var(--line);background:var(--surface-2);border-radius:var(--r);padding:12px;min-width:0}
+.prop[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:var(--surface)}
+.prop b{font-family:var(--f-display);font-stretch:108%;font-size:1rem}
+.prop p{margin:0;font-size:12.5px;color:var(--muted)}
+.side-l{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:2px 0 -4px}
+
+/* Feinschliff */
+.big .stage{padding:18px 10px}
+.chat{display:flex;gap:8px;margin-top:14px}
+.chat input{flex:1;min-width:0;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font:inherit;color:var(--fg)}
+.chat input:focus{outline:none;border-color:var(--accent);background:var(--surface)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.chip{border:1px solid var(--line);background:var(--surface-2);border-radius:999px;padding:4px 11px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.chip:hover{color:var(--fg);border-color:var(--line-strong)}
+details.man{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+details.man summary{cursor:pointer;font-weight:600;font-size:13.5px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;background:var(--surface-2)}
+.seg button{border:0;background:transparent;padding:6px 14px;font-size:13px;font-weight:600;color:var(--muted)}
+.seg button + button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.ctl{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-top:12px}
+.grp{border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 12px;background:var(--surface-2);display:flex;flex-direction:column;gap:8px;min-width:0}
+.grp h3{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;font-family:var(--f-body);display:flex;justify-content:space-between;align-items:center}
+.fl{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.fl > span:first-child{flex:0 0 62px}
+.fl input[type=range]{flex:1;min-width:0;accent-color:var(--accent)}
+.fl input[type=text],.fl select,.fl input[type=number]{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:5px 8px;font:inherit;font-size:13px;color:var(--fg)}
+.cc{width:26px;height:26px;border-radius:50%;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line-strong);padding:0;flex:none}
+.cc.on{box-shadow:0 0 0 2px var(--accent)}
+.mini{border:1px solid var(--line);background:var(--surface);border-radius:50%;width:26px;height:26px;padding:0;font-weight:700;color:var(--muted);flex:none}
+.pal{margin-top:12px;border:1px solid var(--line-strong);border-radius:var(--r-sm);padding:10px;background:var(--surface)}
+.pal-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(28px,1fr));gap:6px;margin-top:8px}
+.pal-g button{aspect-ratio:1;border-radius:50%;border:1px solid var(--line-strong);padding:0}
+.vers{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;align-items:center}
+
+/* Anfrage */
+.fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.f{display:flex;flex-direction:column;gap:5px;min-width:0}
+.f.wide{grid-column:1/-1}
+.f label{font-size:12.5px;font-weight:600;color:var(--muted)}
+.inp{display:flex;align-items:center;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-sm);min-height:40px}
+.inp:focus-within{border-color:var(--accent);background:var(--surface)}
+.inp input,.inp select{flex:1;min-width:0;border:0;background:transparent;padding:9px 11px;outline:none}
+.inp .u{padding-right:11px;color:var(--muted);font-size:13px}
+
+/* Musterbogen */
+.summary{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);display:flex;flex-direction:column;gap:14px;min-width:0}
+.sheet{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;min-width:0}
+.sheet h2{font-size:1.25rem;font-weight:800;font-stretch:112%;margin:2px 0 10px}
+.kv{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.kv td{padding:6px 0;border-top:1px solid var(--line);vertical-align:top}
+.kv td:first-child{color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;width:92px;padding-top:8px}
+.yarns{display:flex;flex-wrap:wrap;gap:5px 10px}
+.yarn{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600}
+.yarn i{width:11px;height:11px;border-radius:50%;box-shadow:0 0 0 1px var(--line-strong);flex:none}
+.notes{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:12.5px}
+.notes li{background:var(--warn-soft);color:var(--warn);border-radius:6px;padding:6px 9px}
+.notes li.info{background:var(--surface-2);color:var(--muted)}
+.price{font-family:var(--f-display);font-weight:800;font-stretch:112%;font-size:2rem;line-height:1.05;letter-spacing:-.02em;margin-top:4px}
+.price small{font-size:.42em;font-weight:600;color:var(--muted);letter-spacing:0;font-stretch:100%}
+
+/* Admin */
+.tbl-wrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;text-align:right;padding:6px 4px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl td{padding:4px;border-bottom:1px solid var(--line);text-align:right}
+.tbl th:first-child,.tbl td:first-child{text-align:left;font-weight:700;white-space:nowrap}
+.tbl input{width:76px;text-align:right;background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:5px 6px;font:inherit;font-size:13px;color:var(--fg)}
+.open{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:13.5px;max-width:75ch}
+.req{border:1px solid var(--line);border-radius:var(--r);padding:14px;background:var(--surface-2);display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.req h3{font-size:1rem}
+
+@media (max-width:980px){.calc-grid{grid-template-columns:minmax(0,1fr)}.summary{position:static}}
+@media (max-width:620px){.props{grid-template-columns:minmax(0,1fr)}.block{padding:16px}.chat{flex-wrap:wrap}.chat input{flex-basis:100%}}
+</style>
+
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <a href="index.html" aria-label="Zur Startseite von WearSuba" style="color:inherit;display:flex"><svg class="logo" viewBox="0 0 250.73 59.83" fill="currentColor" role="img" aria-label="SUBA"><path d="M 17.339844 0.3125 C 7.902344 0.3125 0.226562 7.988281 0.226562 17.425781 C 0.226562 26.859375 7.902344 34.535156 17.339844 34.535156 C 21.753906 34.535156 25.34375 38.128906 25.34375 42.542969 C 25.34375 46.953125 21.753906 50.546875 17.339844 50.546875 L 17.339844 59.652344 C 26.777344 59.652344 34.453125 51.976562 34.453125 42.542969 C 34.453125 33.105469 26.777344 25.429688 17.339844 25.429688 C 12.925781 25.429688 9.335938 21.835938 9.335938 17.425781 C 9.335938 13.011719 12.925781 9.421875 17.339844 9.421875 C 21.753906 9.421875 25.34375 13.011719 25.34375 17.425781 L 25.34375 18.636719 L 34.453125 18.636719 L 34.453125 17.425781 C 34.453125 7.988281 26.777344 0.3125 17.339844 0.3125 M 86.449219 33.503906 C 86.449219 39.621094 81.472656 44.597656 75.355469 44.597656 C 69.238281 44.597656 64.261719 39.621094 64.261719 33.503906 L 64.261719 11.148438 L 55.152344 11.148438 L 55.152344 33.503906 C 55.152344 44.644531 64.214844 53.707031 75.355469 53.707031 C 86.496094 53.707031 95.558594 44.644531 95.558594 33.503906 L 95.558594 2.597656 L 86.449219 2.597656 Z M 86.449219 33.503906 M 167.234375 43.347656 L 125.550781 43.347656 L 125.550781 28.882812 L 167.234375 28.882812 C 171.222656 28.882812 174.46875 32.125 174.46875 36.113281 C 174.46875 40.101562 171.222656 43.347656 167.234375 43.347656 M 125.550781 9.109375 L 150.359375 9.109375 C 153.296875 9.109375 155.6875 11.5 155.6875 14.441406 C 155.6875 17.382812 153.296875 19.773438 150.359375 19.773438 L 125.550781 19.773438 Z M 167.234375 19.773438 L 163.773438 19.773438 C 164.433594 18.121094 164.800781 16.324219 164.800781 14.441406 C 164.800781 6.480469 158.320312 0 150.359375 0 L 116.441406 0 L 116.441406 52.457031 L 167.234375 52.457031 C 176.246094 52.457031 183.574219 45.125 183.574219 36.113281 C 183.574219 27.105469 176.246094 19.773438 167.234375 19.773438 M 228.242188 30.925781 L 236.078125 44.335938 L 220.414062 44.335938 Z M 206.273438 52.457031 L 250.230469 52.457031 L 228.242188 14.835938 L 219.566406 0 L 188.914062 52.457031 L 198.097656 52.457031 L 219.566406 16.089844 L 223.539062 22.890625 L 211.019531 44.335938 Z M 206.273438 52.457031"/></svg></a>
+      <div class="brand-t"><div class="eyebrow">Create Your Own</div><h1>Schal-Konfigurator</h1></div>
+    </div>
+    <a class="btn" href="index.html" style="text-decoration:none">← Zur Website</a>
+    <nav class="tabs" role="tablist" id="tabs" hidden>
+      <button class="tab" role="tab" aria-selected="true" data-tab="konfig">Konfigurator</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="preise" hidden>Preise</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="anfragen" hidden>Anfragen</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="daten" hidden>Daten &amp; offene Punkte</button>
+      <button class="tab" type="button" id="custView" hidden>Kundenansicht</button>
+    </nav>
+  </header>
+
+  <main id="view-konfig" class="calc-grid">
+    <div class="inputs">
+      <nav class="steps" id="steps" aria-label="Schritte">
+        <button type="button" data-go="1"><b>1</b> Schal und Menge</button>
+        <button type="button" data-go="2"><b>2</b> Vorlage</button>
+        <button type="button" data-go="3"><b>3</b> Farben und Text</button>
+        <button type="button" data-go="4"><b>4</b> Anfrage</button>
+      </nav>
+      <div class="stagebar" id="stagebar">
+        <div class="row viewbar">
+          <div class="seg" id="viewSeg" role="group" aria-label="Ansicht"><button type="button" data-view="jac" aria-pressed="true">Jacquard-Ansicht</button><button type="button" data-view="vec" aria-pressed="false">Grafik</button></div>
+          <div class="seg" id="zoomSeg" role="group" aria-label="Zoom"><button type="button" data-z="1" aria-pressed="true">Ganz</button><button type="button" data-z="2" aria-pressed="false">2×</button><button type="button" data-z="4" aria-pressed="false">4×</button></div>
+          <span class="note" id="jacStat"></span>
+        </div>
+        <div class="side-l" id="bigFrontL">Vorderseite</div>
+        <div class="stage" id="bigFront" style="margin-top:6px"></div>
+        <div class="side-l" id="bigBackL" style="margin-top:10px">Rückseite</div>
+        <div class="stage" id="bigBack" style="margin-top:6px"></div>
+        <div class="row" id="tools" style="margin-top:10px" hidden></div>
+        <div class="pal" id="pal" hidden></div>
+      </div>
+      <section data-step="1" class="block">
+        <div class="block-h"><span class="step">1</span><h2>Schal und Menge wählen</h2><span class="sub">Weitere Modelle auf Anfrage</span></div>
+        <div class="row" style="margin-bottom:14px;align-items:flex-end"><div class="f" style="flex:0 0 150px"><label for="menge">Stückzahl</label><div class="inp"><input id="menge" type="number" min="1" step="1" value="50" inputmode="numeric"><span class="u">Stück</span></div></div><div class="chips" id="qChips" style="margin:0 0 6px"></div></div>
+        <div class="models" id="models"></div>
+      </section>
+
+      <section data-step="2" class="block">
+        <div class="block-h"><span class="step">2</span><h2>Vorlage wählen</h2><span class="sub">Oder starte leer und gestalte in Schritt 3 mit Bausteinen</span></div>
+        <div class="row">
+          <div class="seg" id="gleichSeg"><button type="button" data-g="1" aria-pressed="true">Beide Seiten gleich</button><button type="button" data-g="0" aria-pressed="false">Unterschiedlich</button></div>
+          <div class="seg" id="sideSeg" hidden><button type="button" data-side="vorne" aria-pressed="true">Vorderseite</button><button type="button" data-side="hinten" aria-pressed="false">Rückseite</button></div>
+        </div>
+        <p class="note" id="backNote" style="margin:8px 0 0"></p>
+        <div class="tpls" id="tpls"></div>
+      </section>
+
+      <section data-step="3" class="block big" id="editBlock">
+        <div class="block-h"><span class="step">3</span><h2>Farben und Text</h2><span class="sub">Fläche anklicken: Farbe ändern. Text oder Logo anklicken: verschieben, am Punkt größer ziehen</span></div>
+        <div class="lib" id="uploads">
+          <div class="row"><label class="btn primary" for="file">Logo hochladen</label><input type="file" id="file" accept="image/png,image/jpeg,image/svg+xml,image/webp" multiple hidden><span class="note">Einmal hochladen, beliebig oft verwenden. JPG oder PNG genügt.</span></div>
+          <div class="uploads" id="logoLib"></div>
+          <p class="note" style="margin:8px 0 0">Am besten für die Produktion ist eine Vektordatei (PDF, EPS, AI oder SVG). Wenn du eine hast, schick sie uns nach der Anfrage an info@wearsuba.com. Ohne Vektordatei bauen unsere Grafiker dein Logo nach.</p>
+          <p class="note" id="logoHint" hidden style="margin:8px 0 0">„Platzieren“ setzt das Logo auf die gewählte Seite. Du kannst es auch direkt in den Schal ziehen. Dort lässt es sich verschieben, vergrößern, drehen und duplizieren.</p>
+        </div>
+        <div class="ctl" id="ctl"></div>
+        <div class="status" id="genStatus" role="status"></div>
+        <div class="vers" id="vers" hidden></div>
+      </section>
+
+      <section data-step="4" class="block">
+        <div class="block-h"><span class="step">4</span><h2>Anfrage senden</h2><span class="sub">unverbindlich</span></div>
+        <div class="how"><b>So geht es weiter</b><ol><li>Du sendest deine unverbindliche Anfrage.</li><li>Unsere Grafiker prüfen dein Design und erstellen die finale Druckdatei.</li><li>Du erhältst die Druckdatei per E-Mail zur Freigabe.</li><li>Erst mit deiner Freigabe kommt eine Bestellung zustande.</li></ol></div>
+        <form id="reqForm" class="fields">
+          <div class="f"><label for="rname">Name</label><div class="inp"><input id="rname" required autocomplete="name"></div></div>
+          <div class="f"><label for="rorg">Verein oder Unternehmen</label><div class="inp"><input id="rorg" autocomplete="organization"></div></div>
+          <div class="f"><label for="rmail">E-Mail</label><div class="inp"><input id="rmail" type="email" required autocomplete="email"></div></div>
+          <div class="f"><label for="rtel">Telefon</label><div class="inp"><input id="rtel" type="tel" autocomplete="tel"></div></div>
+          <div class="f wide sub-h">Lieferadresse</div>
+          <div class="f wide"><label for="lstr">Straße und Hausnummer</label><div class="inp"><input id="lstr" required autocomplete="shipping street-address"></div></div>
+          <div class="f"><label for="lplz">PLZ</label><div class="inp"><input id="lplz" required autocomplete="shipping postal-code"></div></div>
+          <div class="f"><label for="lort">Ort</label><div class="inp"><input id="lort" required autocomplete="shipping address-level2"></div></div>
+          <div class="f"><label for="lland">Land</label><div class="inp"><input id="lland" autocomplete="shipping country-name" placeholder="z. B. Deutschland"></div></div>
+          <label class="f wide chk" for="rgleich"><input type="checkbox" id="rgleich" checked> Rechnungsadresse ist gleich Lieferadresse</label>
+          <div class="f wide" id="rechBox" hidden><div class="fields">
+            <div class="f wide sub-h">Rechnungsadresse</div>
+            <div class="f wide"><label for="bname">Rechnungsempfänger</label><div class="inp"><input id="bname" autocomplete="billing organization"></div></div>
+            <div class="f wide"><label for="bstr">Straße und Hausnummer</label><div class="inp"><input id="bstr" autocomplete="billing street-address"></div></div>
+            <div class="f"><label for="bplz">PLZ</label><div class="inp"><input id="bplz" autocomplete="billing postal-code"></div></div>
+            <div class="f"><label for="bort">Ort</label><div class="inp"><input id="bort" autocomplete="billing address-level2"></div></div>
+            <div class="f"><label for="bland">Land</label><div class="inp"><input id="bland" autocomplete="billing country-name"></div></div>
+          </div></div>
+          <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Firma2 <input id="hp" tabindex="-1" autocomplete="off"></label></div>
+          <div class="f wide"><label for="rbem">Bemerkungen</label><div class="inp"><input id="rbem" placeholder="Wunschtermin, Fragen, Hinweise"></div></div>
+          <div class="f wide row">
+            <button class="btn accent" id="send">Unverbindliche Anfrage senden</button>
+            <button class="btn" type="button" id="dlPdf" hidden>Zusammenfassung (PDF)</button>
+            <button class="btn" type="button" id="dlProd" hidden>Technical Sheet (PDF, EN)</button>
+            <button class="btn" type="button" id="dlSvg" hidden>Druckvorlage 1:1 (SVG)</button>
+            <button class="btn" type="button" id="dlJson" hidden>Designdaten (JSON)</button>
+          </div>
+        </form>
+        <div class="status" id="reqStatus" role="status"></div>
+      </section>
+      <div class="row" id="stepNav" style="justify-content:space-between"><button type="button" class="btn" id="back">Zurück</button><button type="button" class="btn primary" id="next">Weiter</button></div>
+    </div>
+
+    <aside class="summary">
+      <div class="sheet">
+        <div class="eyebrow" id="sModel"></div>
+        <h2 id="sTitle"></h2>
+        <div id="sPill" style="margin-top:12px"></div>
+        <table class="kv"><tbody id="sKv"></tbody></table>
+        <ul class="notes" id="sNotes"></ul>
+      </div>
+      <div class="sheet">
+        <div class="eyebrow">Richtpreis</div>
+        <div class="price" id="sPrice"></div>
+        <p class="note" id="sPriceNote" style="margin:6px 0 0"></p>
+      </div>
+    </aside>
+  </main>
+
+  <section id="view-preise" hidden>
+    <div class="block">
+      <div class="block-h"><h2>Preise pflegen</h2><span class="sub">Nur für Editoren sichtbar</span></div>
+      <p class="hint" style="max-width:70ch">Trage je Modell und Staffel den Verkaufspreis ein; der Einkaufspreis darunter dient dir als Vergleich. Bleibt ein Verkaufspreis leer, rechnet die Seite Einkauf plus Aufschlag, sofern ein Aufschlag gesetzt ist. Ohne Preis sieht der Kunde „Preis auf Anfrage“. Kunden sehen nie den Einkaufspreis.</p>
+      <div class="fields" style="margin:14px 0">
+        <div class="f wide"><label for="pStaffeln">Staffelmengen (mit Komma getrennt)</label><div class="inp"><input id="pStaffeln"></div></div>
+        <div class="f"><label for="pAuf">Kalkulationsaufschlag</label><div class="inp"><input id="pAuf" type="number" min="0" step="1"><span class="u">%</span></div></div>
+        <div class="f"><label for="pVers">Versand pauschal</label><div class="inp"><input id="pVers" type="number" min="0" step="0.01"><span class="u">EUR</span></div></div>
+        <div class="f"><label for="pKurs">Kurs EUR → CHF (optional)</label><div class="inp"><input id="pKurs" type="number" min="0" step="0.0001"></div></div>
+      </div>
+      <div class="tbl-wrap"><table class="tbl" id="pTbl"></table></div>
+      <div class="row" style="margin-top:14px"><button class="btn primary" id="pSave">Preise speichern</button><span class="status" id="pStatus" role="status" style="margin:0"></span></div>
+    </div>
+  </section>
+
+  <section id="view-anfragen" hidden>
+    <div class="block">
+      <div class="block-h"><h2>Eingegangene Anfragen</h2><button class="btn" id="aReload" style="margin-left:auto">Aktualisieren</button></div>
+      <div id="aList"><p class="hint">Hier erscheinen Anfragen, sobald ein Kunde eine sendet.</p></div>
+    </div>
+  </section>
+
+  <section id="view-daten" hidden>
+    <div class="block">
+      <div class="block-h"><h2>Offene Punkte aus dem Katalog</h2></div>
+      <p class="hint" style="max-width:70ch;margin-bottom:12px">Diese Angaben stehen nicht im Katalog. Der Konfigurator trifft dazu vorsichtige Annahmen und markiert betroffene Entwürfe als prüfpflichtig.</p>
+      <ol class="open" id="openList"></ol>
+    </div>
+    <div class="block" style="margin-top:16px">
+      <div class="block-h"><h2>Produktdaten</h2><span class="sub">zentral im Datenblock KATALOG hinterlegt</span></div>
+      <div class="tbl-wrap"><table class="tbl" id="dTbl"></table></div>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+"use strict";
+/* ============ KATALOG: zentrale Produktdaten (Quelle: SUBA Katalog Schals & Sportswear) ============
+   maxFarben null = im Katalog nicht angegeben. rueck: frei | negativ | gleich | offen.
+   fransen und rueck (ausser SCHAL 10/15/35/75) sind aus den Katalogfotos abgeleitet -> Annahme. */
+const KATALOG_ALLE = [
+ {id:"HD-Schal", art:"SCHAL 10", raster:{w:1.6,h:1.8,typ:"strick"}, lief:"Scarf Ref. 10 (HD jacquard knit, double layer)", matEn:"95% acrylic, 5% elastane", aktiv:true, moq:50, text:"Strickschal aus zwei Lagen, die unterschiedlich gestaltet sein können.", material:"95 % Polyacryl · 5 % Elasthan", l:140,b:18, maxFarben:8, verfahren:"strick", rueck:"frei", fransen:"ja", motiv:true},
+ {id:"Classic-Schal", art:"SCHAL 15", raster:{w:2.0,h:2.1,typ:"strick"}, lief:"Scarf Ref. 15 (jacquard knit)", matEn:"100% acrylic", aktiv:true, moq:50, text:"Jacquard-Strickschal aus zwei Teilen, die unterschiedlich gestaltet sein können.", material:"100 % Polyacryl", l:140,b:18, maxFarben:8, verfahren:"strick", rueck:"frei", fransen:"ja", motiv:true},
+ {id:"SCHAL 20", text:"Strickschal mit elastischem Rippstrick.", material:"100 % Polyacryl", l:180,b:18, maxFarben:1, verfahren:"rippe", rueck:"gleich", fransen:"nein", motiv:false},
+ {id:"SCHAL 25", text:"Strickschal mit Quer- oder Längsstreifen.", material:"100 % Polyacryl", l:140,b:18, maxFarben:null, verfahren:"strick", rueck:"gleich", fransen:"ja", motiv:false},
+ {id:"SCHAL 35", text:"Strickschal aus zwei Teilen – die Rückseite ist das Negativ der Vorderseite.", material:"100 % Polyacryl", l:170,b:23, maxFarben:2, verfahren:"strick", rueck:"negativ", fransen:"nein", motiv:false},
+ {id:"Web-Schal", art:"SCHAL 45", raster:{w:1.0,h:1.0,typ:"web"}, lief:"Woven Scarf Ref. 45 (high-definition woven, single layer)", matEn:"100% acrylic", aktiv:true, moq:200, text:"Einlagiger, hochauflösend gewebter Schal mit Fransen und Seitennaht.", material:"100 % Polyacryl", l:130,b:20, maxFarben:8, verfahren:"web", rueck:"offen", fransen:"ja", motiv:true},
+ {id:"SCHAL 55", text:"Einlagiger, hochauflösend gewebter Schal mit angesetzten Acrylfransen und Seitennaht.", material:"75 % Polyacryl · 25 % Polyester", l:130,b:20, maxFarben:8, verfahren:"web", rueck:"offen", fransen:"ja", motiv:true},
+ {id:"Polyester-Schal", art:"SCHAL 75", lief:"Polyester Scarf Ref. 75 (sublimated both sides)", matEn:"100% polyester", aktiv:true, moq:50, text:"Beidseitig sublimierter Schal. Auch aus SEAQUAL-zertifiziertem Material.", material:"100 % Polyester", l:140,b:18, maxFarben:Infinity, verfahren:"sublimation", rueck:"frei", fransen:"ja", motiv:true},
+ {id:"SCHAL 95", text:"Strickschal mit geflochtenen Fransen.", material:"100 % Polyacryl", l:180,b:17, maxFarben:2, verfahren:"strick", rueck:"gleich", fransen:"geflochten", motiv:false},
+ {id:"MODA 1", text:"Oversize-Strickschal.", material:"100 % Polyacryl", l:240,b:15, maxFarben:4, verfahren:"rippe", rueck:"gleich", fransen:"nein", motiv:false},
+ {id:"MODA 2", text:"Schmaler, langer Strickschal.", material:"100 % Polyacryl", l:240,b:10, maxFarben:3, verfahren:"strick", rueck:"gleich", fransen:"nein", motiv:false},
+];
+/* Testphase: nur Einträge mit aktiv:true stehen zur Auswahl. Weitere Modelle später mit aktiv:true freischalten. */
+const KATALOG = KATALOG_ALLE.filter(m=>m.aktiv);
+/* Garnfarben 100 % Polyacryl (Katalog S. 20–21). Hex-Werte sind Bildschirm-Näherungen der Farbkarte. */
+const GARN = Object.fromEntries(("PRETO:141a18,MARENGO:232826,GRIS MOYENNE:5c5f61,GRIS CLAIRE:b4b7b8,GRIS ECOLE:8e9193,TURBA:2a302e,CANTABRICO:33434a,CENDRE:4f5356,CINZA MÉDIO:767a7b,CINZA CLARO:a3a5a6,MARINHO B:17203f,KRASNODAR:0e4a22,"+
+"MARINHO:162338,AZUL OLYMPIC:1b2140,AZUL 337384:0f4273,SAPHIR:1a4b78,DUCADOS:153e6e,ROYAL B:0a3fae,ROYAL:0b2f96,AZUL X12099:0a5cc4,ES LARGO:0b52c6,HAWAI:0d86c2,AZUL X12123:0a7fe0,FVERDE X12730:0f4630,"+
+"AZUL X12412:6fb8ea,AP326:8fbde3,CELESTE:c4e6f5,CRISTAL:92c3ea,AIR FORCE:2a6590,BRUMA:6f8fbf,TURQUESA:0dc6ef,PISCINA:7fe6ea,VERDOSO:2fa590,VERDE K1445:045c36,VERDE X11072:058563,BOTELLA:0e3a2c,"+
+"CESPED:10a548,BENETTON:088a4c,JARDIN:2d6a4a,CIPRES:3d4a36,VERDE SODRA:078246,GREEN PASTORE:2a5a34,VERDE 1081:244a34,KIWI:96bf2c,PINO:5f8452,QUIROFANO:238a42,PINNEEDLE:2e6650,VERDE 682:1eb85a,"+
+"BOSPHORUS:0a8566,PAJA:fbfbb0,AMARELO X14025:fdfa3e,AMARELO X11706:fdf000,BLEMUR:fde826,BLEMUR 2:fbd516,AMARELO 16292:fbdf28,AMARELO X20964:f9cf30,DINGO:f9b948,ORO:e8b24a,MANDARINA:f08a3c,ACEITE:b77a08,"+
+"ARENA:a58a5e,TORRADO:bd842a,CARAMEL:a84a12,LARANJA 2:e2501e,LARANJA:fc6c0a,LARANJA FLUOR:fd7a3e,VERDE FLUOR:fdfb78,ROSA FLUOR:fd1f82,FESTIVAL:9c2a82,FUSHIA:cf0f5a,MAGENTA:cc1fa2,LILÁS X15736:6c50d0,"+
+"ROXO X7630:4a3a6c,ROXO FIOR:2c2458,CICLAMEN:f6a0d8,ROSA X12992:f8a8d4,ROSA X11196:f486c0,CHICLE:fbdde8,CREMA:fdfdf2,BRANCO:ffffff,ROUGE:f50a22,PERSAN:d00622,VERMELHO X14027:c8081c,VINTAGE RED:cf1226,"+
+"FULL RED:a80f20,HERMES:9c1228,ROUGE LAQUE:8e1a30,BORDEAUX X20966:7e1a2a,BORDEAUX B:6c1024,BORDEAUX X16136:4e1a1c,GRANATE:45181e,MARRON:3c3a2a,AVELLANA:4c4630,NUEZ:62604e,TIERRA:b8ae94,FICELLE:c9c2a2")
+ .split(",").map(s=>{const i=s.lastIndexOf(":");return [s.slice(0,i),"#"+s.slice(i+1)]}));
+const GARN_NAMEN = Object.keys(GARN);
+const OFFEN = [];
+
+/* ============ Hilfen ============ */
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const clamp = (v,a,b,d) => {v=Number(v); return Number.isFinite(v)?Math.min(b,Math.max(a,v)):d};
+const clone = o => JSON.parse(JSON.stringify(o));
+const hex = n => GARN[n] || "#141a18";
+const rgb = h => [1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const lum = n => {const [r,g,b]=rgb(hex(n)); return (.299*r+.587*g+.114*b)/255};
+function garnName(v){
+  if(typeof v!=="string") return null;
+  const u=v.trim().toUpperCase();
+  if(GARN[u]) return u;
+  const f=GARN_NAMEN.find(n=>n.normalize("NFD").replace(/[̀-ͯ]/g,"")===u.normalize("NFD").replace(/[̀-ͯ]/g,""));
+  if(f) return f;
+  if(/^#[0-9a-f]{6}$/i.test(v.trim())){const t=rgb(v.trim());let best=null,bd=1e9;for(const n of GARN_NAMEN){const c=rgb(GARN[n]);const d=(c[0]-t[0])**2+(c[1]-t[1])**2+(c[2]-t[2])**2;if(d<bd){bd=d;best=n}}return best}
+  return null;
+}
+const modell = id => KATALOG.find(m=>m.id===id) || KATALOG[1];
+const farbLimit = m => m.maxFarben===Infinity ? "keine Farbbegrenzung" : m.maxFarben==null ? "nicht angegeben" : m.maxFarben===1 ? "einfarbig" : "bis zu "+m.maxFarben+" Farben";
+
+/* ============ Bausteine für freies Gestalten (b, h in Prozent von Länge bzw. Breite) ============ */
+const FORMS = {
+ balken:{n:"Balken", en:"vertical bar", b:5, h:100, d:0, icon:'<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="6" y="1" width="4" height="14" fill="currentColor"/></svg>'},
+ streifen:{n:"Streifen", en:"lengthwise stripe", b:100, h:14, d:0, icon:'<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="6" width="14" height="4" fill="currentColor"/></svg>'},
+ schraeg:{n:"Schräge", en:"diagonal bar", b:4, h:170, d:35, icon:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 15 L1 13 L13 1 L15 3Z" fill="currentColor"/></svg>'},
+ rechteck:{n:"Rechteck", en:"rectangle", b:14, h:55, d:0, icon:'<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="4" width="12" height="8" fill="currentColor"/></svg>'},
+ kreis:{n:"Kreis", en:"circle", b:null, h:60, d:0, icon:'<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="currentColor"/></svg>'},
+ dreieck:{n:"Dreieck", en:"triangle", b:10, h:60, d:0, icon:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2 L15 14 H1Z" fill="currentColor"/></svg>'},
+};
+const rotN = v => { v=Math.round((Number(v)||0)/5)*5; return ((v%360)+360)%360 };
+
+/* ============ Schriften für Schriftzüge ============ */
+const FONTS = {
+ block:{name:"Archivo Narrow", fam:"'Archivo Narrow', 'Arial Narrow', Arial, sans-serif", w:700, g:"Archivo+Narrow:wght@700"},
+ robotoc:{name:"Roboto Condensed", fam:"'Roboto Condensed', 'Arial Narrow', Arial, sans-serif", w:700, g:"Roboto+Condensed:wght@700"},
+ barlowc:{name:"Barlow Condensed", fam:"'Barlow Condensed', 'Arial Narrow', Arial, sans-serif", w:700, g:"Barlow+Condensed:wght@700"},
+ oswald:{name:"Oswald", fam:"'Oswald', 'Arial Narrow', sans-serif", w:700, g:"Oswald:wght@700"},
+ fjalla:{name:"Fjalla One", fam:"'Fjalla One', Impact, sans-serif", w:400, g:"Fjalla+One"},
+ anton:{name:"Anton", fam:"'Anton', Impact, sans-serif", w:400, g:"Anton"},
+ bebas:{name:"Bebas Neue", fam:"'Bebas Neue', Impact, sans-serif", w:400, g:"Bebas+Neue"},
+ staat:{name:"Staatliches", fam:"'Staatliches', Impact, sans-serif", w:400, g:"Staatliches"},
+ teko:{name:"Teko", fam:"'Teko', Impact, sans-serif", w:700, g:"Teko:wght@700"},
+ passion:{name:"Passion One", fam:"'Passion One', Impact, sans-serif", w:700, g:"Passion+One:wght@700"},
+ mont:{name:"Montserrat", fam:"'Montserrat', Arial, sans-serif", w:800, g:"Montserrat:wght@800"},
+ poppins:{name:"Poppins", fam:"'Poppins', Arial, sans-serif", w:800, g:"Poppins:wght@800"},
+ russo:{name:"Russo One", fam:"'Russo One', Arial, sans-serif", w:400, g:"Russo+One"},
+ righteous:{name:"Righteous", fam:"'Righteous', Arial, sans-serif", w:400, g:"Righteous"},
+ bungee:{name:"Bungee", fam:"'Bungee', Impact, sans-serif", w:400, g:"Bungee"},
+ blackops:{name:"Black Ops One", fam:"'Black Ops One', Impact, sans-serif", w:400, g:"Black+Ops+One"},
+ stencil:{name:"Saira Stencil One", fam:"'Saira Stencil One', Impact, sans-serif", w:400, g:"Saira+Stencil+One"},
+ graduate:{name:"Graduate", fam:"'Graduate', Georgia, serif", w:400, g:"Graduate"},
+ slab:{name:"Alfa Slab One", fam:"'Alfa Slab One', Georgia, serif", w:400, g:"Alfa+Slab+One"},
+ abril:{name:"Abril Fatface", fam:"'Abril Fatface', Georgia, serif", w:400, g:"Abril+Fatface"},
+ serif:{name:"Playfair Display", fam:"'Playfair Display', Georgia, serif", w:700, g:"Playfair+Display:wght@700"},
+ cinzel:{name:"Cinzel", fam:"'Cinzel', Georgia, serif", w:700, g:"Cinzel:wght@700"},
+ fraktur:{name:"UnifrakturCook", fam:"'UnifrakturCook', Georgia, serif", w:700, g:"UnifrakturCook:wght@700"},
+ maguntia:{name:"UnifrakturMaguntia", fam:"'UnifrakturMaguntia', Georgia, serif", w:400, g:"UnifrakturMaguntia"},
+ pirata:{name:"Pirata One", fam:"'Pirata One', Georgia, serif", w:400, g:"Pirata+One"},
+ lobster:{name:"Lobster", fam:"'Lobster', cursive", w:400, g:"Lobster"},
+ script:{name:"Pacifico", fam:"'Pacifico', cursive", w:400, g:"Pacifico"},
+ kaushan:{name:"Kaushan Script", fam:"'Kaushan Script', cursive", w:400, g:"Kaushan+Script"},
+ marker:{name:"Permanent Marker", fam:"'Permanent Marker', cursive", w:400, g:"Permanent+Marker"},
+ bangers:{name:"Bangers", fam:"'Bangers', Impact, sans-serif", w:400, g:"Bangers"},
+};
+/* Jede Schrift lädt über einen eigenen Link, damit ein Ausfall die anderen nicht mitreißt. */
+for(const f of Object.values(FONTS)){ const l=document.createElement("link"); l.rel="stylesheet"; l.href="https://fonts.googleapis.com/css2?family="+f.g+"&display=swap"; document.head.append(l) }
+const MC=document.createElement("canvas").getContext("2d");
+/* Abstand Mitte -> Grundlinie, damit Vorschau, PDF und Druckvorlage die Schrift gleich setzen (ohne dominant-baseline, das Illustrator ignoriert). */
+function baseOff(f,fs){ try{ MC.font=`${f.w} ${fs}px ${f.fam}`; const t=MC.measureText("Hg"), a=t.fontBoundingBoxAscent??t.actualBoundingBoxAscent, d=t.fontBoundingBoxDescent??t.actualBoundingBoxDescent; return Number.isFinite(a-d)?(a-d)/2:fs*.34 }catch{ return fs*.34 } }
+function textW(t,f,fs){ try{ MC.font=`${f.w} ${fs}px ${f.fam}`; return MC.measureText(t).width||t.length*fs*.56 }catch{ return t.length*fs*.56 } }
+
+/* ============ Text-Layout, Kontur, Ebenen-Geometrie ============ */
+function konturMM(e,m){ const k=e.kontur; if(!k) return 0; return k.skal ? k.rel*(m.b*10*e.groesse/100) : k.mm }
+/* Mehrzeiliger Text: Block ist um (x,y) zentriert; die Ausrichtung wirkt nur innerhalb des Blocks. */
+function textLayout(e,m){
+  const W=m.l*10, H=m.b*10, f=FONTS[e.schrift]||FONTS.block, fs=H*e.groesse/100, lh=fs*1.12, maxW=W*.96, a=e.ausr||"c";
+  const lines=String(e.text).split("\n"), raw=lines.map(l=>textW(l,f,fs)), ws=raw.map(w=>Math.min(w,maxW));
+  const bw=Math.max(1,...ws), bh=fs+(lines.length-1)*lh, cx=W*e.x/100, cy=H*(e.y??50)/100, bo=baseOff(f,fs);
+  const ax=a==="l"?cx-bw/2:a==="r"?cx+bw/2:cx;
+  return {f,fs,lh,bw,bh,cx,cy,align:a,anchor:a==="l"?"start":a==="r"?"end":"middle",km:konturMM(e,m),
+    lines:lines.map((t,i)=>({t,x:ax,y:cy-bh/2+fs/2+i*lh+bo,raw:raw[i],tl:raw[i]>maxW?maxW:0}))};
+}
+/* Ausmaß eines Elements in mm (ungedreht), inklusive Kontur und Hinterlegung. */
+function elBox(e,m){ const W=m.l*10, H=m.b*10;
+  if(e.typ==="form") return {bw:W*e.b/100, bh:H*e.h/100};
+  if(e.typ==="text"){ const T=textLayout(e,m), px=e.box?T.fs*.2:0; return {bw:T.bw+2*Math.max(T.km,px), bh:T.bh+2*Math.max(T.km,px/2)} }
+  const lg=LOGO_SRC[e.logo], h=H*e.groesse/100; return {bw:h*(lg?.ratio||1), bh:h} }
+const AUSR_EN={l:"left-aligned",c:"centred",r:"right-aligned"};
+const f1 = v => v.toFixed(1).replace(".",",");
+function konturStatus(km,m){ const r=m.raster; if(!r) return {cls:"good",txt:"Druck: jede Stärke umsetzbar"}; const mn=Math.min(r.w,r.h), n=km/mn;
+  if(n<1) return {cls:"bad",txt:`Nicht produzierbar: schmaler als 1 Masche (${f1(mn)} mm)`};
+  if(n<2) return {cls:"warn",txt:`Grenzwertig: ${f1(n)} Maschen, empfohlen ab ${f1(2*mn)} mm`};
+  return {cls:"good",txt:`Produzierbar: ca. ${Math.floor(n)} Maschen breit`} }
+
+/* ============ Canvas: Ebenen in Reihenfolge zeichnen (für Jacquard-Raster und Druck-PDF) ============ */
+const IMGC=new Map();
+function loadImg(url){ if(!IMGC.has(url)) IMGC.set(url,new Promise(r=>{ const i=new Image(); i.onload=()=>r(i); i.onerror=()=>r(null); i.src=url })); return IMGC.get(url) }
+function loadImgOnce(url){ return new Promise(r=>{ const i=new Image(); i.onload=()=>r(i); i.onerror=()=>r(null); i.src=url }) }
+async function drawElements(x,s,m,kx,ky,ox,oy){
+  const W=m.l*10, H=m.b*10;
+  for(const e of s.elemente){ if(e.aus) continue; const cx=W*e.x/100, cy=H*(e.y??50)/100;
+    let im=null; if(e.typ==="logo"){ const lg=LOGO_SRC[e.logo]; if(!lg?.url) continue; im=await loadImg(lg.url); if(!im) continue }
+    x.save(); x.setTransform(kx,0,0,ky,ox,oy); x.beginPath(); x.rect(0,0,W,H); x.clip();
+    if(e.dreh){ x.translate(cx,cy); x.rotate(e.dreh*Math.PI/180); x.translate(-cx,-cy) }
+    if(e.typ==="form"){ const w=W*e.b/100, h=H*e.h/100; x.fillStyle=hex(e.farbe); x.beginPath();
+      if(e.form==="kreis") x.ellipse(cx,cy,w/2,h/2,0,0,Math.PI*2); else if(e.form==="dreieck"){ x.moveTo(cx,cy-h/2); x.lineTo(cx+w/2,cy+h/2); x.lineTo(cx-w/2,cy+h/2); x.closePath() } else x.rect(cx-w/2,cy-h/2,w,h);
+      x.fill() }
+    else if(e.typ==="text"){ const T=textLayout(e,m), fs=T.fs;
+      if(e.box){ x.fillStyle=hex(e.box); x.fillRect(cx-T.bw/2-fs*.2, cy-T.bh/2-fs*.1, T.bw+fs*.4, T.bh+fs*.2) }
+      x.font=`${T.f.w} ${fs}px ${T.f.fam}`; x.textAlign=T.align==="l"?"left":T.align==="r"?"right":"center"; x.textBaseline="alphabetic"; x.lineJoin="round";
+      const each=fn=>T.lines.forEach(l=>{ x.save(); x.translate(l.x,l.y); if(l.tl) x.scale(l.tl/l.raw,1); fn(l.t); x.restore() });
+      if(T.km){ x.strokeStyle=x.fillStyle=hex(e.kontur.farbe); x.lineWidth=2*T.km; each(t=>{ x.strokeText(t,0,0); x.fillText(t,0,0) }) }
+      x.fillStyle=hex(e.farbe); each(t=>x.fillText(t,0,0)) }
+    else { const lg=LOGO_SRC[e.logo], h=H*e.groesse/100, w=h*(lg.ratio||1); x.drawImage(im,cx-w/2,cy-h/2,w,h) }
+    x.restore() }
+}
+
+/* ============ Jacquard: echtes Maschenraster ============
+   1. Design (Hintergrund + Ebenen) in 3-facher Maschenauflösung zeichnen.
+   2. Je Masche den Mittelpunkt abtasten und auf eine Garnfarbe des Entwurfs setzen (keine Mischfarben).
+   3. Jede Masche als Strick-Masche bzw. Gewebebindung in ihrer Garnfarbe zeichnen. */
+function makeQuant(names){ const pal=names.map(n=>({n,c:rgb(hex(n))})), cache=new Map(), extra=new Set();
+  const d2=(a,b)=>(a[0]-b[0])**2+(a[1]-b[1])**2+(a[2]-b[2])**2;
+  const q=(r,g,b)=>{ const key=(r<<16)|(g<<8)|b; let v=cache.get(key); if(v!==undefined) return v; const p=[r,g,b];
+    let best=0, bd=Infinity; pal.forEach((o,i)=>{ const dd=d2(p,o.c); if(dd<bd){ bd=dd; best=i } });
+    if(bd>1600){ let sb=Infinity, sbest=best;
+      for(let i=0;i<pal.length;i++) for(let j=i+1;j<pal.length;j++){ const A=pal[i].c, B=pal[j].c, AB=[B[0]-A[0],B[1]-A[1],B[2]-A[2]], L=AB[0]**2+AB[1]**2+AB[2]**2||1;
+        let t=((p[0]-A[0])*AB[0]+(p[1]-A[1])*AB[1]+(p[2]-A[2])*AB[2])/L; t=Math.max(0,Math.min(1,t)); const dd=d2(p,[A[0]+AB[0]*t,A[1]+AB[1]*t,A[2]+AB[2]*t]); if(dd<sb){ sb=dd; sbest=t<.5?i:j } }
+      if(sb<900) best=sbest;
+      else { const n=garnName("#"+p.map(x=>x.toString(16).padStart(2,"0")).join("")); let k=pal.findIndex(o=>o.n===n); if(k<0){ pal.push({n,c:rgb(hex(n))}); extra.add(n); k=pal.length-1 } best=k } }
+    cache.set(key,best); return best };
+  return {q,pal,extra} }
+function stitchSprite(c,sw,sh,typ){ const cv=document.createElement("canvas"); cv.width=sw; cv.height=sh; const x=cv.getContext("2d"), [r,g,b]=rgb(c);
+  const dk=f=>`rgb(${r*f|0},${g*f|0},${b*f|0})`, lt=f=>`rgb(${r+(255-r)*f|0},${g+(255-g)*f|0},${b+(255-b)*f|0})`;
+  if(typ==="web"){ x.fillStyle=c; x.fillRect(0,0,sw,sh); x.fillStyle=dk(.8); x.fillRect(0,sh-1,sw,1); x.fillRect(sw-1,0,1,sh); x.fillStyle=lt(.15); x.fillRect(0,0,sw-1,1); return cv }
+  /* Strickmasche liegt quer zum Schal: zwei Schenkel, die sich in Strickrichtung treffen. */
+  x.fillStyle=dk(.55); x.fillRect(0,0,sw,sh); x.lineCap="round";
+  const leg=y0=>{ x.beginPath(); x.moveTo(sw*.1,sh*y0); x.lineTo(sw*.92,sh*.5); x.stroke() };
+  x.strokeStyle=c; x.lineWidth=sh*.4; leg(.27); leg(.73);
+  x.strokeStyle=lt(.22); x.lineWidth=Math.max(.6,sh*.1); x.beginPath(); x.moveTo(sw*.2,sh*.2); x.lineTo(sw*.74,sh*.41); x.stroke(); x.beginPath(); x.moveTo(sw*.2,sh*.66); x.lineTo(sw*.74,sh*.57); x.stroke();
+  return cv }
+async function buildJacquard(s,m,opt={}){
+  const r=m.raster, W=m.l*10, H=m.b*10, cols=Math.round(W/r.w), rows=Math.round(H/r.h), ss=3;
+  await Promise.all([...new Set(s.elemente.filter(e=>e.typ==="text"&&!e.aus).map(e=>FONTS[e.schrift]||FONTS.block))].map(f=>document.fonts.load(`${f.w} 40px ${f.fam}`).catch(()=>{})));
+  const hc=document.createElement("canvas"); hc.width=cols*ss; hc.height=rows*ss; const x=hc.getContext("2d",{willReadFrequently:true});
+  const bg=await loadImgOnce("data:image/svg+xml;charset=utf-8,"+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${sideSVG(s,m,"j"+(++UID),null,{noEl:true})}</svg>`));
+  x.fillStyle=hex(s.grund); x.fillRect(0,0,hc.width,hc.height); if(bg) x.drawImage(bg,0,0,hc.width,hc.height);
+  await drawElements(x,s,m,hc.width/W,hc.height/H,0,0);
+  const data=x.getImageData(0,0,hc.width,hc.height).data, Q=makeQuant([...sideColors(s)]), idx=new Uint16Array(cols*rows), o=ss>>1;
+  for(let j=0;j<rows;j++) for(let i=0;i<cols;i++){ const p=((j*ss+o)*hc.width+(i*ss+o))*4; idx[j*cols+i]=Q.q(data[p],data[p+1],data[p+2]) }
+  const sw=r.typ==="web"?4:6, sh=Math.max(3,Math.round(sw*r.h/r.w)), oc=document.createElement("canvas"); oc.width=cols*sw; oc.height=rows*sh; const ox=oc.getContext("2d");
+  const spr=Q.pal.map(pp=>stitchSprite(hex(pp.n),sw,sh,r.typ));
+  for(let j=0;j<rows;j++) for(let i=0;i<cols;i++) ox.drawImage(spr[idx[j*cols+i]],i*sw,j*sh);
+  const res={cols,rows,extra:[...Q.extra]};
+  if(opt.canvas) return {...res,canvas:oc};
+  const b=await new Promise(rs=>oc.toBlob(rs,"image/png")); return {...res,url:URL.createObjectURL(b)};
+}
+/* Zwischenspeicher: die Vorschau wird nach einer kurzen Pause neu gerastert, während des Ziehens bleibt die Grafik sichtbar. */
+const JAC=new Map(), JAC_Q=new Map(); let JAC_T=null;
+function jacKey(s,m){ return m.id+"|"+JSON.stringify(s)+"|"+LOGO_SRC.map(l=>(l.url||"").length).join(",") }
+function jacGet(s,m){ const k=jacKey(s,m), v=JAC.get(k); if(v) return v.url||null; JAC_Q.set(k,{s:clone(s),m}); clearTimeout(JAC_T); JAC_T=setTimeout(runJac,260); return null }
+async function runJac(){ const jobs=[...JAC_Q]; JAC_Q.clear();
+  for(const [k,{s,m}] of jobs){ if(JAC.has(k)) continue; try{ JAC.set(k,await buildJacquard(s,m)) }catch(e){ console.warn("Jacquard-Vorschau:",e); JAC.set(k,{url:null}) }
+    while(JAC.size>14){ const f=JAC.keys().next().value; const ob=JAC.get(f); if(ob?.url) URL.revokeObjectURL(ob.url); JAC.delete(f) } }
+  if(jobs.length && !DRAG) renderPreview() }
+
+/* ============ Design-Modell ============ */
+const MUSTER = {uni:"Einfarbig",quer:"Querstreifen",laengs:"Längsstreifen",halb:"Zweigeteilt",karo:"Karo",diagonal:"Diagonal",verlauf:"Farbverlauf"};
+function elName(s,i){ const e=s.elemente[i]; if(e.typ==="form") return FORMS[e.form].n+" "+s.elemente.slice(0,i+1).filter(x=>x.typ==="form"&&x.form===e.form).length; return (e.typ==="text"?"Text ":"Logo ")+s.elemente.slice(0,i+1).filter(x=>x.typ===e.typ).length }
+function sideColors(s){
+  const set=new Set(); if(!s) return set;
+  const t=s.muster?.typ||"uni";
+  if(t==="uni") set.add(s.grund); else (s.muster.farben||[]).forEach(c=>set.add(c));
+  if(s.rand) set.add(s.rand.farbe); if(s.enden) set.add(s.enden.farbe);
+  (s.elemente||[]).filter(e=>!e.aus).forEach(e=>{ if(e.typ==="text"){ set.add(e.farbe); if(e.box) set.add(e.box); if(e.kontur) set.add(e.kontur.farbe) } else if(e.typ==="form") set.add(e.farbe) });
+  return set;
+}
+function designColors(d){ const a=sideColors(d.vorne); sideColors(d.hinten).forEach(c=>a.add(c)); return [...a] }
+function fixSide(s, m, notes){
+  s = (s && typeof s==="object") ? s : {};
+  const col = (v,fb) => { const n=garnName(v); if(!n && v!=null) notes.add("Eine Farbe ist keine Garnfarbe aus dem Katalog und wurde ersetzt."); return n||fb };
+  const o = {grund: col(s.grund,"PRETO"), vorlage: String(s.vorlage||"").slice(0,24)};
+  let typ = MUSTER[s.muster?.typ] ? s.muster.typ : "uni";
+  let farben = (Array.isArray(s.muster?.farben)?s.muster.farben:[]).map(c=>col(c,null)).filter(Boolean).slice(0,8);
+  if(typ!=="uni" && farben.length<2){ typ="uni"; if(farben[0]) o.grund=farben[0] }
+  if(typ==="verlauf" && m.verfahren!=="sublimation"){ typ="quer"; notes.add("Ein stufenloser Farbverlauf ist bei diesem Modell nicht möglich. Stattdessen wurde eine abgestufte Farbgestaltung angelegt.") }
+  o.muster = {typ, farben, anzahl: Math.round(clamp(s.muster?.anzahl,2,40, typ==="quer"?7:4))};
+  o.rand = s.rand && garnName(s.rand.farbe) ? {farbe:garnName(s.rand.farbe), breite:clamp(s.rand.breite,3,30,12)} : null;
+  o.enden = s.enden && garnName(s.enden.farbe) ? {farbe:garnName(s.enden.farbe), breite:clamp(s.enden.breite,2,30,8)} : null;
+  o.elemente = (Array.isArray(s.elemente)?s.elemente:[]).slice(0,30).map(e=>{
+    const fg={aus:!!e?.aus, lock:!!e?.lock};
+    if(e?.typ==="form" && FORMS[e.form]) return {typ:"form", form:e.form, x:clamp(e.x,0,100,50), y:clamp(e.y,0,100,50), b:clamp(e.b,0.5,100,10), h:clamp(e.h,1,200,50), dreh:rotN(e.dreh), farbe:col(e.farbe,"PRETO"), ...fg};
+    if(e?.typ==="logo") return {typ:"logo", logo:Math.max(0,Math.round(Number(e.logo)||0)), x:clamp(e.x,0,100,50), y:clamp(e.y,0,100,50), groesse:clamp(e.groesse,15,100,70), dreh:rotN(e.dreh), ...fg};
+    if(e?.typ==="text" && String(e.text||"").trim()){ const groesse=clamp(e.groesse,12,95,50), fs=m.b*10*groesse/100, k=e.kontur&&garnName(e.kontur.farbe)?e.kontur:null, mm=k?clamp(k.mm,0.2,20,2):0;
+      return {typ:"text", text:String(e.text).replace(/\r/g,"").split("\n").slice(0,4).map(l=>l.slice(0,60)).join("\n"), x:clamp(e.x,0,100,50), y:clamp(e.y,0,100,50), schrift:FONTS[e.schrift]?e.schrift:"block", groesse, farbe:col(e.farbe,"BRANCO"), box: e.box?col(e.box,null):null, dreh:rotN(e.dreh),
+        ausr:["l","c","r"].includes(e.ausr)?e.ausr:"c", kontur:k?{farbe:garnName(k.farbe), mm, skal:!!k.skal, rel:clamp(k.rel,0.002,1,mm/fs)}:null, ...fg} }
+    return null;
+  }).filter(Boolean);
+  return o;
+}
+function negativ(s){
+  const cs=[...sideColors(s)]; const a=cs[0], b=cs[1]||cs[0]; const sw=c=>c===a?b:c===b?a:c;
+  const o=clone(s); o.grund=sw(o.grund); o.muster.farben=o.muster.farben.map(sw);
+  if(o.rand) o.rand.farbe=sw(o.rand.farbe); if(o.enden) o.enden.farbe=sw(o.enden.farbe);
+  o.elemente.forEach(e=>{ if(e.typ==="text"){ e.farbe=sw(e.farbe); if(e.box) e.box=sw(e.box) } else if(e.typ==="form") e.farbe=sw(e.farbe); if(e.kontur) e.kontur.farbe=sw(e.kontur.farbe) });
+  return o;
+}
+/* Prüft und bereinigt einen Entwurf gegen die Regeln des Modells. */
+function normalize(d, m){
+  const notes=new Set();
+  const o={titel:String(d?.titel||"Entwurf").slice(0,60), idee:String(d?.idee||"").slice(0,240)};
+  o.vorne=fixSide(d?.vorne,m,notes);
+  o.gleich = m.rueck==="frei" ? !!d?.gleich : true;
+  if(m.rueck==="frei") o.hinten = o.gleich ? clone(o.vorne) : fixSide(d?.hinten||d?.vorne,m,notes);
+  else if(m.rueck==="negativ") o.hinten=negativ(o.vorne);
+  else o.hinten=null;
+  const fr=(Array.isArray(d?.fransen?.farben)?d.fransen.farben:[]).map(garnName).filter(Boolean).slice(0,4);
+  o.fransen={farben: m.fransen==="nein" ? [] : (fr.length?fr:[o.vorne.grund])};
+  o.hinweise=(Array.isArray(d?.hinweise)?d.hinweise:[]).map(h=>String(h).slice(0,220)).filter(Boolean).slice(0,5);
+  const pr=[...notes];
+  const n=designColors(o).length;
+  if(m.maxFarben==null) pr.push("Für "+m.id+" nennt der Katalog keine maximale Farbanzahl. Der Entwurf nutzt "+n+" Farben und wird von uns geprüft.");
+  else if(n>m.maxFarben) pr.push("Der Entwurf nutzt "+n+" Garnfarben, "+m.id+" erlaubt "+(m.maxFarben===1?"eine":"höchstens "+m.maxFarben)+". Bitte Farben reduzieren.");
+  const hatMotiv=[o.vorne,o.hinten].some(s=>s?.elemente.length);
+  if(hatMotiv && !m.motiv) pr.push("Schrift und Logos sind bei "+m.id+" im Katalog nicht vorgesehen. Wir prüfen die Umsetzung, zum Beispiel als Patch.");
+  const r=m.raster; if(r){ const mn=Math.min(r.w,r.h), W=m.l*10, H=m.b*10;
+    const seiten=[["",o.vorne]]; if(o.hinten && m.rueck==="frei" && !o.gleich) seiten.push([" (Rückseite)",o.hinten]);
+    for(const [lab,sd] of seiten) sd.elemente.forEach((e,i)=>{ if(e.aus) return; const nm=elName(sd,i)+lab;
+      if(e.typ==="text"){ const fs=H*e.groesse/100, n=Math.floor(fs/r.h); if(n<6) pr.push(`${nm} ist nur ${f1(fs)} mm hoch (${n} Maschen). Für saubere Buchstaben empfehlen wir mindestens ${f1(6*r.h)} mm.`);
+        const km=konturMM(e,m); if(km && km<mn) pr.push(`Die Kontur von ${nm} ist ${f1(km)} mm breit und damit schmaler als eine Masche (${f1(mn)} mm). So ist sie nicht produzierbar.`);
+        else if(km && km<2*mn) pr.push(`Die Kontur von ${nm} ist mit ${f1(km)} mm grenzwertig. Ab ${f1(2*mn)} mm (zwei Maschen) wirkt sie gleichmäßig.`) }
+      else if(e.typ==="form"){ const mi=Math.min(W*e.b/100,H*e.h/100); if(mi<2*mn) pr.push(`${nm} ist an der schmalsten Stelle ${f1(mi)} mm breit. Unter ${f1(2*mn)} mm (zwei Maschen) wird die Kante unsauber.`) } }) }
+  o.pruef=pr;
+  return o;
+}
+
+/* ============ SVG-Engine ============ */
+let UID=0;
+const LOGOS=[]; // {name, url, ratio}
+let LOGO_SRC=LOGOS;
+function sideSVG(s, m, id, P, opt={}){
+  const W=m.l*10, H=m.b*10, p=[], A=k=>P?` class="hit" data-pal="${P}.${k}"`:"";
+  const mu=s.muster, F=mu.farben;
+  p.push(`<rect width="${W}" height="${H}" fill="${hex(s.grund)}"${A("grund")}/>`);
+  if(mu.typ==="quer"){ const n=mu.anzahl, w=W/n; for(let i=0;i<n;i++) p.push(`<rect x="${(i*w).toFixed(1)}" width="${(w+1).toFixed(1)}" height="${H}" fill="${hex(F[i%F.length])}"${A("muster.farben."+i%F.length)}/>`) }
+  else if(mu.typ==="laengs"){ const n=mu.anzahl, h=H/n; for(let i=0;i<n;i++) p.push(`<rect y="${(i*h).toFixed(1)}" width="${W}" height="${(h+.6).toFixed(1)}" fill="${hex(F[i%F.length])}"${A("muster.farben."+i%F.length)}/>`) }
+  else if(mu.typ==="halb"){ p.push(`<rect width="${W}" height="${H/2}" fill="${hex(F[0])}"${A("muster.farben.0")}/><rect y="${H/2}" width="${W}" height="${H/2}" fill="${hex(F[1])}"${A("muster.farben.1")}/>`) }
+  else if(mu.typ==="karo"){ const rows=Math.min(8,Math.max(2,mu.anzahl)), c=H/rows, cols=Math.ceil(W/c); for(let j=0;j<rows;j++) for(let i=0;i<cols;i++) p.push(`<rect x="${(i*c).toFixed(1)}" y="${(j*c).toFixed(1)}" width="${(c+.5).toFixed(1)}" height="${(c+.5).toFixed(1)}" fill="${hex(F[(i+j)%F.length])}"${A("muster.farben."+(i+j)%F.length)}/>`) }
+  else if(mu.typ==="diagonal"){ const bw=H/Math.min(8,Math.max(2,mu.anzahl)); p.push(`<defs><pattern id="d${id}" width="${bw*F.length}" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">${F.map((c,i)=>`<rect x="${i*bw}" width="${bw+.5}" height="10" fill="${hex(c)}"/>`).join("")}</pattern></defs><rect width="${W}" height="${H}" fill="url(#d${id})"/>`) }
+  else if(mu.typ==="verlauf"){ p.push(`<defs><linearGradient id="g${id}" x1="0" x2="1" y1="0" y2="0">${F.map((c,i)=>`<stop offset="${(i/(F.length-1)*100).toFixed(0)}%" stop-color="${hex(c)}"/>`).join("")}</linearGradient></defs><rect width="${W}" height="${H}" fill="url(#g${id})"/>`) }
+  if(s.enden){ const w=W*s.enden.breite/100; p.push(`<rect width="${w}" height="${H}" fill="${hex(s.enden.farbe)}"${A("enden.farbe")}/><rect x="${W-w}" width="${w}" height="${H}" fill="${hex(s.enden.farbe)}"${A("enden.farbe")}/>`) }
+  if(s.rand){ const h=H*s.rand.breite/100; p.push(`<rect width="${W}" height="${h}" fill="${hex(s.rand.farbe)}"${A("rand.farbe")}/><rect y="${H-h}" width="${W}" height="${h}" fill="${hex(s.rand.farbe)}"${A("rand.farbe")}/>`) }
+  let sel="";
+  if(!opt.noEl) s.elemente.forEach((e,ei)=>{
+    if(e.aus) return;
+    const path=P?P+".elemente."+ei:"", cx=W*e.x/100, cy=H*(e.y??50)/100, ROT=e.dreh?` transform="rotate(${e.dreh} ${cx.toFixed(1)} ${cy.toFixed(1)})"`:"", EL=(P?(e.lock?` pointer-events="none"`:` class="el" data-el="${path}"`):"")+ROT;
+    const {bw,bh}=elBox(e,m);
+    if(e.typ==="form"){ const w=W*e.b/100, h=H*e.h/100, c=hex(e.farbe);
+      p.push(e.form==="kreis" ? `<ellipse cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" rx="${(w/2).toFixed(1)}" ry="${(h/2).toFixed(1)}" fill="${c}"${EL}/>` : e.form==="dreieck" ? `<polygon points="${cx.toFixed(1)},${(cy-h/2).toFixed(1)} ${(cx+w/2).toFixed(1)},${(cy+h/2).toFixed(1)} ${(cx-w/2).toFixed(1)},${(cy+h/2).toFixed(1)}" fill="${c}"${EL}/>` : `<rect x="${(cx-w/2).toFixed(1)}" y="${(cy-h/2).toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" fill="${c}"${EL}/>`);
+    } else if(e.typ==="text"){
+      const T=textLayout(e,m), f=T.f, fs=T.fs;
+      if(e.box) p.push(`<rect x="${(cx-T.bw/2-fs*.2).toFixed(1)}" y="${(cy-T.bh/2-fs*.1).toFixed(1)}" width="${(T.bw+fs*.4).toFixed(1)}" height="${(T.bh+fs*.2).toFixed(1)}" fill="${hex(e.box)}"${EL}/>`);
+      if(!opt.skipText){ const tsp=T.lines.map(l=>`<tspan x="${l.x.toFixed(1)}" y="${l.y.toFixed(1)}"${l.tl?` textLength="${l.tl.toFixed(0)}" lengthAdjust="spacingAndGlyphs"`:""}>${esc(l.t)||" "}</tspan>`).join(""), at=`text-anchor="${T.anchor}" font-family="${f.fam}" font-weight="${f.w}" font-size="${fs.toFixed(1)}"`;
+        /* Kontur als eigene Ebene hinter der Schrift: so liegt die volle Stärke außen, auch in Illustrator. */
+        if(T.km) p.push(`<text ${at} fill="${hex(e.kontur.farbe)}" stroke="${hex(e.kontur.farbe)}" stroke-width="${(2*T.km).toFixed(2)}" stroke-linejoin="round"${EL}>${tsp}</text>`);
+        p.push(`<text ${at} fill="${hex(e.farbe)}"${EL}>${tsp}</text>`) }
+    } else {
+      const L=LOGO_SRC[e.logo], h=bh, w=bw;
+      if(L&&L.url) p.push(`<image href="${L.url}" x="${(cx-w/2).toFixed(1)}" y="${(cy-h/2).toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" preserveAspectRatio="xMidYMid meet"${EL}/>`);
+      else p.push(`<g${EL}><rect x="${(cx-w/2).toFixed(1)}" y="${(cy-h/2).toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" fill="#fff" fill-opacity=".35" stroke="#000" stroke-width="2" stroke-dasharray="10 8"/><text x="${cx}" y="${cy}" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="${h*.2}" fill="#000">LOGO</text></g>`);
+    }
+    if(P && S.sel===path){ const x0=(cx-bw/2-6).toFixed(1), y0=(cy-bh/2-6).toFixed(1), ww=(bw+12).toFixed(1), hh=(bh+12).toFixed(1);
+      sel=`<g${ROT}><rect x="${x0}" y="${y0}" width="${ww}" height="${hh}" fill="none" stroke="#fff" stroke-width="5" pointer-events="none"/><rect x="${x0}" y="${y0}" width="${ww}" height="${hh}" fill="none" stroke="#C2005F" stroke-width="2.5" stroke-dasharray="12 7" pointer-events="none"/>${e.lock?"":`<circle cx="${(cx+bw/2+6).toFixed(1)}" cy="${(cy+bh/2+6).toFixed(1)}" r="15" fill="#C2005F" stroke="#fff" stroke-width="4" class="el" data-h="${path}" style="cursor:nwse-resize"/>`}</g>` }
+  });
+  if(opt.selOut) opt.selOut.s=sel; else p.push(sel);
+  return p.join("");
+}
+/* Ganzer Schal mit Stoffstruktur und Fransen. */
+function scarfSVG(s, d, m, label, P, opt={}){
+  const id=++UID, W=m.l*10, H=m.b*10, fr=d.fransen.farben, FL=m.fransen==="nein"?0:62, pad=FL+10, selOut={s:""};
+  if(opt.art) return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${W}mm" height="${H}mm" viewBox="0 0 ${W} ${H}"><title>${esc(label||"")}</title><defs><clipPath id="a${id}"><rect width="${W}" height="${H}"/></clipPath></defs><g clip-path="url(#a${id})">${sideSVG(s,m,id,null,{})}</g></svg>`.replace(/<image href=/g,"<image xlink:href=");
+  let tex="";
+  if(opt.flat||opt.jac) tex="";
+  else if(m.verfahren==="strick") tex=`<pattern id="t${id}" width="9" height="11" patternUnits="userSpaceOnUse"><path d="M0 1 L4.5 9 L9 1" fill="none" stroke="#000" stroke-opacity=".16" stroke-width="1.3"/><path d="M0 -3 L4.5 5 L9 -3" fill="none" stroke="#fff" stroke-opacity=".07" stroke-width="1"/></pattern>`;
+  else if(m.verfahren==="rippe") tex=`<pattern id="t${id}" width="${W}" height="14" patternUnits="userSpaceOnUse"><rect width="${W}" height="6" fill="#000" fill-opacity=".14"/><rect y="6" width="${W}" height="2" fill="#fff" fill-opacity=".08"/></pattern>`;
+  else if(m.verfahren==="web") tex=`<pattern id="t${id}" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M0 0H5M0 0V5" stroke="#000" stroke-opacity=".12" stroke-width="1"/></pattern>`;
+  let fransen="";
+  if(FL && fr.length){
+    const braid=m.fransen==="geflochten", step=braid?20:7, n=Math.floor(H/step), g=Math.max(1,Math.round(n/(fr.length*2)));
+    for(let i=0;i<n;i++){ const y=step/2+i*step+(H-n*step)/2, c=hex(fr[i%fr.length]), dy=Math.sin(i*2.3)*4, len=FL-6+Math.cos(i*1.7)*6;
+      for(const [x0,dir] of [[0,-1],[W,1]]) fransen+=`<line x1="${x0}" y1="${y.toFixed(1)}" x2="${(x0+dir*len).toFixed(1)}" y2="${(y+dy).toFixed(1)}" stroke="${c}" stroke-width="${braid?9:4.2}" stroke-linecap="round"${braid?' stroke-dasharray="11 3"':""}/>`; }
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${-pad} -8 ${W+2*pad} ${H+16}" role="img" aria-label="${esc(label||"Schalvorschau")}"><defs><clipPath id="c${id}"><rect width="${W}" height="${H}" rx="5"/></clipPath>${tex}<linearGradient id="s${id}" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".10"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient></defs>${fransen}<g clip-path="url(#c${id})">${opt.jac?`<g opacity="0">${sideSVG(s,m,id,P,{...opt,selOut})}</g><image href="${opt.jac}" width="${W}" height="${H}" preserveAspectRatio="none" pointer-events="none"/>`:sideSVG(s,m,id,P,{...opt,selOut})}${tex?`<rect width="${W}" height="${H}" fill="url(#t${id})" pointer-events="none"/>`:""}${opt.flat?"":`<rect width="${W}" height="${H}" fill="url(#s${id})" pointer-events="none"/>`}</g><rect width="${W}" height="${H}" rx="5" fill="none" pointer-events="none" stroke="#000" stroke-opacity=".25"/>${selOut.s}</svg>`;
+}
+
+/* ============ Lokaler Generator (Beispiele und Ersatz, wenn keine KI verfügbar ist) ============ */
+const WORT = [["dunkelblau","MARINHO"],["navy","MARINHO"],["hellblau","AZUL X12412"],["dunkelgrün","BOTELLA"],["weinrot","BORDEAUX B"],["bordeaux","BORDEAUX B"],["türkis","TURQUESA"],["schwarz","PRETO"],["weiß","BRANCO"],["weiss","BRANCO"],["rot","ROUGE"],["blau","ROYAL"],["gelb","AMARELO X11706"],["gold","ORO"],["grün","CESPED"],["gruen","CESPED"],["orange","LARANJA"],["lila","LILÁS X15736"],["violett","LILÁS X15736"],["pink","ROSA FLUOR"],["rosa","ROSA X11196"],["grau","GRIS MOYENNE"],["braun","CARAMEL"],["beige","FICELLE"]];
+function lokal(wunsch, m){
+  const low=wunsch.toLowerCase(); let found=[]; let rest=low;
+  for(const [w,n] of WORT){ const i=rest.indexOf(w); if(i>=0){ found.push([low.indexOf(w),n]); rest=rest.split(w).join(" ".repeat(w.length)) } }
+  let cs=[...new Set(found.sort((a,b)=>a[0]-b[0]).map(f=>f[1]))];
+  if(!cs.length) cs=["PRETO","BRANCO"];
+  const max = m.maxFarben==null||m.maxFarben===Infinity ? 8 : m.maxFarben;
+  cs=cs.slice(0,Math.max(1,max));
+  const c1=cs[0], c2=cs[1]||c1, c3=cs[2]||(max>=3 && cs.length>1 ? null : null);
+  const q=wunsch.match(/[„"“]([^"“”„]{2,40})["“”]/); const T=(q?q[1]:"DEIN VEREIN").toUpperCase();
+  const on = bg => { const pool=cs.filter(c=>c!==bg); if(!pool.length) return bg; return pool.sort((a,b)=>Math.abs(lum(b)-lum(bg))-Math.abs(lum(a)-lum(bg)))[0] };
+  const txt = (bg,g,x=50) => m.motiv && max>1 ? [{typ:"text",text:T,x,groesse:g,farbe:on(bg)}] : [];
+  const logos = (g) => m.motiv && LOGOS.length ? [{typ:"logo",logo:0,x:8,groesse:g},{typ:"logo",logo:0,x:92,groesse:g}] : [];
+  const uni = c => ({grund:c,muster:{typ:"uni",farben:[]},elemente:[]});
+  const multi = cs.length>1;
+  const v = [
+   {titel:"Klassisch", idee:"Balkenrahmen, großer Schriftzug in der Mitte.", vorne:{grund:c1,muster:{typ:"uni",farben:[]},rand:multi?{farbe:c2,breite:13}:null,enden:multi?{farbe:c3||c2,breite:7}:null,elemente:[...txt(c1,52),...logos(60)]},
+    hinten:{grund:c2,muster:multi?{typ:"laengs",farben:[c2,c1,c2,c1,c2],anzahl:5}:{typ:"uni",farben:[]},elemente:[]}},
+   {titel:"Modern und sportlich", idee: m.verfahren==="sublimation"?"Farbverlauf mit schmalem Schriftzug.":"Diagonale Streifen mit Schriftfeld.", vorne:{grund:c1,muster:multi?(m.verfahren==="sublimation"?{typ:"verlauf",farben:cs}:{typ:"diagonal",farben:[c1,c2],anzahl:3}):{typ:"uni",farben:[]},elemente: m.motiv&&multi?[{typ:"text",text:T,x:50,groesse:46,farbe:on(c1),box:c1}]:[]},
+    hinten:{grund:c1,muster:multi?{typ:"halb",farben:[c1,c2]}:{typ:"uni",farben:[]},elemente:[]}},
+   {titel:"Minimalistisch", idee:"Ruhige Fläche, kleiner Schriftzug, schmale Enden.", vorne:{grund:c1,muster:{typ:"uni",farben:[]},enden:multi?{farbe:c2,breite:4}:null,elemente:[...txt(c1,30)]},
+    hinten:{...uni(c2),enden:multi?{farbe:c1,breite:4}:null}},
+   {titel:"Kreativ und auffällig", idee:"Blockstreifen über die ganze Länge.", vorne:{grund:c1,muster:multi?{typ:"quer",farben:cs,anzahl:m.l>200?13:9}:{typ:"uni",farben:[]},elemente: m.motiv&&multi?[{typ:"text",text:T,x:50,groesse:44,farbe:on(c1),box:c1}]:[]},
+    hinten:{grund:c1,muster:multi?{typ:"karo",farben:[c1,c2],anzahl:4}:{typ:"uni",farben:[]},elemente:[]}},
+  ];
+  return v.map(d=>normalize({...d,fransen:{farben:multi?[c1,c2]:[c1]},hinweise:[]},m));
+}
+
+/* ============ Vorlagen: neue Designs hier ergänzen. f(a,b,c) bekommt drei Garnfarben und liefert eine Seite. ============ */
+const U={typ:"uni",farben:[]};
+const TEMPLATES = [
+ {id:"uni", name:"Leer, frei gestalten", f:(a)=>({grund:a,muster:U})},
+ {id:"rahmen", name:"Klassischer Rahmen", f:(a,b,c)=>({grund:a,muster:U,rand:{farbe:b,breite:13},enden:{farbe:c,breite:7}})},
+ {id:"balken", name:"Balkenschal", f:(a,b)=>({grund:a,muster:{typ:"quer",farben:[a,b],anzahl:7}})},
+ {id:"balken3", name:"Balken dreifarbig", f:(a,b,c)=>({grund:a,muster:{typ:"quer",farben:[a,b,c],anzahl:9}})},
+ {id:"schmal", name:"Schmale Balken", f:(a,b)=>({grund:a,muster:{typ:"quer",farben:[a,b],anzahl:17}})},
+ {id:"balkenrand", name:"Balken mit Rand", f:(a,b,c)=>({grund:a,muster:{typ:"quer",farben:[a,b],anzahl:9},rand:{farbe:c,breite:12}})},
+ {id:"rand", name:"Randstreifen", f:(a,b)=>({grund:a,muster:U,rand:{farbe:b,breite:14}})},
+ {id:"enden", name:"Endblöcke", f:(a,b)=>({grund:a,muster:U,enden:{farbe:b,breite:12}})},
+ {id:"mitte", name:"Mittelstreifen", f:(a,b)=>({grund:a,muster:{typ:"laengs",farben:[a,b,a],anzahl:3}})},
+ {id:"laengs", name:"Längsstreifen", f:(a,b)=>({grund:a,muster:{typ:"laengs",farben:[a,b],anzahl:5}})},
+ {id:"trikolore", name:"Drei Bahnen", f:(a,b,c)=>({grund:a,muster:{typ:"laengs",farben:[a,b,c],anzahl:3}})},
+ {id:"halb", name:"Zweigeteilt", f:(a,b)=>({grund:a,muster:{typ:"halb",farben:[a,b]}})},
+ {id:"diagonal", name:"Diagonalstreifen", f:(a,b)=>({grund:a,muster:{typ:"diagonal",farben:[a,b],anzahl:3}})},
+ {id:"karo", name:"Karo", f:(a,b)=>({grund:a,muster:{typ:"karo",farben:[a,b],anzahl:4}})},
+ {id:"verlauf", name:"Farbverlauf", nur:"sublimation", f:(a,b)=>({grund:a,muster:{typ:"verlauf",farben:[a,b]}})},
+ {id:"verlauf3", name:"Verlauf dreifarbig", nur:"sublimation", f:(a,b,c)=>({grund:a,muster:{typ:"verlauf",farben:[a,c,b]}})},
+];
+function tplFarben(s){
+  const l=[...new Set([...(s.muster.typ==="uni"?[s.grund]:s.muster.farben), s.rand?.farbe, s.enden?.farbe].filter(Boolean))];
+  for(const c of ["ROUGE","PRETO","BRANCO"]) if(l.length<3 && !l.includes(c)) l.push(c);
+  return l;
+}
+function renderTpls(){
+  const m=modell(S.modell), d=S.design, s=d[S.seite]||d.vorne, [a,b,c]=tplFarben(s);
+  $("tpls").innerHTML=TEMPLATES.filter(t=>!t.nur||t.nur===m.verfahren).map(t=>{ const side=fixSide({...t.f(a,b,c),elemente:[]},m,new Set());
+    return `<button type="button" class="tpl" data-t="${t.id}" aria-pressed="${s.vorlage===t.id}"><span class="stage">${scarfSVG(side,{fransen:d.fransen},m,t.name)}</span><span>${t.name}</span></button>` }).join("");
+}
+function applyTpl(id){
+  const t=TEMPLATES.find(x=>x.id===id); if(!t) return; const d=S.design, s=d[S.seite]||d.vorne, [a,b,c]=tplFarben(s);
+  d[S.seite]={...t.f(a,b,c), elemente:s.elemente, vorlage:t.id}; if(S.seite==="vorne") d.titel=t.name; S.pal=null; commit("Vorlage "+t.name);
+}
+
+/* ============ Zustand ============ */
+const S = {modell:"Classic-Schal", sel:null, design:null, versionen:[], vi:0, seite:"vorne", beispiel:true, pal:null, view:"jac", zoom:1};
+let ADM=false, CAP = {db:null, user:null, downloads:null}, UIDV=null, PREISE=null, ctl=null;
+const ls = { get(k){try{return localStorage.getItem(k)}catch{return null}}, set(k,v){try{localStorage.setItem(k,v)}catch{}} };
+const BEISPIEL = "Ich möchte einen klassischen Fanschal für unseren Fußballverein. Unsere Vereinsfarben sind Rot, Schwarz und Weiß. Auf der Vorderseite soll groß „FC Musterstadt“ stehen. Die Rückseite soll ein modernes Streifenmuster enthalten. Die Fransen sollen rot-schwarz sein.";
+
+/* ============ Rendern ============ */
+function preisText(m){ const q=Number($("menge").value)||0; if(q<m.moq) return "erst ab "+m.moq+" Stück"; const r=richtpreis(m.id); return r ? new Intl.NumberFormat("de-CH",{style:"currency",currency:"EUR"}).format(r.vk)+" pro Schal" : "Preis auf Anfrage" }
+function renderModels(){
+  $("models").innerHTML = KATALOG.map((m,i)=>{
+    const demo = lokal(["grün orange schwarz","hellblau schwarz","orange schwarz weiß","türkis weiß schwarz"][i%4]+' "SUBA"', m)[[0,3,0,1][i%4]];
+    return `<button class="model" data-m="${m.id}" aria-pressed="${m.id===S.modell}"><span class="stage">${scarfSVG(demo.vorne,demo,m,m.id)}</span><span class="m-n">${m.id}</span><span class="m-d">${esc(m.text)}</span><span class="m-s"><span>${m.l} × ${m.b} cm</span><span>${farbLimit(m)}</span><span>ab ${m.moq} Stück</span></span><span class="m-p">${preisText(m)}</span></button>`}).join("");
+}
+function backText(m){ return m.rueck==="negativ" ? "Bei "+m.id+" ist die Rückseite automatisch das Negativ der Vorderseite." : m.rueck==="gleich" ? "Bei "+m.id+" entspricht die Rückseite der Vorderseite." : m.rueck==="offen" ? "Der "+m.id+" ist einlagig gewebt. Du gestaltest eine Seite; die Rückseite ergibt sich aus der Webung." : "" }
+function renderPreview(){
+  const m=modell(S.modell), d=S.design; if(!d) return;
+  const zwei=m.rueck==="frei" && !d.gleich;
+  $("bigFrontL").textContent = m.rueck==="frei" && d.gleich ? "Vorder- und Rückseite" : "Vorderseite";
+  const jv=S.view!=="vec" && !!m.raster, jf=jv&&!DRAG?jacGet(d.vorne,m):null, jb=zwei&&jv&&!DRAG?jacGet(d.hinten,m):null;
+  $("bigFront").innerHTML=scarfSVG(d.vorne,d,m,"Vorderseite","vorne",{jac:jf});
+  $("bigBack").hidden=!zwei; $("bigBackL").hidden=!zwei;
+  if(zwei) $("bigBack").innerHTML=scarfSVG(d.hinten,d,m,"Rückseite","hinten",{jac:jb});
+  renderViewbar(m, jv, !!jf&&(!zwei||!!jb));
+  $("backNote").textContent=backText(m);
+  // Musterbogen
+  $("sModel").textContent=m.id; $("sTitle").textContent=d.titel;
+  const cs=designColors(d);
+  $("sPill").innerHTML = d.pruef.length ? '<span class="pill warn">Prüfpflichtig</span>' : '<span class="pill good">Im Rahmen der Katalogregeln</span>';
+  $("sKv").innerHTML = `<tr><td>Material</td><td>${esc(m.material)}</td></tr><tr><td>Maße</td><td>${m.l} × ${m.b} cm</td></tr><tr><td>Farben</td><td>${cs.length}${Number.isFinite(m.maxFarben)&&m.maxFarben!=null?" von "+m.maxFarben:""} · ${farbLimit(m)}</td></tr><tr><td>Garn</td><td><div class="yarns">${cs.map(c=>`<span class="yarn"><i style="background:${hex(c)}"></i>${esc(c)}</span>`).join("")}</div></td></tr>${d.fransen.farben.length?`<tr><td>Fransen</td><td><div class="yarns">${d.fransen.farben.map(c=>`<span class="yarn"><i style="background:${hex(c)}"></i>${esc(c)}</span>`).join("")}</div></td></tr>`:""}`;
+  $("sNotes").innerHTML = d.pruef.map(h=>`<li>${esc(h)}</li>`).join("") + d.hinweise.map(h=>`<li class="info">${esc(h)}</li>`).join("");
+  renderPrice();
+}
+function renderViewbar(m,jv,ready){
+  $("viewSeg").hidden=!m.raster; [...$("viewSeg").children].forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.view===S.view)));
+  [...$("zoomSeg").children].forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.z)===S.zoom)));
+  for(const id of ["bigFront","bigBack"]){ $(id).classList.toggle("zoom",S.zoom>1); $(id).style.setProperty("--z",S.zoom) }
+  const r=m.raster; $("jacStat").textContent = !r ? "Sublimationsdruck: Vorschau ohne Maschenraster" : !jv ? "Grafikansicht: exakte Konturen ohne Maschenraster" : ready ? `Maschenraster ${f1(r.w)} × ${f1(r.h)} mm · ${Math.round(m.l*10/r.w)} × ${Math.round(m.b*10/r.h)} Maschen` : "Jacquard-Vorschau wird berechnet …" }
+function renderVers(){
+  $("vers").innerHTML = S.versionen.length>1 ? `<span class="note">Versionen:</span>`+S.versionen.map((v,i)=>`<button class="chip" data-v="${i}" ${i===S.vi?'style="border-color:var(--accent);color:var(--accent)"':""} title="${esc(v.label)}">${i+1} · ${esc(v.label.slice(0,26))}</button>`).join("") : "";
+}
+function pushVersion(label){ S.versionen=S.versionen.slice(0,S.vi+1); S.versionen.push({label, d:clone(S.design)}); if(S.versionen.length>30) S.versionen.shift(); S.vi=S.versionen.length-1; renderVers() }
+
+/* --- Handsteuerung --- */
+const getP = (o,p) => p.split(".").reduce((a,k)=>a==null?a:a[k],o);
+function setP(o,p,v){ const ks=p.split("."); const last=ks.pop(); let a=o; for(const k of ks){ if(a[k]==null) a[k]=/^\d+$/.test(ks[ks.indexOf(k)+1]??last)?[]:{}; a=a[k] } a[last]=v }
+function delP(o,p){ const ks=p.split("."); const last=ks.pop(); const a=getP(o,ks.join(".")); if(a==null) return; if(Array.isArray(a)) a.splice(Number(last),1); else a[last]=null }
+const cc = (p,c) => `<button type="button" class="cc${S.pal===p?" on":""}" data-pal="${p}" style="background:${hex(c)}" title="${esc(c)}" aria-label="Farbe ${esc(c)} ändern"></button>`;
+function fl(lab,id,path,min,max,val,base,step=0.5){ return `<div class="fl"><span>${lab}</span><input type="range" id="${id}" min="${min}" max="${max}" step="${step}" value="${val}" data-num="${path}" aria-label="${lab}"><input type="number" class="nb" id="${id}n" step="${base?0.1:1}" value="${base?(val/100*base).toFixed(1):val}" data-cmp="${path}" data-base="${base||0}" aria-label="${lab}${base?" in cm":""}">${base?'<span class="cmu">cm</span>':""}</div>` }
+const ALI={h:[["l","Links ausrichten",'<path d="M2 1v14" stroke="currentColor" stroke-width="1.6"/><rect x="4" y="4" width="9" height="3" fill="currentColor"/><rect x="4" y="9" width="6" height="3" fill="currentColor"/>'],["c","Horizontal zentrieren",'<path d="M8 1v14" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="4" width="10" height="3" fill="currentColor"/><rect x="5" y="9" width="6" height="3" fill="currentColor"/>'],["r","Rechts ausrichten",'<path d="M14 1v14" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="4" width="9" height="3" fill="currentColor"/><rect x="6" y="9" width="6" height="3" fill="currentColor"/>']],
+  v:[["t","Oben ausrichten",'<path d="M1 2h14" stroke="currentColor" stroke-width="1.6"/><rect x="4" y="4" width="3" height="9" fill="currentColor"/><rect x="9" y="4" width="3" height="6" fill="currentColor"/>'],["m","Vertikal zentrieren",'<path d="M1 8h14" stroke="currentColor" stroke-width="1.6"/><rect x="4" y="3" width="3" height="10" fill="currentColor"/><rect x="9" y="5" width="3" height="6" fill="currentColor"/>'],["b","Unten ausrichten",'<path d="M1 14h14" stroke="currentColor" stroke-width="1.6"/><rect x="4" y="3" width="3" height="9" fill="currentColor"/><rect x="9" y="6" width="3" height="6" fill="currentColor"/>']]};
+const TXA=[["l","Linksbündig"],["c","Zentriert"],["r","Rechtsbündig"]];
+const txIcon=a=>`<svg viewBox="0 0 16 16" aria-hidden="true">${[12,8,10].map((w,j)=>`<rect x="${a==="l"?2:a==="r"?14-w:8-w/2}" y="${3+j*4}" width="${w}" height="2" fill="currentColor"/>`).join("")}</svg>`;
+const IC={eye:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.6-5 7-5 7 5 7 5-2.6 5-7 5-7-5-7-5Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8" r="2.2" fill="currentColor"/></svg>',
+  eyeOff:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.6-5 7-5 7 5 7 5-2.6 5-7 5-7-5-7-5Z" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".45"/><path d="M2 14 14 2" stroke="currentColor" stroke-width="1.6"/></svg>',
+  lock:'<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" fill="currentColor"/><path d="M5 7V5a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>',
+  unlock:'<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5 7V5a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>',
+  text:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3h10M8 3v10" stroke="currentColor" stroke-width="2"/></svg>',
+  logo:'<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 12l3.5-4 3 3 2-2 2.5 3" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>'};
+/* Ebenenliste: oben steht die vorderste Ebene. */
+function layersHTML(s,P,seite){ const n=s.elemente.length;
+  if(!n) return `<div class="grp lays"><h3>Ebenen${seite}</h3><p class="note" style="margin:0">Noch keine Elemente. Füge oben Text, Formen oder ein Logo hinzu.</p></div>`;
+  const rows=s.elemente.map((e,i)=>[e,i]).reverse().map(([e,i])=>{ const nm=elName(s,i);
+    return `<li class="lay${S.sel===P+".elemente."+i?" on":""}${e.aus?" off":""}" draggable="true" data-layer="${i}"><span class="grip" aria-hidden="true">⠿</span><button type="button" class="ln" data-selel="${P}.elemente.${i}">${e.typ==="form"?FORMS[e.form].icon:IC[e.typ]}<span>${nm}${e.typ==="text"?` <small>${esc(e.text.split("\n")[0].slice(0,18))}</small>`:""}</span></button><button type="button" class="li" data-lup="${i}" title="Eine Ebene nach vorne" aria-label="${nm} eine Ebene nach vorne"${i===n-1?" disabled":""}>↑</button><button type="button" class="li" data-ldn="${i}" title="Eine Ebene nach hinten" aria-label="${nm} eine Ebene nach hinten"${i===0?" disabled":""}>↓</button><button type="button" class="li" data-vis="${i}" aria-pressed="${!e.aus}" title="${e.aus?"Einblenden":"Ausblenden"}" aria-label="${nm} ${e.aus?"einblenden":"ausblenden"}">${e.aus?IC.eyeOff:IC.eye}</button><button type="button" class="li" data-lock="${i}" aria-pressed="${!!e.lock}" title="${e.lock?"Entsperren":"Sperren"}" aria-label="${nm} ${e.lock?"entsperren":"sperren"}">${e.lock?IC.lock:IC.unlock}</button></li>` }).join("");
+  return `<div class="grp lays"><h3>Ebenen${seite} <span class="lh">oben liegt vorne · zum Sortieren ziehen</span></h3><ol class="laylist">${rows}<li class="lay base" data-layer="-1"><span class="grip"></span><span class="ln">Hintergrund (Vorlage)</span></li></ol></div>` }
+function moveLayer(from,to,side=S.seite){ const arr=S.design[side].elemente; if(to<0||to>=arr.length||from===to||!arr[from]) return;
+  const selObj=S.sel?getP(S.design,S.sel):null, [e]=arr.splice(from,1); arr.splice(to,0,e);
+  if(selObj){ const j=arr.indexOf(selObj); if(j>=0) S.sel=side+".elemente."+j } commit("Ebene verschoben") }
+/* Positioniert das ausgewählte Element am Rand oder in der Mitte des Schals (berücksichtigt Drehung). */
+function alignSel(ax,v){ if(!S.sel) return; const e=getP(S.design,S.sel), m=modell(S.modell); if(!e||e.lock) return;
+  const W=m.l*10, H=m.b*10, {bw,bh}=elBox(e,m), a=(e.dreh||0)*Math.PI/180, c=Math.abs(Math.cos(a)), sn=Math.abs(Math.sin(a)), hw=(c*bw+sn*bh)/2, hh=(sn*bw+c*bh)/2;
+  if(ax==="h") e.x=clamp(v==="l"?hw/W*100:v==="r"?100-hw/W*100:50,0,100,50); else e.y=clamp(v==="t"?hh/H*100:v==="b"?100-hh/H*100:50,0,100,50);
+  commit("Ausgerichtet") }
+function renderCtl(){
+  const m=modell(S.modell), d=S.design; if(!d) return;
+  const free=m.rueck==="frei", zwei=free && !d.gleich; if(!zwei) S.seite="vorne";
+  $("gleichSeg").hidden=!free; [...$("gleichSeg").children].forEach(b=>b.setAttribute("aria-pressed", (b.dataset.g==="1")===!!d.gleich));
+  $("sideSeg").hidden=!zwei; [...$("sideSeg").children].forEach(b=>b.setAttribute("aria-pressed", b.dataset.side===S.seite));
+  const P=S.seite, s=d[P], h=[], seite=zwei?(P==="vorne"?" · Vorderseite":" · Rückseite"):"";
+  h.push(`<div class="grp"><h3>Fläche${seite}</h3>`+
+    (s.muster.typ==="uni" ? `<div class="fl"><span>Farbe</span>${cc(P+".grund",s.grund)}</div>` :
+     `<div class="fl"><span>Farben</span><div class="row" style="gap:6px">${s.muster.farben.map((c,i)=>cc(P+".muster.farben."+i,c)).join("")}${s.muster.farben.length<8?`<button type="button" class="mini" data-act="addc" aria-label="Farbe hinzufügen">+</button>`:""}${s.muster.farben.length>2?`<button type="button" class="mini" data-act="delc" aria-label="Letzte Farbe entfernen">−</button>`:""}</div></div>`+
+     (["quer","laengs","karo","diagonal"].includes(s.muster.typ)?fl("Anzahl","c-anz",P+".muster.anzahl",2,s.muster.typ==="quer"?40:8,s.muster.anzahl,0,1):""))+`</div>`);
+  h.push(`<div class="grp"><h3>Rand oben und unten ${s.rand?`<button type="button" class="x" data-act="rand0">entfernen</button>`:""}</h3>${s.rand?`<div class="fl"><span>Farbe</span>${cc(P+".rand.farbe",s.rand.farbe)}</div>${fl("Breite","c-rb",P+".rand.breite",3,30,s.rand.breite,m.b)}`:`<button type="button" class="btn" data-act="rand1">Rand hinzufügen</button>`}</div>`);
+  h.push(`<div class="grp"><h3>Enden ${s.enden?`<button type="button" class="x" data-act="end0">entfernen</button>`:""}</h3>${s.enden?`<div class="fl"><span>Farbe</span>${cc(P+".enden.farbe",s.enden.farbe)}</div>${fl("Breite","c-eb",P+".enden.breite",2,30,s.enden.breite,m.l)}`:`<button type="button" class="btn" data-act="end1">Endblöcke hinzufügen</button>`}</div>`);
+  h.unshift(layersHTML(s,P,seite));
+  s.elemente.forEach((e,i)=>{ const b=P+".elemente."+i; if(S.sel!==b) return;
+    const head=`<div class="grp sel"><h3>${elName(s,i)} <button type="button" class="x" data-del="${b}"${e.lock?" disabled":""}>entfernen</button></h3>`;
+    if(e.lock||e.aus){ h.unshift(head+`<p class="note" style="margin:0">${e.lock?"Diese Ebene ist gesperrt und lässt sich nicht verschieben oder ändern.":"Diese Ebene ist ausgeblendet. Ausgeblendete Ebenen werden nicht produziert."}</p><div class="row">${e.lock?`<button type="button" class="btn" data-lock="${i}">Entsperren</button>`:""}${e.aus?`<button type="button" class="btn" data-vis="${i}">Einblenden</button>`:""}</div></div>`); return }
+    let t="";
+    if(e.typ==="text"){ const F=FONTS[e.schrift]||FONTS.block, k=e.kontur, km=konturMM(e,m), st=k?konturStatus(km,m):null;
+      t+=`<div class="fl"><span>Text</span><textarea id="c-t${i}" rows="${Math.min(4,e.text.split("\n").length+1)}" maxlength="250" data-str="${b}.text" aria-label="Text, neue Zeile mit Enter">${esc(e.text)}</textarea></div>`
+       +`<div class="fl"><span>Schrift</span><button type="button" class="btn" id="c-f${i}" data-fontopen="${b}" style="flex:1;min-width:0;justify-content:space-between;border-radius:7px;font-size:15px;font-family:${F.fam};font-weight:${F.w}">${F.name}<span aria-hidden="true">▾</span></button></div>`
+       +`<div class="fl"><span>Farbe</span>${cc(b+".farbe",e.farbe)}</div>`
+       +`<div class="fl"><span>Zeilen</span><div class="seg al" role="group" aria-label="Textausrichtung im Textfeld">${TXA.map(([v,l])=>`<button type="button" data-ausr="${b}:${v}" aria-pressed="${(e.ausr||"c")===v}" title="${l}" aria-label="${l}">${txIcon(v)}</button>`).join("")}</div><span class="note">im Textfeld</span></div>`
+       +`<div class="fl"><span>Kontur</span><label class="chk"><input type="checkbox" id="c-k${i}" data-kon="${b}"${k?" checked":""}> anzeigen</label>${k?cc(b+".kontur.farbe",k.farbe):""}</div>`
+       +(k?`<div class="fl"><span>Stärke</span><input type="range" id="c-km${i}" min="0.3" max="12" step="0.1" value="${km.toFixed(1)}" data-kmm="${b}" aria-label="Konturstärke"><input type="number" class="nb" id="c-km${i}n" min="0.3" max="12" step="0.1" value="${km.toFixed(1)}" data-kmm="${b}" aria-label="Konturstärke in mm"><span class="cmu">mm</span></div><div class="fl"><span></span><label class="chk"><input type="checkbox" id="c-ks${i}" data-kskal="${b}"${k.skal?" checked":""}> wächst mit der Schriftgröße</label></div><div class="fl"><span></span><span class="pill ${st.cls}" data-kst="${b}">${st.txt}</span></div>`:"");
+    }
+    if(e.typ==="form") t+=`<div class="fl"><span>Farbe</span>${cc(b+".farbe",e.farbe)}</div>`;
+    t+=`<div class="fl"><span>Auf dem Schal</span><div class="row" style="gap:6px">${["h","v"].map(ax=>`<div class="seg al" role="group" aria-label="${ax==="h"?"Horizontal positionieren":"Vertikal positionieren"}">${ALI[ax].map(([v,l,ic])=>`<button type="button" data-align="${ax}:${v}" title="${l}" aria-label="${l}"><svg viewBox="0 0 16 16" aria-hidden="true">${ic}</svg></button>`).join("")}</div>`).join("")}</div></div>`;
+    t+=`${fl("Von links","c-x"+i,b+".x",0,100,e.x,m.l)}${fl("Von oben","c-y"+i,b+".y",0,100,e.y??50,m.b)}${e.typ==="form"?fl("Breite","c-b"+i,b+".b",0.5,100,e.b,m.l)+fl("Höhe","c-h"+i,b+".h",1,200,e.h,m.b):fl("Größe","c-g"+i,b+".groesse",12,100,e.groesse,m.b)}${fl("Drehung °","c-r"+i,b+".dreh",0,355,e.dreh||0,0,5)}`;
+    h.unshift(head+t+`</div>`) });
+  if(m.fransen!=="nein") h.push(`<div class="grp"><h3>Fransen</h3><div class="fl"><span>Farben</span><div class="row" style="gap:6px">${d.fransen.farben.map((c,i)=>cc("fransen.farben."+i,c)).join("")}${d.fransen.farben.length<4?`<button type="button" class="mini" data-act="addf" aria-label="Fransenfarbe hinzufügen">+</button>`:""}${d.fransen.farben.length>1?`<button type="button" class="mini" data-act="delf" aria-label="Fransenfarbe entfernen">−</button>`:""}</div></div></div>`);
+  $("ctl").innerHTML=h.join("");
+  if(S.fontP && S.fontP!==S.sel) S.fontP=null;
+  const pal=$("pal"); pal.hidden=!S.pal && !S.fontP;
+  if(S.fontP){ const fe=getP(d,S.fontP), probe=esc((fe.text||"Abc").slice(0,16));
+    pal.innerHTML=`<div class="row" style="justify-content:space-between"><b style="font-size:13px">Schrift wählen · aktuell ${(FONTS[fe.schrift]||FONTS.block).name}</b><button type="button" class="x" data-act="palx">schließen</button></div><div class="fgrid">${Object.entries(FONTS).map(([k,f])=>`<button type="button" data-fpick="${k}" class="${fe.schrift===k?"on":""}"><b style="font-family:${f.fam};font-weight:${f.w}">${probe}</b><small>${f.name}</small></button>`).join("")}</div>` }
+  else if(S.pal) pal.innerHTML=`<div class="row" style="justify-content:space-between"><b style="font-size:13px">Garnfarbe wählen · aktuell ${esc(getP(d,S.pal)||"")}</b><button type="button" class="x" data-act="palx">schließen</button></div><div class="pal-g">${GARN_NAMEN.map(n=>`<button type="button" data-pick="${esc(n)}" style="background:${GARN[n]}" title="${esc(n)}" aria-label="${esc(n)}"></button>`).join("")}</div><p class="note" style="margin:8px 0 0">Garnfarben 100 % Polyacryl. Farbabbildungen können vom Originalgarn abweichen.</p>`;
+  const se=S.sel?getP(d,S.sel):null, sp=S.sel?S.sel.split("."):[];
+  const chips=s.elemente.map((e,i)=>`<button type="button" class="chip${S.sel===P+".elemente."+i?" on":""}" data-selel="${P}.elemente.${i}">${elName(s,i)}</button>`).join("");
+  $("tools").innerHTML=`<div class="bs"><span class="note">Bausteine:</span>${Object.entries(FORMS).map(([k,f])=>`<button type="button" class="btn bsb" data-addf="${k}" title="${f.n} hinzufügen">${f.icon}${f.n}</button>`).join("")}<button type="button" class="btn primary" data-act="addt">+ Text</button></div>`+(se?`<span class="note"><b>${elName(d[sp[0]],Number(sp[2]))}</b>:</span><button type="button" class="btn" data-act="dup">Duplizieren</button>${zwei?`<button type="button" class="btn" data-act="other">Auf ${sp[0]==="vorne"?"Rückseite":"Vorderseite"} kopieren</button>`:""}<button type="button" class="btn" data-act="rot">90° drehen</button><span class="tg" role="group" aria-label="Ebenenreihenfolge"><button type="button" class="btn" data-act="front" title="In den Vordergrund">Ganz nach vorne</button><button type="button" class="btn" data-act="fwd" title="Eine Ebene nach vorne">Eine nach vorne</button><button type="button" class="btn" data-act="bwd" title="Eine Ebene nach hinten">Eine nach hinten</button><button type="button" class="btn" data-act="backz" title="In den Hintergrund">Ganz nach hinten</button></span><button type="button" class="btn" data-act="delsel">Entfernen</button>`:(s.elemente.length?`<span class="note">Element im Schal oder in der Ebenenliste anklicken, um es zu bearbeiten.</span>`:""))+(S.vi>0?`<button type="button" class="btn ghost" data-act="undo" style="margin-left:auto">Rückgängig</button>`:"");
+  renderTpls();
+}
+function commit(label, rebuild=true){ S.design=normalize(S.design, modell(S.modell)); pushVersion(label); renderPreview(); if(rebuild) renderCtl() }
+
+/* ============ Preise ============ */
+const STD_STAFFELN=[50,100,200,300,500,750,1000];
+function richtpreis(mid){
+  const q=Math.max(1,Math.round(Number($("menge").value)||0)), P=PREISE, m=mid||S.modell;
+  if(!P?.modelle?.[m]) return null;
+  const st=(P.staffeln||[]).filter(s=>s<=q && P.modelle[m].vk?.[s]!=null).sort((a,b)=>b-a)[0];
+  if(st==null) return null;
+  const vk=P.modelle[m].vk[st], einr=P.modelle[m].einrichtung||0, vers=P.versand||0;
+  return {q, st, vk, einr, vers, total:vk*q+einr+vers};
+}
+function renderPrice(){
+  const r=richtpreis(), f=v=>new Intl.NumberFormat("de-CH",{style:"currency",currency:"EUR"}).format(v);
+  const mq=modell(S.modell).moq||1;
+  if((Number($("menge").value)||0)<mq){ $("sPrice").textContent="Ab "+mq+" Stück"; $("sPriceNote").textContent="Der "+S.modell+" ist ab "+mq+" Stück erhältlich. Bitte die Stückzahl erhöhen."; return }
+  if(!r){ $("sPrice").textContent="Preis auf Anfrage"; $("sPriceNote").textContent="Für dieses Modell und diese Stückzahl ist noch kein Richtpreis hinterlegt. Du erhältst ein Angebot auf deine Anfrage."; return }
+  $("sPrice").innerHTML=`${f(r.vk)} <small>pro Schal</small>`;
+  $("sPriceNote").textContent=`${r.q} Stück (Staffel ab ${r.st}): ${f(r.total)} gesamt`+(r.einr?`, inkl. ${f(r.einr)} Einrichtung`:"")+(r.vers?`, inkl. ${f(r.vers)} Versand`:"")+(PREISE.kurs?` · ca. CHF ${(r.total*PREISE.kurs).toFixed(2)}`:"")+". Unverbindlicher Richtpreis.";
+}
+let ADMIN={staffeln:STD_STAFFELN, aufschlag:0, versand:null, kurs:null, modelle:{}};
+function renderAdminPreise(){
+  $("pStaffeln").value=ADMIN.staffeln.join(", "); $("pAuf").value=ADMIN.aufschlag??0; $("pVers").value=ADMIN.versand??""; $("pKurs").value=ADMIN.kurs??"";
+  $("pTbl").innerHTML=`<thead><tr><th>EUR / Schal</th>${ADMIN.staffeln.map(s=>`<th>ab ${s}</th>`).join("")}<th>Einrichtung</th></tr></thead><tbody>${KATALOG.map((m,r)=>`<tr><td>${m.id} · Verkauf</td>${ADMIN.staffeln.map(s=>`<td><input type="number" min="0" step="0.01" id="v-${r}-${s}" aria-label="${m.id} Verkauf ab ${s}" data-vm="${m.id}" data-ps="${s}" value="${ADMIN.modelle[m.id]?.vk?.[s]??""}" placeholder="${s<m.moq?"–":"auto"}"></td>`).join("")}<td></td></tr><tr><td style="font-weight:500;color:var(--muted)">${m.id} · Einkauf</td>${ADMIN.staffeln.map(s=>`<td><input type="number" min="0" step="0.01" id="p-${r}-${s}" aria-label="${m.id} Einkauf ab ${s}" data-pm="${m.id}" data-ps="${s}" value="${ADMIN.modelle[m.id]?.ek?.[s]??""}" placeholder="offen"></td>`).join("")}<td><input type="number" min="0" step="0.01" id="p-${r}-e" aria-label="${m.id} Einrichtung" data-pe="${m.id}" value="${ADMIN.modelle[m.id]?.einrichtung??""}" placeholder="–"></td></tr>`).join("")}</tbody>`;
+}
+function readAdmin(){
+  const num=v=>v===""||v==null?null:Number(v);
+  document.querySelectorAll("[data-pm]").forEach(i=>{ const m=ADMIN.modelle[i.dataset.pm]??={ek:{}}; m.ek??={}; m.ek[i.dataset.ps]=num(i.value) });
+  document.querySelectorAll("[data-vm]").forEach(i=>{ const m=ADMIN.modelle[i.dataset.vm]??={ek:{}}; m.vk??={}; m.vk[i.dataset.ps]=num(i.value) });
+  document.querySelectorAll("[data-pe]").forEach(i=>{ (ADMIN.modelle[i.dataset.pe]??={ek:{}}).einrichtung=num(i.value) });
+  ADMIN.aufschlag=Number($("pAuf").value)||0; ADMIN.versand=num($("pVers").value); ADMIN.kurs=num($("pKurs").value);
+}
+async function savePreise(){
+  readAdmin(); const st=$("pStatus"); st.textContent="Speichert …";
+  const pub={staffeln:ADMIN.staffeln, versand:ADMIN.versand, kurs:ADMIN.kurs, modelle:{}};
+  for(const m of KATALOG){ const a=ADMIN.modelle[m.id]; if(!a) continue; const vk={}; for(const s of ADMIN.staffeln){ const ek=a.ek?.[s], fix=a.vk?.[s]; if(fix!=null && fix>0) vk[s]=fix; else if(ek!=null && ek>0 && ADMIN.aufschlag>0) vk[s]=Math.round(ek*(1+ADMIN.aufschlag/100)*100)/100 } pub.modelle[m.id]={vk, einrichtung:a.einrichtung??null} }
+  try{ await CAP.db.doc("config/preise").set(clone(ADMIN)); await CAP.db.doc("oeffentlich/preise").set(pub); PREISE=pub; renderPrice(); renderModels(); st.textContent="Gespeichert. Kunden sehen ab sofort die neuen Richtpreise." }
+  catch(e){ st.textContent="Speichern nicht möglich ("+(e?.code||"Fehler")+")." }
+}
+
+/* ============ Anfrage und Dateien ============ */
+const adr = p => ({strasse:$(p+"str").value.trim(), plz:$(p+"plz").value.trim(), ort:$(p+"ort").value.trim(), land:$(p+"land").value.trim()});
+const adrText = a => a ? [a.name,a.strasse,[a.plz,a.ort].filter(Boolean).join(" "),a.land].filter(Boolean).join(", ") : "";
+function anfrageDaten(){
+  const m=modell(S.modell), r=richtpreis();
+  return {zeit:new Date().toISOString(), name:$("rname").value.trim(), organisation:$("rorg").value.trim(), email:$("rmail").value.trim(), telefon:$("rtel").value.trim(), bemerkung:$("rbem").value.trim(), lieferadresse:adr("l"), rechnungsadresse:$("rgleich").checked?null:{name:$("bname").value.trim(),...adr("b")},
+    modell:m.id, artikel:m.art, masse:m.l+" × "+m.b+" cm", material:m.material, menge:Math.max(1,Math.round(Number($("menge").value)||1)), garnfarben:designColors(S.design), fransen:S.design.fransen.farben,
+    design:{titel:S.design.titel,gleich:S.design.gleich,vorne:S.design.vorne,hinten:S.design.hinten,fransen:S.design.fransen}, pruefhinweise:S.design.pruef, hinweise:S.design.hinweise,
+    richtpreis:r?{proSchal:r.vk,gesamt:r.total,staffel:r.st,waehrung:"EUR"}:null, logos:LOGOS.map(l=>l.name)};
+}
+async function blobB64(b){ const u=new Uint8Array(await b.arrayBuffer()); let t=""; for(let i=0;i<u.length;i+=0x8000) t+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000)); return btoa(t) }
+const txtB64 = t => btoa(unescape(encodeURIComponent(t)));
+async function sendAnfrage(ev){
+  ev.preventDefault(); const st=$("reqStatus"); st.className="status";
+  if(!$("reqForm").reportValidity()) return;
+  if($("hp").value) return;
+  const mq=modell(S.modell).moq||1; if((Number($("menge").value)||0)<mq){ st.textContent="Der "+S.modell+" ist ab "+mq+" Stück erhältlich. Bitte die Stückzahl anpassen."; $("menge").focus(); return }
+  const a=anfrageDaten(), kunde=(a.organisation||a.name||"Anfrage").normalize("NFD").replace(/[^A-Za-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,30), base=fileBase()+"-"+kunde;
+  $("send").disabled=true; st.textContent="Deine Druckdateien werden erstellt …";
+  try{
+    const att=[];
+    att.push({filename:base+"-Zusammenfassung.pdf", content:await blobB64(await makePdf("kunde")), kunde:true});
+    att.push({filename:base+"-TechnicalSheet-EN.pdf", content:await blobB64(await makePdf("produktion"))});
+    for(const [fn,svg] of artFiles(a,LOGOS,base)) att.push({filename:fn, content:txtB64(svg)});
+    att.push({filename:base+"-Designdaten.json", content:txtB64(JSON.stringify(a,null,2))});
+    let budget=3200000-att.reduce((n,x)=>n+x.content.length,0); const fehlt=[];
+    LOGOS.forEach(l=>{ const mt=String(l.url||"").match(/^data:[^;]+;base64,(.*)$/); if(mt&&mt[1].length<=budget){ budget-=mt[1].length; att.push({filename:"Logo-"+l.name, content:mt[1]}) } else fehlt.push(l.name) });
+    st.textContent="Wird gesendet …";
+    const r=await fetch("/api/anfrage",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({produkt:"Schal",anfrage:a,attachments:att,logosFehlen:fehlt})});
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    st.textContent="Danke! Deine unverbindliche Anfrage ist bei SUBA eingegangen. Du erhältst gleich eine Bestätigung per E-Mail. Unsere Grafiker prüfen dein Design und senden dir die Druckdatei zur Freigabe. Erst danach kommt eine Bestellung zustande."+(fehlt.length?" Bitte sende deine Logodatei(en) "+fehlt.join(", ")+" zusätzlich an info@wearsuba.com, sie waren für den Versand zu gross.":"");
+  }catch(e){ st.className="status err"; st.textContent="Die Anfrage konnte gerade nicht gesendet werden. Lade bitte die Zusammenfassung (PDF) herunter und sende sie an info@wearsuba.com." }
+  finally{ $("send").disabled=false }
+}
+const fileBase = () => "SUBA-Schal-"+S.modell.replace(/\s+/g,"")+"-"+new Date().toISOString().slice(0,10);
+async function save(filename,data){ const st=$("reqStatus"); st.className="status"; try{ await CAP.downloads.save({filename,data}); st.textContent="Gespeichert: "+filename }catch(e){ if(e?.code!=="declined") st.textContent="Die Datei konnte nicht gespeichert werden." } }
+function svgToPng(svg, px){ return new Promise((res,rej)=>{ const img=new Image(); img.onload=()=>{ const c=document.createElement("canvas"); c.width=px; c.height=Math.round(px*img.naturalHeight/img.naturalWidth)||200; const x=c.getContext("2d"); x.fillStyle="#eef1f4"; x.fillRect(0,0,c.width,c.height); x.drawImage(img,0,0,c.width,c.height); res({url:c.toDataURL("image/png"),ratio:c.height/c.width}) }; img.onerror=rej;
+  const vb=svg.match(/viewBox="([^"]+)"/)[1].split(" ").map(Number); img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg.replace("<svg ",`<svg width="${vb[2]}" height="${vb[3]}" `)) }) }
+const cm = v => (Math.round(v)/10).toFixed(1).replace(".",",")+" cm"; // v in mm
+const cmE = v => (Math.round(v)/10).toFixed(1)+" cm";
+const VERF = {strick:"Jacquard-Strick",rippe:"Rippstrick",web:"hochauflösend gewebt",sublimation:"Sublimationsdruck"};
+const VERF_EN = {strick:"jacquard knit",rippe:"rib knit",web:"high-definition woven",sublimation:"sublimation print"};
+/* Technical data of one side in centimetres, in English, for the supplier. */
+function specLines(s,m){
+  const W=m.l*10, H=m.b*10, L=[], mu=s.muster, F=mu.farben;
+  if(mu.typ==="uni") L.push("Base: solid colour "+s.grund);
+  else if(mu.typ==="quer") L.push(`Cross bars: ${mu.anzahl} bars of ${cmE(W/mu.anzahl)} along the length, colour sequence from left: ${F.join(" – ")} (repeating)`);
+  else if(mu.typ==="laengs") L.push(`Lengthwise stripes: ${mu.anzahl} stripes of ${cmE(H/mu.anzahl)} height over the full length, colour sequence from top: ${F.join(" – ")} (repeating)`);
+  else if(mu.typ==="halb") L.push(`Split lengthwise: upper half ${F[0]}, lower half ${F[1]}, ${cmE(H/2)} each`);
+  else if(mu.typ==="karo"){ const r=Math.min(8,Math.max(2,mu.anzahl)); L.push(`Check pattern: squares ${cmE(H/r)} × ${cmE(H/r)}, colours ${F.join(" / ")}`) }
+  else if(mu.typ==="diagonal"){ const bw=H/Math.min(8,Math.max(2,mu.anzahl)); L.push(`Diagonal stripes, angle 35°, stripe width ${cmE(bw)}, colours ${F.join(" / ")}`) }
+  else if(mu.typ==="verlauf") L.push(`Gradient along the length: ${F.join(" → ")}`);
+  if(s.enden) L.push(`End blocks: ${cmE(W*s.enden.breite/100)} at both ends, colour ${s.enden.farbe}`);
+  if(s.rand) L.push(`Border: ${cmE(H*s.rand.breite/100)} at top and bottom over the full length, colour ${s.rand.farbe}`);
+  s.elemente.forEach((e,i)=>{ if(e.aus) return; const pos=`centre at ${cmE(W*e.x/100)} from left and ${cmE(H*(e.y??50)/100)} from top`, rot=e.dreh?` · rotated ${e.dreh}°`:"";
+    if(e.typ==="form"){ L.push(`${elName(s,i)} (${FORMS[e.form].en}): ${cmE(W*e.b/100)} wide × ${cmE(H*e.h/100)} high · ${pos} · colour ${e.farbe}${rot}`) }
+    else if(e.typ==="text"){ const T=textLayout(e,m), n=T.lines.length; L.push(`${elName(s,i)}: "${e.text.replace(/\n/g," / ")}"${n>1?` · ${n} lines, ${AUSR_EN[T.align]}`:""} · font ${T.f.name} (Google Fonts) · font size ${cmE(T.fs)} · text block approx. ${cmE(T.bw)} × ${cmE(T.bh)} · ${pos} · colour ${e.farbe}${e.kontur?` · outline ${T.km.toFixed(1)} mm ${e.kontur.farbe} (outside the letters)`:""}${e.box?" · backing "+e.box:""}${rot}`) }
+    else { const lg=LOGO_SRC[e.logo], h=H*e.groesse/100; L.push(`${elName(s,i)}: ${lg?.name||"file to follow"} · ${cmE(h*(lg?.ratio||1))} wide × ${cmE(h)} high (before rotation) · ${pos}${rot}`) } });
+  const vis=s.elemente.map((e,i)=>[e,i]).filter(([e])=>!e.aus); if(vis.length>1) L.push("Layer order, back to front: "+vis.map(([e,i])=>elName(s,i)).join(" → "));
+  if(s.elemente.some(e=>e.aus)) L.push("Hidden layers are not part of this design.");
+  return L;
+}
+/* Rastert eine Seite für die PDFs: Strick und Webung in Jacquard-Maschenoptik, Druck flach mit allen Ebenen in Reihenfolge. */
+async function rasterSide(s,d,m,px){
+  const svg=scarfSVG(s,d,m,"",null,{flat:true,noEl:true}), vb=svg.match(/viewBox="([^"]+)"/)[1].split(" ").map(Number), k=px/vb[2], W=m.l*10, H=m.b*10;
+  const img=await new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg.replace("<svg ",`<svg width="${vb[2]}" height="${vb[3]}" `)) });
+  const c=document.createElement("canvas"); c.width=px; c.height=Math.round(vb[3]*k); const x=c.getContext("2d"); x.fillStyle="#fff"; x.fillRect(0,0,c.width,c.height); x.drawImage(img,0,0,c.width,c.height);
+  let info=null;
+  if(m.raster){ info=await buildJacquard(s,m,{canvas:true}); x.drawImage(info.canvas,-vb[0]*k,-vb[1]*k,W*k,H*k) }
+  else await drawElements(x,s,m,k,k,-vb[0]*k,-vb[1]*k);
+  return {url:c.toDataURL("image/jpeg",.92), ratio:c.height/c.width, info};
+}
+/* kind: "kunde" (mit Richtpreis und Kontakt) oder "produktion" (ohne Preis, mit Maßangaben). */
+async function makePdf(kind, a, logos){ const prev=LOGO_SRC; LOGO_SRC=logos||LOGOS; try{ return await makePdfInner(kind,a) } finally { LOGO_SRC=prev } }
+async function makePdfInner(kind, a){
+  a=a||anfrageDaten(); const m=modell(a.modell); let d, sides;
+  { d=normalize(a.design,m); const zwei=d.hinten&&!d.gleich;
+    sides=(zwei?[["Vorderseite",d.vorne],["Rückseite",d.hinten]]:[[d.hinten?"Vorder- und Rückseite (identisch)":"Vorderseite",d.vorne]]).map(([lab,s])=>({lab,s,spec:specLines(s,m)}));
+  }
+  await Promise.all(Object.values(FONTS).map(f=>document.fonts.load(`${f.w} 40px ${f.fam}`).catch(()=>{})));
+  const {jsPDF}=window.jspdf, doc=new jsPDF({unit:"mm",format:"a4",orientation:"landscape"}), L=15, B=267, prod=kind==="produktion";
+  let y=17; const line=(t,sz=10,b=false,gap=5)=>{ doc.setFont("helvetica",b?"bold":"normal"); doc.setFontSize(sz); for(const z of doc.splitTextToSize(String(t),B)){ if(y>198){doc.addPage();y=17} doc.text(z,L,y); y+=gap } };
+  const garn=designColors(d), datum=new Date(a.zeit||Date.now());
+  if(prod){
+    line("SUBA · Technical Sheet – Custom Scarf",18,true,8);
+    line(`Item: ${m.lief||m.art||m.id} · Size: ${m.l} × ${m.b} cm (length × width, without fringes) · Material: ${m.matEn||m.material} · Technique: ${VERF_EN[m.verfahren]||""}`,10);
+    line(`Quantity: ${a.menge} pcs · Date: ${datum.toISOString().slice(0,10)}${a.organisation?" · Project: "+a.organisation:""}`,10);
+    if(m.raster) line(`Preview simulates an assumed stitch grid of ${m.raster.w} mm (along the length) × ${m.raster.h} mm (across the width), ${Math.round(m.l*10/m.raster.w)} × ${Math.round(m.b*10/m.raster.h)} stitches. Please confirm your actual gauge.`,9,false,4.4); y+=2;
+    const EN={"Vorderseite":"Front","Rückseite":"Back","Vorder- und Rückseite (identisch)":"Front and back (identical)"};
+    for(const sd of sides){ const im=await rasterSide(sd.s,d,m,3600), h=B*im.ratio; if(y+h+8>198){doc.addPage();y=17} line(EN[sd.lab]||sd.lab,10,true,4.5); doc.addImage(im.url,"JPEG",L,y,B,h); y+=h+5; sd.spec.forEach(t=>line("– "+t,9.5,false,4.6)); if(im.info?.extra?.length) line("– Logo colours shown with the nearest yarn in the preview: "+im.info.extra.join(", "),9.5,false,4.6); y+=3 }
+    line(m.verfahren==="sublimation"?"Colours (reference: 100% acrylic yarn colour card)":"Yarn colours (100% acrylic yarn colour card)",11,true); line(garn.join(", "));
+    line(d.fransen.farben.length ? "Fringes: "+d.fransen.farben.join(", ")+(d.fransen.farben.length>1?" · mixed, colour alternates with every single fringe":"") : "Fringes: none"); y+=2;
+    if((a.logos||[]).length) line("Logo files (originals supplied separately): "+a.logos.join(", "));
+    line(`Artwork: separate vector file at scale 1:1 (${m.l} × ${m.b} cm per side). All dimensions refer to the finished scarf without fringes. The picture above is not to scale; the centimetre values are binding. Screen colours may differ from the actual yarn.`,8.5,false,4.2);
+  } else {
+    line("SUBA · Schal-Anfrage",18,true,8);
+    line(`${m.id} · ${m.l} × ${m.b} cm · ${m.material} · ${VERF[m.verfahren]||""} · ${a.menge} Stück · ${datum.toLocaleDateString("de-CH")} · unverbindlich`,10);
+    if(m.raster) line("Die Abbildung zeigt deinen Schal in Jacquard-Maschenoptik: Rundungen, Schrägen und feine Details erscheinen gestuft wie im fertigen Schal.",9,false,4.4); y+=2;
+    for(const sd of sides){ const im=await rasterSide(sd.s,d,m,3600), h=B*im.ratio; if(y+h+8>198){doc.addPage();y=17} line(sd.lab,10,true,4.5); doc.addImage(im.url,"JPEG",L,y,B,h); y+=h+5 }
+    line("Farben",11,true); line(garn.join(", ")+(d.fransen.farben.length?"  |  Fransen: "+d.fransen.farben.join(", "):"")); y+=2;
+    line("Stückzahl und Richtpreis",11,true); line(a.menge+" Stück · "+(a.richtpreis?`${a.richtpreis.proSchal.toFixed(2)} EUR pro Schal, ${a.richtpreis.gesamt.toFixed(2)} EUR gesamt (unverbindlicher Richtpreis)`:"Preis auf Anfrage")); y+=2;
+    line("Kontakt",11,true); line([a.name,a.organisation,a.email,a.telefon].filter(Boolean).join(" · ")||"–");
+    if(adrText(a.lieferadresse)) line("Lieferadresse: "+adrText(a.lieferadresse)); line("Rechnungsadresse: "+(a.rechnungsadresse?adrText(a.rechnungsadresse):"wie Lieferadresse"));
+    if(a.bemerkung) line("Bemerkung: "+a.bemerkung); if((a.logos||[]).length) line("Logodateien: "+a.logos.join(", ")); y+=2;
+    line("So geht es weiter: Unsere Grafiker prüfen dein Design und senden dir die finale Druckdatei zur Freigabe. Erst mit deiner Freigabe kommt eine Bestellung zustande.",9,false,4.4);
+  }
+  return doc.output("blob");
+}
+
+/* Druckvorlage 1:1 als SVG (Millimeter, ohne Stoffstruktur und Fransen), zum Öffnen in Illustrator. */
+function artFiles(a, logos, base){ const m=modell(a.modell); let files=[]; LOGO_SRC=logos||LOGOS;
+  try{ const d=normalize(a.design,m), zwei=d.hinten&&!d.gleich; files.push([base+(zwei?"-front":"")+"-1zu1.svg", scarfSVG(d.vorne,d,m,m.id+" front "+m.l+"x"+m.b+" cm",null,{art:true})]); if(zwei) files.push([base+"-back-1zu1.svg", scarfSVG(d.hinten,d,m,m.id+" back "+m.l+"x"+m.b+" cm",null,{art:true})]) } finally { LOGO_SRC=LOGOS }
+  return files }
+async function saveArt(a, logos, base){ const m=modell(a.modell); let files=[]; LOGO_SRC=logos||LOGOS;
+  try{ const d=normalize(a.design,m), zwei=d.hinten&&!d.gleich; files.push([base+(zwei?"-front":"")+"-1zu1.svg", scarfSVG(d.vorne,d,m,m.id+" front "+m.l+"x"+m.b+" cm",null,{art:true})]); if(zwei) files.push([base+"-back-1zu1.svg", scarfSVG(d.hinten,d,m,m.id+" back "+m.l+"x"+m.b+" cm",null,{art:true})]) } finally { LOGO_SRC=LOGOS }
+  for(const [fn,data] of files){ try{ await CAP.downloads.save({filename:fn,data}) }catch(e){ if(e?.code==="declined") break } } }
+
+/* --- Admin: Anfragen --- */
+async function loadAnfragen(){
+  const el=$("aList"); if(!CAP.db) return; el.innerHTML='<p class="hint">Lädt …</p>';
+  try{
+    const snap=await CAP.db.collection("anfragen").get(); const all=[];
+    snap.docs.forEach(dc=>((dc.data()?.liste)||[]).forEach(a=>all.push(a)));
+    all.sort((a,b)=>String(b.zeit).localeCompare(String(a.zeit)));
+    if(!all.length){ el.innerHTML='<p class="hint">Noch keine Anfragen. Hier erscheinen sie, sobald ein Kunde eine sendet.</p>'; return }
+    el.innerHTML="";
+    all.forEach(a=>{ LOGO_SRC=a.logoDaten||[]; const m=modell(a.modell), d=normalize(a.design,m), box=document.createElement("div"); box.className="req";
+      box.innerHTML=`<h3></h3><div class="note"></div><div class="stage">${scarfSVG(d.vorne,d,m,"Vorderseite")}</div>${d.hinten&&!d.gleich?`<div class="stage">${scarfSVG(d.hinten,d,m,"Rückseite")}</div>`:""}<div class="note b"></div>`;
+      box.querySelector("h3").textContent=[a.name,a.organisation].filter(Boolean).join(" · ")+" · "+a.menge+" × "+a.modell;
+      box.querySelector(".note").textContent=new Date(a.zeit).toLocaleString("de-CH")+" · "+[a.email,a.telefon].filter(Boolean).join(" · ");
+      box.querySelector(".b").textContent="Garn: "+(a.garnfarben||[]).join(", ")+(a.bemerkung?" · Bemerkung: "+a.bemerkung:"")+(adrText(a.lieferadresse)?" · Lieferung: "+adrText(a.lieferadresse):"")+" · Rechnung: "+(a.rechnungsadresse?adrText(a.rechnungsadresse):"wie Lieferadresse")+(a.logos?.length?" · Logos: "+a.logos.join(", ")+" (hier als Platzhalter)":"")+(a.richtpreis?" · Richtpreis "+a.richtpreis.gesamt+" EUR":" · Preis auf Anfrage");
+      if(CAP.downloads){ const b=document.createElement("button"); b.className="btn"; b.textContent="Designdaten (JSON)"; b.style.alignSelf="flex-start"; b.onclick=()=>CAP.downloads.save({filename:"SUBA-Anfrage-"+(a.id||"x")+".json",data:JSON.stringify(a,null,2)}).catch(()=>{}); box.append(b) }
+      if(CAP.downloads){ const b2=document.createElement("button"); b2.className="btn"; b2.textContent="Technical Sheet (PDF, EN)"; b2.style.alignSelf="flex-start"; b2.onclick=async()=>{ try{ await CAP.downloads.save({filename:"SUBA-TechnicalSheet-"+(a.id||"x")+".pdf",data:await makePdf("produktion",a,a.logoDaten||[])}) }catch{} }; box.append(b2); const b3=document.createElement("button"); b3.className="btn"; b3.textContent="Druckvorlage 1:1 (SVG)"; b3.style.alignSelf="flex-start"; b3.onclick=()=>saveArt(a,a.logoDaten||[],"SUBA-Schal-"+(a.id||"x")); box.append(b3) }
+      el.append(box) }); LOGO_SRC=LOGOS;
+  }catch(e){ el.innerHTML='<p class="hint">Anfragen konnten nicht geladen werden.</p>' }
+}
+
+/* ============ Ereignisse ============ */
+$("models").addEventListener("click",e=>{ const b=e.target.closest("[data-m]"); if(!b) return; S.modell=b.dataset.m; ls.set("suba-schal-modell",S.modell); const m=modell(S.modell); if((Number($("menge").value)||0)<m.moq){ $("menge").value=m.moq; renderModels() } S.sel=null;
+  [...$("models").children].forEach(c=>c.setAttribute("aria-pressed",c.dataset.m===S.modell));
+  S.pal=null; S.design=normalize(S.design,m); S.versionen=[]; S.vi=0; pushVersion("Start"); renderPreview(); renderCtl() });
+$("vers").addEventListener("click",e=>{ const b=e.target.closest("[data-v]"); if(!b) return; S.vi=Number(b.dataset.v); S.design=clone(S.versionen[S.vi].d); renderVers(); renderPreview(); renderCtl() });
+$("gleichSeg").addEventListener("click",e=>{ const b=e.target.closest("[data-g]"); if(!b) return; S.design.gleich=b.dataset.g==="1"; S.pal=null; commit(S.design.gleich?"Beide Seiten gleich":"Seiten unterschiedlich") });
+$("sideSeg").addEventListener("click",e=>{ const b=e.target.closest("[data-side]"); if(b){ S.seite=b.dataset.side; S.pal=null; renderCtl() } });
+$("tpls").addEventListener("click",e=>{ const b=e.target.closest("[data-t]"); if(b) applyTpl(b.dataset.t) });
+function stageClick(e){ const t=e.target.closest("[data-pal]"); if(!t) return; S.sel=null; S.fontP=null; S.pal=t.dataset.pal; if(!S.design.gleich) S.seite=S.pal.startsWith("hinten")?"hinten":"vorne"; renderPreview(); renderCtl(); if(S.step!==3) showStep(3) }
+let DRAG=null;
+function svgPt(stage,ev){ const svg=stage.querySelector("svg"), pt=svg.createSVGPoint(); pt.x=ev.clientX; pt.y=ev.clientY; return pt.matrixTransform(svg.getScreenCTM().inverse()) }
+function stageDown(ev){ const stage=ev.currentTarget, h=ev.target.closest("[data-h]"), el=h?null:ev.target.closest("[data-el]"); if(!h&&!el) return;
+  ev.preventDefault(); const path=h?h.dataset.h:el.dataset.el, e=getP(S.design,path); if(!e) return;
+  S.sel=path; S.pal=null; if(S.step!==3) showStep(3); if(!S.design.gleich) S.seite=path.startsWith("hinten")?"hinten":"vorne";
+  DRAG={stage,path,mode:h?"size":"move",p0:svgPt(stage,ev),x0:e.x,y0:e.y??50,g0:e.groesse,b0:e.b,h0:e.h,moved:false}; try{ stage.setPointerCapture(ev.pointerId) }catch{} renderPreview(); renderCtl() }
+function stageMove(ev){ if(!DRAG) return; const m=modell(S.modell), W=m.l*10, H=m.b*10, p=svgPt(DRAG.stage,ev), e=getP(S.design,DRAG.path); if(!e) return;
+  if(DRAG.mode==="move"){ e.x=clamp(DRAG.x0+(p.x-DRAG.p0.x)/W*100,0,100,50); e.y=clamp(DRAG.y0+(p.y-DRAG.p0.y)/H*100,0,100,50) }
+  else if(e.typ==="form"){ e.b=clamp(DRAG.b0+(p.x-DRAG.p0.x)*2/W*100,0.5,100,10); e.h=clamp(DRAG.h0+(p.y-DRAG.p0.y)*2/H*100,1,200,50) }
+  else e.groesse=clamp(DRAG.g0+(p.y-DRAG.p0.y)*2/H*100, e.typ==="logo"?15:12, 100, 50);
+  DRAG.moved=true; renderPreview() }
+function stageUp(){ if(!DRAG) return; const mv=DRAG.moved, md=DRAG.mode; DRAG=null; if(mv) commit(md==="move"?"Verschoben":"Größe geändert"); else renderPreview() }
+for(const id of ["bigFront","bigBack"]){ $(id).addEventListener("pointerdown",stageDown); $(id).addEventListener("pointermove",stageMove); $(id).addEventListener("pointerup",stageUp); $(id).addEventListener("pointercancel",stageUp) }
+$("bigFront").addEventListener("click",stageClick); $("bigBack").addEventListener("click",stageClick);
+$("ctl").addEventListener("input",e=>{ const t=e.target;
+  if(t.dataset.kmm){ const el=getP(S.design,t.dataset.kmm), m=modell(S.modell); if(!el?.kontur||t.value==="") return; const v=clamp(t.value,0.3,12,null); if(v==null) return;
+    el.kontur.mm=v; el.kontur.rel=v/(m.b*10*el.groesse/100); t.parentElement.querySelectorAll("[data-kmm]").forEach(x=>{ if(x!==t) x.value=v });
+    const st=konturStatus(v,m), pl=[...$("ctl").querySelectorAll("[data-kst]")].find(x=>x.dataset.kst===t.dataset.kmm); if(pl){ pl.className="pill "+st.cls; pl.textContent=st.txt } renderPreview() }
+  else if(t.dataset.num){ const v=Number(t.value); setP(S.design,t.dataset.num,v); const n=t.parentElement.querySelector(".nb"); if(n) n.value=Number(n.dataset.base)?(v/100*Number(n.dataset.base)).toFixed(1):v; renderPreview() }
+  else if(t.dataset.cmp){ const r=t.parentElement.querySelector("[type=range]"), b=Number(t.dataset.base); let v=b?Number(t.value)/b*100:Number(t.value); if(t.value===""||!Number.isFinite(v)) return; v=Math.min(Number(r.max),Math.max(Number(r.min),v)); setP(S.design,t.dataset.cmp,v); r.value=v; renderPreview() }
+  else if(t.dataset.str){ setP(S.design,t.dataset.str,t.value); renderPreview() } });
+$("ctl").addEventListener("change",e=>{ const t=e.target, s=S.design[S.seite];
+  if(t.dataset.set){ const v=t.value; s.muster.typ=v; if(v!=="uni" && s.muster.farben.length<2){ const o=GARN_NAMEN.find(n=>n!==s.grund && Math.abs(lum(n)-lum(s.grund))>.5)||"BRANCO"; s.muster.farben=[s.grund,o] } if(v==="quer"&&s.muster.anzahl<5) s.muster.anzahl=7; if(v!=="quer"&&s.muster.anzahl>8) s.muster.anzahl=4; commit("Muster: "+MUSTER[v]) }
+  else if(t.dataset.font){ setP(S.design,t.dataset.font,t.value); const f=FONTS[t.value]||FONTS.block; commit("Schrift "+f.name); document.fonts.load(`${f.w} 40px ${f.fam}`).then(()=>renderPreview()).catch(()=>{}) }
+  else if(t.dataset.kon){ const el=getP(S.design,t.dataset.kon), m=modell(S.modell); if(!el) return;
+    if(t.checked){ const fs=m.b*10*el.groesse/100, mn=m.raster?Math.min(m.raster.w,m.raster.h):0, mm=Math.max(2*mn, Math.round(fs*.06*10)/10, 1); el.kontur={farbe:lum(el.farbe)>.5?"PRETO":"BRANCO", mm, skal:true, rel:mm/fs} } else el.kontur=null;
+    commit(t.checked?"Kontur an":"Kontur aus") }
+  else if(t.dataset.kskal){ const el=getP(S.design,t.dataset.kskal), m=modell(S.modell); if(!el?.kontur) return; const fs=m.b*10*el.groesse/100, cur=konturMM(el,m); el.kontur.skal=t.checked; el.kontur.mm=cur; el.kontur.rel=cur/fs; commit("Kontur skalieren") }
+  else if(t.dataset.kmm) commit("Konturstärke",false);
+  else if(t.dataset.num||t.dataset.str||t.dataset.cmp) commit("Von Hand",false) });
+let LDRAG=null;
+$("ctl").addEventListener("dragstart",e=>{ const li=e.target.closest?.("li.lay[data-layer]"); if(!li||li.classList.contains("base")) return; LDRAG=Number(li.dataset.layer); e.dataTransfer.setData("text/plain","layer:"+LDRAG); e.dataTransfer.effectAllowed="move"; li.classList.add("drag") });
+$("ctl").addEventListener("dragover",e=>{ const li=e.target.closest?.("li.lay"); if(LDRAG==null||!li) return; e.preventDefault(); $("ctl").querySelectorAll("li.lay.over").forEach(x=>x.classList.remove("over")); li.classList.add("over") });
+$("ctl").addEventListener("drop",e=>{ const li=e.target.closest?.("li.lay"); if(LDRAG==null||!li) return; e.preventDefault(); const from=LDRAG; LDRAG=null; moveLayer(from,Math.max(0,Number(li.dataset.layer))) });
+$("ctl").addEventListener("dragend",()=>{ LDRAG=null; $("ctl").querySelectorAll("li.lay.over,li.lay.drag").forEach(x=>x.classList.remove("over","drag")) });
+$("viewSeg").addEventListener("click",e=>{ const b=e.target.closest("[data-view]"); if(b){ S.view=b.dataset.view; renderPreview() } });
+$("zoomSeg").addEventListener("click",e=>{ const b=e.target.closest("[data-z]"); if(b){ S.zoom=Number(b.dataset.z); renderPreview() } });
+function manClick(e){
+  const t=e.target.closest("button"); if(!t) return; const s=S.design[S.seite], kontrast=()=>GARN_NAMEN.includes("BRANCO")&&lum(s.grund)<.6?"BRANCO":"PRETO";
+  if(t.dataset.rm){ removeLogo(Number(t.dataset.rm)); return }
+  if(t.dataset.ausr){ const [pa,v]=t.dataset.ausr.split(":"), el=getP(S.design,pa); if(el){ el.ausr=v; commit("Textausrichtung") } return }
+  if(t.dataset.align){ const [ax,v]=t.dataset.align.split(":"); alignSel(ax,v); return }
+  if(t.dataset.lup!=null||t.dataset.ldn!=null){ const i=Number(t.dataset.lup??t.dataset.ldn); moveLayer(i,i+(t.dataset.lup!=null?1:-1)); return }
+  if(t.dataset.vis!=null){ const el=S.design[S.seite].elemente[Number(t.dataset.vis)]; if(el){ el.aus=!el.aus; commit(el.aus?"Ausgeblendet":"Eingeblendet") } return }
+  if(t.dataset.lock!=null){ const el=S.design[S.seite].elemente[Number(t.dataset.lock)]; if(el){ el.lock=!el.lock; commit(el.lock?"Gesperrt":"Entsperrt") } return }
+  if(t.dataset.addf){ const F=FORMS[t.dataset.addf]; if(!F) return; const m=modell(S.modell), sd=S.design[S.seite]||S.design.vorne, bg=sd.muster.typ==="uni"?sd.grund:sd.muster.farben[0];
+    sd.elemente.push({typ:"form", form:t.dataset.addf, x:50, y:50, b:F.b??(m.b*F.h/100)/m.l*100, h:F.h, dreh:F.d, farbe:lum(bg)<.55?"BRANCO":"PRETO"}); S.sel=S.seite+".elemente."+(sd.elemente.length-1); S.pal=null; commit(F.n+" hinzugefügt"); return }
+  if(t.dataset.fontopen){ S.fontP=S.fontP===t.dataset.fontopen?null:t.dataset.fontopen; S.pal=null; renderCtl(); $("stagebar").scrollTop=$("stagebar").scrollHeight; return }
+  if(t.dataset.fpick){ const f=FONTS[t.dataset.fpick]; if(!f||!S.fontP) return; setP(S.design,S.fontP+".schrift",t.dataset.fpick); commit("Schrift "+f.name); document.fonts.load(`${f.w} 40px ${f.fam}`).then(()=>renderPreview()).catch(()=>{}); return }
+  if(t.dataset.selel){ S.sel=S.sel===t.dataset.selel?null:t.dataset.selel; S.pal=null; renderPreview(); renderCtl(); return }
+  if(t.dataset.act==="undo"){ if(S.vi>0){ S.vi--; S.design=clone(S.versionen[S.vi].d); S.sel=null; S.pal=null; renderPreview(); renderCtl() } return }
+  if(t.dataset.pal){ S.fontP=null; S.pal = S.pal===t.dataset.pal?null:t.dataset.pal; renderCtl(); return }
+  if(t.dataset.pick){ setP(S.design,S.pal,t.dataset.pick); S.pal=null; commit("Farbe "+t.dataset.pick); return }
+  if(t.dataset.del){ S.sel=null; delP(S.design,t.dataset.del); commit("Element entfernt"); return }
+  if(t.dataset.addl){ s.elemente.push({typ:"logo",logo:Number(t.dataset.addl),x:[50,12,88,30,70][s.elemente.filter(x=>x.typ==="logo").length%5],y:50,groesse:70}); S.sel=S.seite+".elemente."+(s.elemente.length-1); commit("Logo platziert"); return }
+  const a=t.dataset.act; if(!a) return;
+  if(a==="palx"){ S.pal=null; S.fontP=null; renderCtl(); return }
+  if(["dup","other","rot","delsel","front","backz","fwd","bwd"].includes(a)){ if(!S.sel) return; const side=S.sel.split(".")[0], e=getP(S.design,S.sel); if(!e) return;
+    if(a==="fwd"||a==="bwd"){ const i=Number(S.sel.split(".")[2]); moveLayer(i,i+(a==="fwd"?1:-1),side); return }
+    if(e.lock && (a==="rot"||a==="delsel")) return;
+    if(a==="front"||a==="backz"){ const arr=S.design[side].elemente; arr.splice(Number(S.sel.split(".")[2]),1); if(a==="front") arr.push(e); else arr.unshift(e); S.sel=side+".elemente."+(a==="front"?arr.length-1:0); commit(a==="front"?"Nach vorne":"Nach hinten"); return }
+    if(a==="rot"){ e.dreh=((e.dreh||0)+90)%360; commit("Gedreht"); return }
+    if(a==="delsel"){ delP(S.design,S.sel); S.sel=null; commit("Entfernt"); return }
+    const ziel=a==="other"?(side==="vorne"?"hinten":"vorne"):side, c=clone(e); if(a==="dup") c.x=e.x>80?e.x-12:e.x+12;
+    S.design[ziel].elemente.push(c); S.seite=S.design.gleich?"vorne":ziel; S.sel=ziel+".elemente."+(S.design[ziel].elemente.length-1); commit(a==="dup"?"Dupliziert":"Kopiert"); return }
+  if(a==="addc") s.muster.farben.push(s.muster.farben[0]); else if(a==="delc") s.muster.farben.pop();
+  else if(a==="rand1") s.rand={farbe:kontrast(),breite:12}; else if(a==="rand0") s.rand=null;
+  else if(a==="end1") s.enden={farbe:kontrast(),breite:8}; else if(a==="end0") s.enden=null;
+  else if(a==="addt"){ s.elemente.push({typ:"text",text:"DEIN TEXT",x:50,y:50,groesse:45,farbe:kontrast(),box:null,ausr:"c",kontur:null}); S.sel=S.seite+".elemente."+(s.elemente.length-1) }
+  else if(a==="addf") S.design.fransen.farben.push(S.design.fransen.farben[0]); else if(a==="delf") S.design.fransen.farben.pop();
+  commit("Von Hand");
+}
+$("ctl").addEventListener("click",manClick); $("pal").addEventListener("click",manClick); $("tools").addEventListener("click",manClick); $("uploads").addEventListener("click",manClick);
+$("uploads").addEventListener("dragstart",e=>{ const u=e.target.closest("[data-logo]"); if(u){ e.dataTransfer.setData("text/plain","logo:"+u.dataset.logo); e.dataTransfer.effectAllowed="copy" } });
+for(const [id,side] of [["bigFront","vorne"],["bigBack","hinten"]]){ $(id).addEventListener("dragover",e=>e.preventDefault()); $(id).addEventListener("drop",e=>{ e.preventDefault(); const mt=(e.dataTransfer.getData("text/plain")||"").match(/^logo:(\d+)$/); if(!mt||!LOGOS[+mt[1]]) return; const m=modell(S.modell), pt=svgPt($(id),e), sd=S.design[side]; sd.elemente.push({typ:"logo",logo:+mt[1],x:clamp(pt.x/(m.l*10)*100,0,100,50),y:clamp(pt.y/(m.b*10)*100,0,100,50),groesse:70}); S.seite=S.design.gleich?"vorne":side; S.sel=side+".elemente."+(sd.elemente.length-1); commit("Logo platziert") }) }
+document.addEventListener("keydown",e=>{ if(!S.sel||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||getP(S.design,S.sel)?.lock) return; if(e.key==="Delete"||e.key==="Backspace"){ e.preventDefault(); delP(S.design,S.sel); S.sel=null; commit("Entfernt") } else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="d"){ e.preventDefault(); $("tools").querySelector('[data-act="dup"]')?.click() } });
+function removeLogo(i){ LOGOS.splice(i,1); const fix=sd=>{ if(sd) sd.elemente=sd.elemente.filter(e=>!(e.typ==="logo"&&e.logo===i)).map(e=>e.typ==="logo"&&e.logo>i?{...e,logo:e.logo-1}:e) }; fix(S.design.vorne); fix(S.design.hinten); S.sel=null; renderUploads(); commit("Logo entfernt") }
+$("menge").addEventListener("input",()=>{ renderPrice(); renderModels() });
+$("qChips").innerHTML=STD_STAFFELN.map(q=>`<button type="button" class="chip" data-q="${q}">${q}</button>`).join("");
+$("qChips").addEventListener("click",e=>{ const b=e.target.closest("[data-q]"); if(b){ $("menge").value=b.dataset.q; renderPrice(); renderModels() } });
+$("reqForm").addEventListener("submit",sendAnfrage);
+$("dlPdf").addEventListener("click",async()=>{ $("reqStatus").textContent="PDF wird erstellt …"; try{ await save(fileBase()+".pdf", await makePdf("kunde")) }catch{ $("reqStatus").textContent="Das PDF konnte nicht erstellt werden." } });
+$("dlProd").addEventListener("click",async()=>{ $("reqStatus").textContent="Produktionsblatt wird erstellt …"; try{ await save(fileBase()+"-TechnicalSheet.pdf", await makePdf("produktion")) }catch{ $("reqStatus").textContent="Das Produktionsblatt konnte nicht erstellt werden." } });
+$("dlSvg").addEventListener("click",()=>saveArt(anfrageDaten(),LOGOS,fileBase()));
+$("dlJson").addEventListener("click",()=>save(fileBase()+".json", JSON.stringify(anfrageDaten(),null,2)));
+$("file").addEventListener("change",e=>{ [...e.target.files].slice(0,4-LOGOS.length).forEach(f=>{ if(f.size>6e6){ $("genStatus").textContent=f.name+" ist größer als 6 MB und wurde nicht geladen."; return } const r=new FileReader(); r.onload=()=>{ const img=new Image(); img.onload=()=>{ LOGOS.push({name:f.name,url:r.result,ratio:(img.naturalWidth/img.naturalHeight)||1}); const sd=S.design[S.seite]||S.design.vorne; sd.elemente.push({typ:"logo",logo:LOGOS.length-1,x:50,y:50,groesse:70}); S.sel=S.seite+".elemente."+(sd.elemente.length-1); renderUploads(); commit("Logo platziert"); $("genStatus").textContent="Logo platziert. Zieh es an die gewünschte Stelle." }; img.src=r.result }; r.readAsDataURL(f) }); e.target.value="" });
+function renderUploads(){ const box=$("logoLib"); box.innerHTML=""; LOGOS.forEach((l,i)=>{ const d=document.createElement("div"); d.className="up"; d.draggable=true; d.dataset.logo=i; d.innerHTML=`<img alt="" draggable="false"><span></span><button type="button" class="btn" data-addl="${i}">Platzieren</button><button type="button" class="x" data-rm="${i}" aria-label="Logo entfernen">×</button>`; d.querySelector("img").src=l.url; d.querySelector("span").textContent=l.name; box.append(d) }); $("logoHint").hidden=!LOGOS.length }
+$("tabs").addEventListener("click",e=>{ const b=e.target.closest("[data-tab]"); if(!b) return; $("tabs").querySelectorAll("[data-tab]").forEach(t=>t.setAttribute("aria-selected",t===b)); ["konfig","preise","anfragen","daten"].forEach(v=>$("view-"+v).hidden=v!==b.dataset.tab); if(b.dataset.tab==="anfragen") loadAnfragen() });
+$("aReload").addEventListener("click",loadAnfragen);
+$("pSave").addEventListener("click",savePreise);
+$("pStaffeln").addEventListener("change",()=>{ readAdmin(); const l=[...new Set($("pStaffeln").value.split(/[,;\s]+/).map(Number).filter(n=>n>0&&Number.isInteger(n)))].sort((a,b)=>a-b).slice(0,12); if(l.length){ ADMIN.staffeln=l } renderAdminPreise() });
+
+/* Admin-Bereiche: nur für Editoren, und per „Kundenansicht“ ausblendbar. */
+let KUNDE=false;
+function adminUI(){ const on=ADM&&!KUNDE; ["preise","anfragen","daten"].forEach(t=>document.querySelector(`[data-tab="${t}"]`).hidden=!on); ["dlProd","dlSvg","dlJson"].forEach(i=>$(i).hidden=!(on&&CAP.downloads)); $("custView").textContent=KUNDE?"Admin-Ansicht":"Kundenansicht" }
+$("custView").addEventListener("click",()=>{ KUNDE=!KUNDE; adminUI(); if(KUNDE) document.querySelector('[data-tab="konfig"]').click() });
+$("rgleich").addEventListener("change",()=>{ const g=$("rgleich").checked; $("rechBox").hidden=g; ["bstr","bplz","bort"].forEach(i=>$(i).required=!g) });
+
+/* ============ Schritte ============ */
+function showStep(n, scroll){ S.step=n=Math.min(4,Math.max(1,n)); document.querySelectorAll("[data-step]").forEach(x=>x.hidden=Number(x.dataset.step)!==n);
+  [...$("steps").children].forEach(b=>{ if(Number(b.dataset.go)===n) b.setAttribute("aria-current","step"); else b.removeAttribute("aria-current") });
+  $("back").style.visibility=n>1?"visible":"hidden"; $("next").hidden=n===4; $("tools").hidden=n!==3; if(n!==3){ S.pal=null; S.fontP=null; $("pal").hidden=true }
+  if(scroll) $("steps").scrollIntoView({block:"start",behavior:"smooth"}) }
+$("steps").addEventListener("click",e=>{ const b=e.target.closest("[data-go]"); if(b) showStep(Number(b.dataset.go)) });
+$("back").addEventListener("click",()=>showStep(S.step-1,true)); $("next").addEventListener("click",()=>showStep(S.step+1,true));
+
+/* ============ Start ============ */
+(function start(){
+  const sm=ls.get("suba-schal-modell"); if(sm && KATALOG.some(m=>m.id===sm)) S.modell=sm;
+  $("openList").innerHTML=OFFEN.map(o=>`<li>${esc(o)}</li>`).join("");
+  $("dTbl").innerHTML=`<thead><tr><th>Modell</th><th>Maße</th><th>Material</th><th>Farben</th><th>Rückseite</th><th>Fransen</th><th>Maschenraster (Annahme)</th></tr></thead><tbody>${KATALOG.map(m=>`<tr><td>${m.id} (${m.art})</td><td>${m.l} × ${m.b} cm</td><td>${esc(m.material)}</td><td>${farbLimit(m)}</td><td>${m.rueck}</td><td>${m.fransen}</td><td>${m.raster?f1(m.raster.w)+" × "+f1(m.raster.h)+" mm":"–"}</td></tr>`).join("")}</tbody>`;
+  showStep(1); renderModels(); { const m0=modell(S.modell), d0=lokal(BEISPIEL,m0)[0]; d0.vorne.vorlage="rahmen"; d0.gleich=true; S.design=normalize(d0,m0); pushVersion("Start"); renderPreview(); renderCtl() } renderAdminPreise();
+  document.fonts?.ready?.then(()=>{ renderPreview(); renderModels() });
+  CAP.downloads={ save: async ({filename,data}) => { const b=data instanceof Blob?data:new Blob([data]); const u=URL.createObjectURL(b); const l=document.createElement("a"); l.href=u; l.download=filename; document.body.append(l); l.click(); l.remove(); setTimeout(()=>URL.revokeObjectURL(u),5000) } };
+  $("dlPdf").hidden=false;
+  fetch("data/schal-preise.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).then(p=>{ if(p){ PREISE=p; renderPrice(); renderModels() } }).catch(()=>{});
+})();
+</script>
+
+</body></html>

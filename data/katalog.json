@@ -1,0 +1,4003 @@
+{
+  "_hinweis": "Zentrale Produktdaten der WearSUBA-Website. Anleitung: siehe PRODUKTPFLEGE.md",
+  "konfiguratoren_sichtbar": false,
+  "kategorien_ausgeblendet": [
+    "gastro"
+  ],
+  "bereiche": [
+    {
+      "id": "sportswear",
+      "name": "Sportswear & Merchandise",
+      "kurz": "Vereine · Teams · Fans",
+      "bild": "img/site/panel-sportswear.jpg",
+      "status": "aktiv",
+      "text": "Trikots, Schals, Socken, Wimpel, Bälle und Fanartikel für Vereine, Teams und Events. Vieles davon kannst du selbst gestalten.",
+      "typ": "katalog"
+    },
+    {
+      "id": "workwear",
+      "name": "Workwear & Corporate",
+      "kurz": "Hotels · Gastro · Unternehmen",
+      "bild": "img/site/panel-workwear.jpg",
+      "status": "aktiv",
+      "text": "Corporate Wear, Hotel-Textilien, Keramik und Tassen mit deiner Handschrift. Von der veredelten Tasse bis zum handgemachten Geschirr aus Kolumbien.",
+      "typ": "corporate",
+      "bilder_hero": [
+        "img/site/panel-workwear.jpg",
+        "img/keramik/bowl-pinselstrich.jpg"
+      ]
+    },
+    {
+      "id": "retail",
+      "name": "Retail",
+      "kurz": "Souvenirs · Städte-Merchandise · Handel",
+      "bild": "img/site/panel-retail-handel.jpg",
+      "status": "aktiv",
+      "text": "Souvenir-Textilien und Merchandise für Shops und den Handel: entwickelt, produziert und handelsfertig geliefert. Schnell bei Trends, auch in kleinen Stückzahlen.",
+      "typ": "retail",
+      "bilder_hero": [
+        "img/retail/lugano-shop.jpg",
+        "img/retail/lugano-display.jpg"
+      ]
+    },
+    {
+      "id": "personal-brand",
+      "name": "Personal Brand",
+      "kurz": "Eigenes Logo · Eigene Marke · Eigene Kollektion",
+      "bild": "img/site/panel-personal-brand.jpg",
+      "status": "aktiv",
+      "text": "Wir entwickeln mit dir die Produkte deiner Marke: von der ersten Idee über Schnitt, Design und Muster bis zur fertigen Produktion.",
+      "typ": "showcase",
+      "bilder_hero": [
+        "img/referenzen/nido55-strand-partnerlook.jpg",
+        "img/site/panel-personal-brand.jpg"
+      ]
+    }
+  ],
+  "kategorien": [
+    {
+      "id": "textilien",
+      "name": "Textilien",
+      "bild": "img/kategorien/kat-corporate.jpg",
+      "text": "Von der schnellen Veredelung bis zur kompletten Eigenentwicklung: drei Wege zu deinem Textil.",
+      "bild_sportswear": "img/kategorien/sw-textilien.jpg"
+    },
+    {
+      "id": "sportbekleidung",
+      "name": "Sportbekleidung",
+      "bild": "img/kategorien/kat-sportbekleidung.jpg",
+      "text": "Trikots, Shorts, Jacken und mehr, sublimiert im eigenen Design.",
+      "bild_sportswear": "img/kategorien/sw-sportbekleidung.jpg"
+    },
+    {
+      "id": "kopfbedeckung",
+      "name": "Kopfbedeckung",
+      "bild": "img/kategorien/kat-kopfbedeckung.jpg",
+      "text": "Caps, Beanies und Fischerhüte, individuell gefertigt und veredelt. Weitere Modelle und Designs auf Anfrage.",
+      "mehr": {
+        "titel": "Weitere Beanie-Modelle",
+        "text": "Über 30 weitere Strickarten, Garne und Formen auf Anfrage."
+      },
+      "bild_sportswear": "img/kategorien/sw-kopfbedeckung.jpg"
+    },
+    {
+      "id": "schals",
+      "name": "Schals",
+      "bild": "img/kategorien/kat-schals.jpg",
+      "text": "Gestrickt, gewebt oder sublimiert: Schals für Fans, Vereine, Firmen und Events. Weitere Modelle und Designs auf Anfrage.",
+      "mehr": {
+        "titel": "Weitere Schalmodelle",
+        "text": "Zum Beispiel Rippstrick, Oversize oder mit geflochtenen Fransen. Auf Anfrage."
+      },
+      "bild_sportswear": "img/kategorien/sw-schals.jpg"
+    },
+    {
+      "id": "socken",
+      "name": "Socken",
+      "bild": "img/kategorien/kat-socken.jpg",
+      "text": "Individuelle Socken für Unternehmen, Vereine und Events, ab 50 Paar pro Design.",
+      "bild_sportswear": "img/kategorien/sw-socken.jpg"
+    },
+    {
+      "id": "wimpel",
+      "name": "Wimpel",
+      "bild": "img/produkte/wimpel-4.jpg",
+      "text": "Wimpel für Vereine, Firmen und Events, individuell gefertigt ab 30 Stück."
+    },
+    {
+      "id": "accessoires",
+      "name": "Lanyards & Accessoires",
+      "bild": "img/kategorien/kat-accessoires.jpg",
+      "text": "Lanyards, Schlüsselanhänger, Armbänder, Tassen, Handtücher und mehr."
+    },
+    {
+      "id": "kissen",
+      "name": "Kissen & Komfort",
+      "bild": "img/kategorien/kat-kissen.jpg",
+      "text": "Trikot-, Logo-, Sitz- und Nackenkissen, vollflächig bedruckt ab 50 Stück."
+    },
+    {
+      "id": "taschen",
+      "name": "Taschen & Gepäck",
+      "bild": "img/kategorien/kat-taschen.jpg",
+      "text": "Drei Wege zu deiner Tasche: Quick Branding, Full Sublimation oder Full Custom."
+    },
+    {
+      "id": "baelle",
+      "name": "Bälle",
+      "bild": "img/kategorien/kat-baelle.jpg",
+      "text": "Individuell gestaltete Bälle für Sport, Training und Promotion, ab 300 Stück."
+    },
+    {
+      "id": "schuhe",
+      "name": "Sneaker",
+      "bild": "img/kategorien/kat-schuhe.jpg",
+      "text": "Sneaker im eigenen Design, entworfen und gefertigt in der EU."
+    },
+    {
+      "id": "gastro",
+      "name": "Gastro & Display",
+      "bild": "img/kategorien/kat-gastro.jpg",
+      "text": "Aufsteller, Speisekarten, Tischaccessoires und Servierbretter aus Holz, mit deinem Logo. Ohne Mindestmenge."
+    }
+  ],
+  "veredelungen": {
+    "dtf": "DTF",
+    "flex": "Flex",
+    "flock": "Flock",
+    "transfer": "Transfer",
+    "siebdruck": "Siebdruck",
+    "stick": "Stick",
+    "3d-stick": "3D-Stick",
+    "sublimation": "Sublimation",
+    "patch": "Patch",
+    "jacquard": "Jacquard (eingestrickt)",
+    "praegung": "Prägung",
+    "gravur": "Gravur",
+    "druck": "Druck"
+  },
+  "konfiguratoren": [
+    {
+      "id": "schal",
+      "name": "Schal-Konfigurator",
+      "aktiv": true,
+      "url": "schal-konfigurator.html",
+      "text": "Schal und Menge wählen, Vorlage aussuchen, Garnfarben, Text und Logo setzen, unverbindlich anfragen.",
+      "bild": "img/produkte/schal-hd-jacquard.jpg"
+    },
+    {
+      "id": "trikot",
+      "name": "Trikot-Konfigurator",
+      "aktiv": false,
+      "url": "https://claude.ai/artifact/CE1Psxutmdi9jZJFEEApv4",
+      "text": "Sportart wählen, Design und Farben gestalten, Teamliste mit Namen, Nummern und Grössen hochladen.",
+      "bild": "img/produkte/trikot-full-custom.jpg"
+    },
+    {
+      "id": "beanie",
+      "name": "Beanie-Konfigurator",
+      "aktiv": false,
+      "url": "https://claude.ai/artifact/1FJFCdbkdBm4WVjoSDb9BZ",
+      "text": "Farben, eingestrickter Text und auf Wunsch ein Patch, mit 3D-Ansicht.",
+      "bild": "img/produkte/beanie.jpg"
+    },
+    {
+      "id": "tasse",
+      "name": "Tassen-Konfigurator",
+      "aktiv": false,
+      "url": "https://claude.ai/artifact/2Rbr7PeqTanoTWbsZTNWCM",
+      "text": "Sublimationstasse rundum gestalten, mit 3D-Ansicht und Korrekturabzug.",
+      "bild": "img/produkte/tasse-sublimation.jpg"
+    },
+    {
+      "id": "handtuch",
+      "name": "Handtuch-Konfigurator",
+      "aktiv": false,
+      "url": "https://claude.ai/artifact/SBVQkZQaznzfWWHQd49vV9",
+      "text": "Handtuch quer oder hoch gestalten, vorne frei bedruckbar.",
+      "bild": "img/produkte/handtuch-sublimation.jpg"
+    }
+  ],
+  "produkte": [
+    {
+      "id": "t-shirts",
+      "name": "T-Shirts & Tops",
+      "kategorie": "textilien",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Alle Schnitte und Qualitäten, veredelt ab 30 Stück.",
+      "bilder": [
+        "img/produkte/textil-quick.jpg",
+        "img/produkte/textil-serie.jpg"
+      ],
+      "mindestmenge": "30 Stück",
+      "daten": [
+        {
+          "label": "Rohware",
+          "wert": "Bestehende Rohware aus unserem breiten Lieferantennetzwerk"
+        },
+        {
+          "label": "Veredelung",
+          "wert": "In unserer eigenen Produktion in Deutschland"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Produktionsweg",
+          "optionen": [
+            "Schnell & flexibel: Veredelung ab 30 Stück, Express ab 72 Stunden",
+            "Die Serie: professionelle Veredelung ab 100 Stück",
+            "Dein Produkt: Full Custom ab 300 Stück"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "flex",
+        "flock",
+        "transfer",
+        "siebdruck",
+        "stick"
+      ],
+      "text": "Für Events, Teams, Retail und Eigenmarken. Wir veredeln bestehende Rohware oder entwickeln dein Shirt komplett nach deinen Vorstellungen.",
+      "konfigurator": null,
+      "highlights": [
+        "Ab 30 Stück",
+        "Eigene Veredelung in Deutschland",
+        "Express ab 72 Stunden möglich"
+      ]
+    },
+    {
+      "id": "hoodies",
+      "name": "Hoodies & Sweater",
+      "kategorie": "textilien",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Vom veredelten Hoodie bis zur Eigenentwicklung mit eigenem Label.",
+      "bilder": [
+        "img/produkte/textil-full-custom.jpg",
+        "img/produkte/textil-serie.jpg"
+      ],
+      "mindestmenge": "30 Stück",
+      "daten": [
+        {
+          "label": "Rohware",
+          "wert": "Bestehende Rohware aus unserem breiten Lieferantennetzwerk"
+        },
+        {
+          "label": "Full Custom",
+          "wert": "Material, Schnitt, Farbe, Label und Verpackung nach deinen Vorstellungen"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Produktionsweg",
+          "optionen": [
+            "Schnell & flexibel: Veredelung ab 30 Stück, Express ab 72 Stunden",
+            "Die Serie: professionelle Veredelung ab 100 Stück",
+            "Dein Produkt: Full Custom ab 300 Stück"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "flex",
+        "flock",
+        "transfer",
+        "siebdruck",
+        "stick"
+      ],
+      "text": "Ideal für Merchandise-Linien, Teams und Firmen. Ab 300 Stück entwickeln wir dein Produkt von der Idee über das Sampling bis zum fertigen Teil.",
+      "konfigurator": null,
+      "highlights": [
+        "Ab 30 Stück",
+        "Eigene Veredelung in Deutschland",
+        "Express ab 72 Stunden möglich"
+      ]
+    },
+    {
+      "id": "poloshirts",
+      "name": "Poloshirts & Corporate Fashion",
+      "kategorie": "textilien",
+      "bereiche": [
+        "sportswear",
+        "workwear"
+      ],
+      "kurz": "Professioneller Auftritt für dein Team.",
+      "bilder": [
+        "img/produkte/textil-serie.jpg"
+      ],
+      "mindestmenge": "1 Stück",
+      "daten": [
+        {
+          "label": "Rohware",
+          "wert": "Bestehende Rohware aus unserem breiten Lieferantennetzwerk"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Produktionsweg",
+          "optionen": [
+            "Schnell & flexibel: Veredelung ab 1 Stück, Express ab 72 Stunden",
+            "Die Serie: professionelle Veredelung ab 100 Stück",
+            "Dein Produkt: Full Custom ab 300 Stück"
+          ]
+        }
+      ],
+      "veredelung": [
+        "stick",
+        "dtf",
+        "transfer",
+        "siebdruck"
+      ],
+      "text": "Poloshirts und Corporate Fashion mit Stick oder Druck, für Empfang, Service und Aussendienst.",
+      "konfigurator": null,
+      "highlights": [
+        "Ab 1 Stück",
+        "Eigene Veredelung in Deutschland",
+        "Express ab 72 Stunden möglich"
+      ]
+    },
+    {
+      "id": "workwear-jacken",
+      "name": "Workwear & Jacken",
+      "kategorie": "textilien",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Arbeitskleidung und Jacken mit deinem Logo.",
+      "bilder": [
+        "img/produkte/textil-serie.jpg"
+      ],
+      "mindestmenge": "1 Stück",
+      "daten": [
+        {
+          "label": "Rohware",
+          "wert": "Bestehende Rohware aus unserem breiten Lieferantennetzwerk"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Produktionsweg",
+          "optionen": [
+            "Schnell & flexibel: Veredelung ab 1 Stück, Express ab 72 Stunden",
+            "Die Serie: professionelle Veredelung ab 100 Stück",
+            "Dein Produkt: Full Custom ab 300 Stück"
+          ]
+        }
+      ],
+      "veredelung": [
+        "stick",
+        "transfer",
+        "dtf",
+        "flex"
+      ],
+      "text": "Robuste Arbeitskleidung, Westen und Jacken, veredelt mit Stick oder Transfer.",
+      "konfigurator": null,
+      "highlights": [
+        "Ab 1 Stück",
+        "Eigene Veredelung in Deutschland",
+        "Express ab 72 Stunden möglich"
+      ]
+    },
+    {
+      "id": "trikot-full-custom",
+      "name": "Trikot Full Custom",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Voll individualisiert im Sublimationsverfahren. Dein Design, deine Farben, dein Style.",
+      "bilder": [
+        "img/produkte/trikot-full-custom.jpg",
+        "img/produkte/trikot-fussball.jpg",
+        "img/produkte/trikot-handball.jpg",
+        "img/produkte/trikot-basketball.jpg",
+        "img/produkte/trikot-eishockey.jpg",
+        "img/produkte/trikot-detail-kragen.jpg",
+        "img/produkte/trikot-detail-stoff.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck"
+        },
+        {
+          "label": "Grössen",
+          "wert": "98 bis 5XL"
+        },
+        {
+          "label": "Produktion",
+          "wert": "Produziert in Europa"
+        },
+        {
+          "label": "Design",
+          "wert": "Keine Designlimits"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Sportart",
+          "optionen": [
+            "Fussball",
+            "Handball",
+            "Basketball",
+            "Eishockey",
+            "Volleyball",
+            "Dart",
+            "Running",
+            "und vieles mehr"
+          ]
+        },
+        {
+          "name": "Optionen",
+          "optionen": [
+            "Individuelle Kragenformen",
+            "Hochwertige Funktionsstoffe",
+            "Individuelle Veredelungen"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Schick einfach dein eigenes Design oder deine Ideen. Unsere Grafiker entwickeln dein voll individualisiertes Trikot, für Sportvereine, Firmen oder privat.",
+      "konfigurator": "trikot",
+      "highlights": [
+        "100 % individuell",
+        "Grössen 98 bis 5XL",
+        "Produziert in Europa"
+      ]
+    },
+    {
+      "id": "trikot-basic",
+      "name": "Basic Trikot (Lagerware)",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Basic Trikots ab Lager in verschiedenen Farben und Schnitten, nach Wunsch veredelt.",
+      "bilder": [
+        "img/produkte/trikot-basic.jpg"
+      ],
+      "mindestmenge": "30 Stück",
+      "daten": [
+        {
+          "label": "Veredelung",
+          "wert": "Nach Wunsch in unserer eigenen Produktion in Deutschland"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Farben",
+          "optionen": [
+            "Schwarz",
+            "Navy",
+            "Rot",
+            "Weiss",
+            "Grün"
+          ]
+        }
+      ],
+      "veredelung": [
+        "flock",
+        "flex",
+        "stick"
+      ],
+      "text": "Ideal für Nachbestellungen und kleine Mengen: Nummern, Namen und Sponsoren werden schnell in Deutschland veredelt.",
+      "konfigurator": null,
+      "highlights": [
+        "Nummern, Namen, Sponsoren",
+        "Schnelle Veredelung in Deutschland",
+        "Persönliche Beratung"
+      ]
+    },
+    {
+      "id": "caps",
+      "name": "Caps",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Quick Branding mit DTF oder Stick, oder komplett nach deinen Vorstellungen.",
+      "bilder": [
+        "img/produkte/cap.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Quick Branding",
+          "wert": "DTF- oder Stickveredelung"
+        },
+        {
+          "label": "Full Custom",
+          "wert": "Eigene Farben und Stoffe, Innenband wählbar"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Veredelung (Full Custom)",
+          "optionen": [
+            "Patch (gewebt, PVC, Leder …)",
+            "3D-Stick",
+            "Normaler Stick",
+            "Folienveredelung",
+            "Bedruckung an den Seiten"
+          ]
+        },
+        {
+          "name": "Verschluss",
+          "optionen": [
+            "Klettverschluss",
+            "Metallschieber",
+            "Kunststoffverschluss (Snapback)"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "stick",
+        "3d-stick",
+        "patch"
+      ],
+      "text": "Für jede Marke, für jeden Auftritt.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-casual",
+      "name": "Casual-Socken",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Alltagssocke mit deinem Design.",
+      "bilder": [
+        "img/produkte/socken-casual.jpg"
+      ],
+      "mindestmenge": "50 Paar",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "80 % Baumwolle, 15 % Polypropylen, 5 % Lycra"
+        },
+        {
+          "label": "Grössen",
+          "wert": "35/37 – 38/40 – 41/43 – 44/46"
+        },
+        {
+          "label": "Design",
+          "wert": "Bis zu 5 Farben"
+        },
+        {
+          "label": "Lieferung",
+          "wert": "Produktion und Lieferung in ca. 2–3 Wochen"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "Alle Socken sind individuell gestaltbar: Farben, Logos, Muster, Längen, Etiketten und Verpackung.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-sport",
+      "name": "Sport-Socken",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Klassische Sportsocke.",
+      "bilder": [
+        "img/produkte/socken-sport.jpg"
+      ],
+      "mindestmenge": "50 Paar",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "80 % Baumwolle, 15 % Polypropylen, 5 % Lycra"
+        },
+        {
+          "label": "Grössen",
+          "wert": "35/37 – 38/40 – 41/43 – 44/46"
+        },
+        {
+          "label": "Design",
+          "wert": "Bis zu 5 Farben"
+        },
+        {
+          "label": "Lieferung",
+          "wert": "Produktion und Lieferung in ca. 2–3 Wochen"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "Alle Socken sind individuell gestaltbar: Farben, Logos, Muster, Längen, Etiketten und Verpackung.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-fussball",
+      "name": "Fussball-Socken",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Stutzen für dein Team.",
+      "bilder": [
+        "img/produkte/socken-fussball.jpg"
+      ],
+      "mindestmenge": "50 Paar",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "70 % Polyester, 25 % Baumwolle, 5 % Elastan"
+        },
+        {
+          "label": "Grössen",
+          "wert": "35/37 – 38/40 – 41/43 – 44/46"
+        },
+        {
+          "label": "Design",
+          "wert": "Bis zu 5 Farben"
+        },
+        {
+          "label": "Lieferung",
+          "wert": "Produktion und Lieferung in ca. 2–3 Wochen"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "Alle Socken sind individuell gestaltbar: Farben, Logos, Muster, Längen, Etiketten und Verpackung.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-sneaker",
+      "name": "Sneaker-Socken",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Kurze Socke für Sneaker.",
+      "bilder": [
+        "img/produkte/socken-sneaker.jpg"
+      ],
+      "mindestmenge": "50 Paar",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "80 % Baumwolle, 15 % Polypropylen, 5 % Lycra"
+        },
+        {
+          "label": "Grössen",
+          "wert": "35/37 – 38/40 – 41/43 – 44/46"
+        },
+        {
+          "label": "Design",
+          "wert": "Bis zu 5 Farben"
+        },
+        {
+          "label": "Lieferung",
+          "wert": "Produktion und Lieferung in ca. 2–3 Wochen"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "Alle Socken sind individuell gestaltbar: Farben, Logos, Muster, Längen, Etiketten und Verpackung.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-full-terry",
+      "name": "Full Terry-Socken",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Voll gepolsterte Frottee-Socke.",
+      "bilder": [
+        "img/produkte/socken-full-terry.jpg"
+      ],
+      "mindestmenge": "50 Paar",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "80 % Baumwolle, 15 % Polypropylen, 5 % Lycra"
+        },
+        {
+          "label": "Grössen",
+          "wert": "35/37 – 38/40 – 41/43 – 44/46"
+        },
+        {
+          "label": "Design",
+          "wert": "Bis zu 5 Farben"
+        },
+        {
+          "label": "Lieferung",
+          "wert": "Produktion und Lieferung in ca. 2–3 Wochen"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "Alle Socken sind individuell gestaltbar: Farben, Logos, Muster, Längen, Etiketten und Verpackung.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-cycling",
+      "name": "Cycling-Socken",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Leichte Socke für Radsport.",
+      "bilder": [
+        "img/produkte/socken-cycling.jpg"
+      ],
+      "mindestmenge": "50 Paar",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "95 % Polypropylen, 5 % Elastan"
+        },
+        {
+          "label": "Grössen",
+          "wert": "35/37 – 38/40 – 41/43 – 44/46"
+        },
+        {
+          "label": "Design",
+          "wert": "Bis zu 5 Farben"
+        },
+        {
+          "label": "Lieferung",
+          "wert": "Produktion und Lieferung in ca. 2–3 Wochen"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "Alle Socken sind individuell gestaltbar: Farben, Logos, Muster, Längen, Etiketten und Verpackung.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "socken-kinder",
+      "name": "Kinder-Socken",
+      "kategorie": "socken",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Socken für Kinder.",
+      "bilder": [
+        "img/produkte/socken-kinder.jpg"
+      ],
+      "mindestmenge": "50 Paar",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "80 % Baumwolle, 15 % Polypropylen, 5 % Lycra"
+        },
+        {
+          "label": "Grössen",
+          "wert": "23/25 – 26/28 – 29/31 – 32/34"
+        },
+        {
+          "label": "Design",
+          "wert": "Bis zu 5 Farben"
+        },
+        {
+          "label": "Lieferung",
+          "wert": "Produktion und Lieferung in ca. 2–3 Wochen"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "Alle Socken sind individuell gestaltbar: Farben, Logos, Muster, Längen, Etiketten und Verpackung.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "wimpel",
+      "name": "Wimpel",
+      "kategorie": "wimpel",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Individuell gefertigt, beidseitig, ab 30 Stück.",
+      "bilder": [
+        "img/produkte/wimpel-4.jpg",
+        "img/produkte/wimpel-1.jpg",
+        "img/produkte/wimpel-2.jpg",
+        "img/produkte/wimpel-5.jpg",
+        "img/produkte/wimpel-6.jpg",
+        "img/produkte/wimpel-3.jpg"
+      ],
+      "mindestmenge": "30 Stück",
+      "daten": [
+        {
+          "label": "Druck",
+          "wert": "Sublimation für brillante Farben und höchste Qualität"
+        },
+        {
+          "label": "Seiten",
+          "wert": "Vorder- und Rückseite inklusive"
+        },
+        {
+          "label": "Sonderanfertigungen",
+          "wert": "Auch aus Baumwolle und in anderen Formaten möglich"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Grösse",
+          "optionen": [
+            "10 × 14 cm",
+            "14 × 20 cm",
+            "20,5 × 28 cm",
+            "26,5 × 37 cm"
+          ]
+        },
+        {
+          "name": "Form",
+          "optionen": [
+            "Dreieck",
+            "5-eckig"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Unsere Wimpel stehen für Tradition, Zugehörigkeit und Stolz, perfekt für Vereine, Firmen, Events und besondere Anlässe. Weitere Grössen, Formen und Ausführungen auf Anfrage.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "lanyards",
+      "name": "Lanyards",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Material, Breite, Druck, Verschlüsse und Extras: du bestimmst jedes Detail.",
+      "bilder": [
+        "img/produkte/lanyard.jpg"
+      ],
+      "mindestmenge": "100 Stück",
+      "daten": [
+        {
+          "label": "Druck",
+          "wert": "Einseitig oder doppelseitig, sublimiert"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Material",
+          "optionen": [
+            "Polyester",
+            "Baumwolle",
+            "Organic Cotton",
+            "RPET",
+            "Kordel"
+          ]
+        },
+        {
+          "name": "Breite",
+          "optionen": [
+            "10 mm",
+            "15 mm",
+            "20 mm",
+            "25 mm",
+            "30 mm"
+          ]
+        },
+        {
+          "name": "Extras",
+          "optionen": [
+            "Safety Clip",
+            "Abnehmbarer Verschluss",
+            "Schlüsselhalter",
+            "Getränkehalter"
+          ]
+        },
+        {
+          "name": "Verpackung",
+          "optionen": [
+            "Einzeln verpackt",
+            "10er-Pack",
+            "50er-Pack",
+            "100er-Pack"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "keyring-pvc",
+      "name": "Schlüsselanhänger 2D PVC",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Freie Formen, starke Farben.",
+      "bilder": [
+        "img/produkte/keyring-pvc.jpg"
+      ],
+      "mindestmenge": "100 Stück",
+      "daten": [],
+      "varianten": [],
+      "veredelung": [],
+      "text": "Individuelle 2D-PVC-Schlüsselanhänger in nahezu jeder Form und Farbe. Ideal für Logos, Schriftzüge, Maskottchen und kreative Designs.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "keyring-leder",
+      "name": "Schlüsselanhänger Leder",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Klassisch und hochwertig.",
+      "bilder": [
+        "img/produkte/keyring-leder.jpg"
+      ],
+      "mindestmenge": "100 Stück",
+      "daten": [],
+      "varianten": [],
+      "veredelung": [
+        "praegung",
+        "gravur",
+        "druck"
+      ],
+      "text": "Aus echtem Leder oder Lederoptik, mit Prägung, Gravur oder Druck für einen edlen Auftritt.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "keyring-gewebt",
+      "name": "Schlüsselanhänger gewebt",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Textil, individuell, detailreich.",
+      "bilder": [
+        "img/produkte/keyring-gewebt.jpg"
+      ],
+      "mindestmenge": "100 Stück",
+      "daten": [],
+      "varianten": [],
+      "veredelung": [],
+      "text": "Gewebte Schlüsselanhänger mit deinem Design, Schriftzug oder sogar als Mini-Trikot. Perfekt für Vereine, Events und Fans.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "armbaender",
+      "name": "Armbänder",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Für jeden Einsatz, in verschiedenen Materialien, Farben und Ausführungen.",
+      "bilder": [
+        "img/produkte/armband-silikon.jpg",
+        "img/produkte/armband-vinyl.jpg",
+        "img/produkte/armband-tyvek.jpg",
+        "img/produkte/armband-sublimation.jpg"
+      ],
+      "mindestmenge": "100 Stück",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Material",
+          "optionen": [
+            "Silikon: weich, langlebig, in vielen Farben, mit Prägung",
+            "Vinyl: flexibel, leicht, wasserfest, ideal für kurze Aktionen",
+            "Tyvek: leicht, reissfest, mit Sicherheitsverschluss, für Einlasskontrollen",
+            "Sublimation (Event): vollflächig bedruckt für Events, Festivals und Promotion"
+          ]
+        }
+      ],
+      "veredelung": [
+        "praegung",
+        "sublimation"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "brillenputztuch",
+      "name": "Brillenputztücher",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Mikrofaser-Putztücher mit vollflächigem Druck.",
+      "bilder": [
+        "img/produkte/brillenputztuch.jpg"
+      ],
+      "mindestmenge": "100 Stück",
+      "daten": [
+        {
+          "label": "Eigenschaft",
+          "wert": "Weich und kratzfrei"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Grösse",
+          "optionen": [
+            "10 × 15 cm",
+            "15 × 15 cm",
+            "15 × 21 cm",
+            "17 × 18 cm",
+            "18 × 30 cm",
+            "20 × 20 cm",
+            "25 × 25 cm",
+            "30 × 30 cm"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Perfekt für Brillen, Displays, Kameras und mehr.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "schweissband",
+      "name": "Schweissbänder",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Hochwertige Frottee-Schweissbänder mit deinem Logo.",
+      "bilder": [
+        "img/produkte/schweissband.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "Hochwertiges Frottee, saugstark und komfortabel"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "stick"
+      ],
+      "text": "Ideal für Sport, Fitness und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "tasse",
+      "name": "Sublimationstasse",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Klassische Keramiktasse mit vollflächigem Sublimationsdruck.",
+      "bilder": [
+        "img/produkte/tasse-sublimation.jpg"
+      ],
+      "mindestmenge": "24 Stück",
+      "daten": [
+        {
+          "label": "Volumen",
+          "wert": "11 oz (330 ml)"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächig"
+        },
+        {
+          "label": "Pflege",
+          "wert": "Spülmaschinengeeignet"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "",
+      "konfigurator": "tasse",
+      "highlights": []
+    },
+    {
+      "id": "handtuch",
+      "name": "Sublimations-Handtuch",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Hochwertige Handtücher mit vollflächigem, einseitigem Druck.",
+      "bilder": [
+        "img/produkte/handtuch-sublimation.jpg"
+      ],
+      "mindestmenge": "30 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "400 g/m², 60 % Baumwolle, 40 % Polyester"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Grösse",
+          "optionen": [
+            "50 × 70 cm",
+            "50 × 100 cm",
+            "70 × 140 cm"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Ideal für Sport, Events und Promotion.",
+      "konfigurator": "handtuch",
+      "highlights": []
+    },
+    {
+      "id": "kissen-trikot",
+      "name": "Trikotkissen",
+      "kategorie": "kissen",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Kissen in Trikotform mit Name und Nummer.",
+      "bilder": [
+        "img/produkte/kissen-trikot.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "Polyester oder Baumwolle"
+        },
+        {
+          "label": "Form",
+          "wert": "Trikotform individuell"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächig bedruckbar"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Komfort, Qualität und individuelles Design, für Vereine, Unternehmen, Events und Promotion.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "kissen-logo",
+      "name": "Logokissen",
+      "kategorie": "kissen",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Dein Logo als Kissen.",
+      "bilder": [
+        "img/produkte/kissen-logo.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "Polyester oder Baumwolle"
+        },
+        {
+          "label": "Form",
+          "wert": "Rund, eckig oder Sonderform"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächig bedruckbar"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Komfort, Qualität und individuelles Design, für Vereine, Unternehmen, Events und Promotion.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "kissen-sitz",
+      "name": "Sitzkissen",
+      "kategorie": "kissen",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Klappbares Sitzkissen fürs Stadion.",
+      "bilder": [
+        "img/produkte/kissen-sitz.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "Polyester oder Baumwolle"
+        },
+        {
+          "label": "Form",
+          "wert": "Klappbar"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächig bedruckbar"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Komfort, Qualität und individuelles Design, für Vereine, Unternehmen, Events und Promotion.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "kissen-nacken",
+      "name": "Nackenkissen",
+      "kategorie": "kissen",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Nackenkissen in U-Form.",
+      "bilder": [
+        "img/produkte/kissen-nacken.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "Polyester oder Baumwolle"
+        },
+        {
+          "label": "Form",
+          "wert": "Nackenkissen (U-Form)"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächig bedruckbar"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Komfort, Qualität und individuelles Design, für Vereine, Unternehmen, Events und Promotion.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "baumwolltasche",
+      "name": "Baumwolltaschen",
+      "kategorie": "taschen",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Klassisch, nachhaltig und vielseitig. Ideal für Alltag, Events und Promotion.",
+      "bilder": [
+        "img/produkte/tasche-baumwolle.jpg"
+      ],
+      "mindestmenge": "10 Stück (je nach Druckverfahren)",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Produktionsweg",
+          "optionen": [
+            "Quick Branding: Veredelung bestehender Rohware ab kleinen Stückzahlen",
+            "Full Custom: komplett nach deinen Vorgaben entwickelt"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "transfer",
+        "stick"
+      ],
+      "text": "Egal ob kleine Stückzahl oder komplett individuell: wir finden die passende Lösung. Muster erstellen wir dir gerne nach deinen Wünschen.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gymbag",
+      "name": "Gymbags",
+      "kategorie": "taschen",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Leicht, praktisch und vollflächig bedruckbar.",
+      "bilder": [
+        "img/produkte/gymbag.jpg",
+        "img/produkte/gymbag-sublimation.jpg"
+      ],
+      "mindestmenge": "10 Stück (je nach Druckverfahren)",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Produktionsweg",
+          "optionen": [
+            "Quick Branding: Veredelung bestehender Rohware ab kleinen Stückzahlen",
+            "Full Sublimation: vollflächiger Druck, eigene Farben, ab 50 Stück",
+            "Full Custom: komplett nach deinen Vorgaben entwickelt"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "transfer",
+        "sublimation"
+      ],
+      "text": "Egal ob kleine Stückzahl oder komplett individuell: wir finden die passende Lösung. Muster erstellen wir dir gerne nach deinen Wünschen.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "shopper",
+      "name": "Shopper",
+      "kategorie": "taschen",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Geräumig und stabil, der perfekte Begleiter für jeden Tag.",
+      "bilder": [
+        "img/produkte/shopper.jpg"
+      ],
+      "mindestmenge": "10 Stück (je nach Druckverfahren)",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Produktionsweg",
+          "optionen": [
+            "Quick Branding: Veredelung bestehender Rohware ab kleinen Stückzahlen",
+            "Full Custom: komplett nach deinen Vorgaben entwickelt"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "transfer",
+        "stick"
+      ],
+      "text": "Egal ob kleine Stückzahl oder komplett individuell: wir finden die passende Lösung. Muster erstellen wir dir gerne nach deinen Wünschen.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "sporttasche",
+      "name": "Sporttaschen",
+      "kategorie": "taschen",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Robust und funktional. Ideal für Sport, Freizeit und Reisen.",
+      "bilder": [
+        "img/produkte/tasche-sport.jpg",
+        "img/produkte/tasche-full-custom.jpg"
+      ],
+      "mindestmenge": "10 Stück (je nach Druckverfahren)",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Produktionsweg",
+          "optionen": [
+            "Quick Branding: Veredelung bestehender Rohware ab kleinen Stückzahlen",
+            "Full Custom: komplett nach deinen Vorgaben entwickelt"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "transfer",
+        "stick"
+      ],
+      "text": "Egal ob kleine Stückzahl oder komplett individuell: wir finden die passende Lösung. Muster erstellen wir dir gerne nach deinen Wünschen.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "reisetasche",
+      "name": "Reisetaschen",
+      "kategorie": "taschen",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Viel Platz und hoher Tragekomfort für jede Reise.",
+      "bilder": [
+        "img/produkte/tasche-reise.jpg",
+        "img/produkte/tasche-full-custom.jpg"
+      ],
+      "mindestmenge": "10 Stück (je nach Druckverfahren)",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Produktionsweg",
+          "optionen": [
+            "Quick Branding: Veredelung bestehender Rohware ab kleinen Stückzahlen",
+            "Full Custom: komplett nach deinen Vorgaben entwickelt"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "transfer",
+        "stick"
+      ],
+      "text": "Egal ob kleine Stückzahl oder komplett individuell: wir finden die passende Lösung. Muster erstellen wir dir gerne nach deinen Wünschen.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "rucksack",
+      "name": "Rucksäcke",
+      "kategorie": "taschen",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Bequem und langlebig. Für Schule, Arbeit und unterwegs.",
+      "bilder": [
+        "img/produkte/rucksack.jpg"
+      ],
+      "mindestmenge": "10 Stück (je nach Druckverfahren)",
+      "daten": [],
+      "varianten": [
+        {
+          "name": "Produktionsweg",
+          "optionen": [
+            "Quick Branding: Veredelung bestehender Rohware ab kleinen Stückzahlen",
+            "Full Custom: komplett nach deinen Vorgaben entwickelt"
+          ]
+        }
+      ],
+      "veredelung": [
+        "dtf",
+        "transfer",
+        "stick"
+      ],
+      "text": "Egal ob kleine Stückzahl oder komplett individuell: wir finden die passende Lösung. Muster erstellen wir dir gerne nach deinen Wünschen.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "ball-profi",
+      "name": "Professioneller Spielball",
+      "kategorie": "baelle",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Für Wettkampf und anspruchsvollen Spielbetrieb.",
+      "bilder": [
+        "img/produkte/ball-profi.jpg"
+      ],
+      "mindestmenge": "300 Stück",
+      "daten": [
+        {
+          "label": "Lieferzeit",
+          "wert": "Ca. 3–4 Monate nach finaler Designfreigabe"
+        },
+        {
+          "label": "Produktion",
+          "wert": "FIFA-zertifizierte Produktionsstätte"
+        },
+        {
+          "label": "Grösse",
+          "wert": "5"
+        },
+        {
+          "label": "Qualität",
+          "wert": "Hochwertige Spielballqualität"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "druck"
+      ],
+      "text": "Hochwertige Qualität, präzise Verarbeitung und 100 % individuelles Design.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "ball-training",
+      "name": "Trainingsball",
+      "kategorie": "baelle",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Der robuste Allrounder für den Trainingsalltag.",
+      "bilder": [
+        "img/produkte/ball-training.jpg"
+      ],
+      "mindestmenge": "300 Stück",
+      "daten": [
+        {
+          "label": "Lieferzeit",
+          "wert": "Ca. 3–4 Monate nach finaler Designfreigabe"
+        },
+        {
+          "label": "Produktion",
+          "wert": "FIFA-zertifizierte Produktionsstätte"
+        },
+        {
+          "label": "Grösse",
+          "wert": "5"
+        },
+        {
+          "label": "Qualität",
+          "wert": "Strapazierfähig und langlebig"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "druck"
+      ],
+      "text": "Hochwertige Qualität, präzise Verarbeitung und 100 % individuelles Design.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "ball-promo",
+      "name": "Promo-Ball",
+      "kategorie": "baelle",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Für Sponsoren, Events, Give-aways und Fanaktionen.",
+      "bilder": [
+        "img/produkte/ball-promo.jpg"
+      ],
+      "mindestmenge": "300 Stück",
+      "daten": [
+        {
+          "label": "Lieferzeit",
+          "wert": "Ca. 3–4 Monate nach finaler Designfreigabe"
+        },
+        {
+          "label": "Produktion",
+          "wert": "FIFA-zertifizierte Produktionsstätte"
+        },
+        {
+          "label": "Grösse",
+          "wert": "Verschiedene Grössen verfügbar"
+        },
+        {
+          "label": "Qualität",
+          "wert": "Preisoptimierte Ausführung"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "druck"
+      ],
+      "text": "Hochwertige Qualität, präzise Verarbeitung und 100 % individuelles Design.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "ball-handball",
+      "name": "Handball",
+      "kategorie": "baelle",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Für Wettkampf und anspruchsvollen Spielbetrieb.",
+      "bilder": [
+        "img/produkte/ball-handball.jpg"
+      ],
+      "mindestmenge": "300 Stück",
+      "daten": [
+        {
+          "label": "Lieferzeit",
+          "wert": "Ca. 3–4 Monate nach finaler Designfreigabe"
+        },
+        {
+          "label": "Produktion",
+          "wert": "FIFA-zertifizierte Produktionsstätte"
+        },
+        {
+          "label": "Grösse",
+          "wert": "Verschiedene Grössen verfügbar"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "druck"
+      ],
+      "text": "Hochwertige Qualität, präzise Verarbeitung und 100 % individuelles Design.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "ball-volleyball",
+      "name": "Volleyball",
+      "kategorie": "baelle",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Für Wettkampf und anspruchsvollen Spielbetrieb.",
+      "bilder": [
+        "img/produkte/ball-volleyball.jpg"
+      ],
+      "mindestmenge": "300 Stück",
+      "daten": [
+        {
+          "label": "Lieferzeit",
+          "wert": "Ca. 3–4 Monate nach finaler Designfreigabe"
+        },
+        {
+          "label": "Produktion",
+          "wert": "FIFA-zertifizierte Produktionsstätte"
+        },
+        {
+          "label": "Grösse",
+          "wert": "Standardgrösse"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "druck"
+      ],
+      "text": "Hochwertige Qualität, präzise Verarbeitung und 100 % individuelles Design.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "ball-basketball",
+      "name": "Basketball",
+      "kategorie": "baelle",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Für Wettkampf und anspruchsvollen Spielbetrieb.",
+      "bilder": [
+        "img/produkte/ball-basketball.jpg"
+      ],
+      "mindestmenge": "300 Stück",
+      "daten": [
+        {
+          "label": "Lieferzeit",
+          "wert": "Ca. 3–4 Monate nach finaler Designfreigabe"
+        },
+        {
+          "label": "Produktion",
+          "wert": "FIFA-zertifizierte Produktionsstätte"
+        },
+        {
+          "label": "Grösse",
+          "wert": "Verschiedene Grössen verfügbar"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "druck"
+      ],
+      "text": "Hochwertige Qualität, präzise Verarbeitung und 100 % individuelles Design.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "beanie-13",
+      "name": "Beanie 13",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Soft-Touch-Beanie mit Streifendekor.",
+      "bilder": [
+        "img/produkte/beanie-13.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Beanie 13"
+        },
+        {
+          "label": "Material",
+          "wert": "95 % Polyacryl · 5 % Lycra"
+        },
+        {
+          "label": "Farben",
+          "wert": "bis zu 8 Farben"
+        },
+        {
+          "label": "Garnfarben",
+          "wert": "Polyacryl, Woll-Mischung oder Bio-Baumwolle, siehe Garnfarbkarte"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "stick",
+        "patch",
+        "jacquard"
+      ],
+      "text": "Farben, Logo und Design bestimmst du, wir setzen es um. Weitere Modelle und Designs auf Anfrage.",
+      "konfigurator": "beanie",
+      "highlights": []
+    },
+    {
+      "id": "beanie-16",
+      "name": "Beanie 16",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Wende-Strickbeanie, erhältlich in Erwachsenen- und Kindergrösse.",
+      "bilder": [
+        "img/produkte/beanie-16.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Beanie 16"
+        },
+        {
+          "label": "Material",
+          "wert": "90 % Polyacryl · 10 % Elasthan"
+        },
+        {
+          "label": "Farben",
+          "wert": "4 bis 8 Farben"
+        },
+        {
+          "label": "Garnfarben",
+          "wert": "Polyacryl, Woll-Mischung oder Bio-Baumwolle, siehe Garnfarbkarte"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Ausführung",
+          "optionen": [
+            "Bommel",
+            "Umschlag",
+            "Stickerei oder Patch"
+          ]
+        }
+      ],
+      "veredelung": [
+        "stick",
+        "patch",
+        "jacquard"
+      ],
+      "text": "Farben, Logo und Design bestimmst du, wir setzen es um. Weitere Modelle und Designs auf Anfrage.",
+      "konfigurator": "beanie",
+      "highlights": []
+    },
+    {
+      "id": "beanie-38",
+      "name": "Beanie 38",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Strickbeanie mit gerippter Falte.",
+      "bilder": [
+        "img/produkte/beanie-38.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Beanie 38"
+        },
+        {
+          "label": "Material",
+          "wert": "100 % Polyacryl"
+        },
+        {
+          "label": "Farben",
+          "wert": "bis zu 3 Farben"
+        },
+        {
+          "label": "Garnfarben",
+          "wert": "Polyacryl, Woll-Mischung oder Bio-Baumwolle, siehe Garnfarbkarte"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Ausführung",
+          "optionen": [
+            "Bommel",
+            "Stickerei oder Patch",
+            "Umschlag"
+          ]
+        }
+      ],
+      "veredelung": [
+        "stick",
+        "patch",
+        "jacquard"
+      ],
+      "text": "Farben, Logo und Design bestimmst du, wir setzen es um. Weitere Modelle und Designs auf Anfrage.",
+      "konfigurator": "beanie",
+      "highlights": []
+    },
+    {
+      "id": "beanie-40",
+      "name": "Beanie 40",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Rippbeanie mit elastischem Jacquard.",
+      "bilder": [
+        "img/produkte/beanie-40.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Beanie 40"
+        },
+        {
+          "label": "Material",
+          "wert": "100 % Polyacryl"
+        },
+        {
+          "label": "Farben",
+          "wert": "bis zu 3 Farben"
+        },
+        {
+          "label": "Garnfarben",
+          "wert": "Polyacryl, Woll-Mischung oder Bio-Baumwolle, siehe Garnfarbkarte"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Ausführung",
+          "optionen": [
+            "Umschlag",
+            "Bommel",
+            "Stickerei oder Patch"
+          ]
+        }
+      ],
+      "veredelung": [
+        "stick",
+        "patch",
+        "jacquard"
+      ],
+      "text": "Farben, Logo und Design bestimmst du, wir setzen es um. Weitere Modelle und Designs auf Anfrage.",
+      "konfigurator": "beanie",
+      "highlights": []
+    },
+    {
+      "id": "bucket-hat-93",
+      "name": "Bucket Hat 93",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Glatter, sublimierter Fischerhut.",
+      "bilder": [
+        "img/produkte/bucket-hat-93.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Bucket Hat 93"
+        },
+        {
+          "label": "Material",
+          "wert": "100 % Polyester"
+        },
+        {
+          "label": "Design",
+          "wert": "Vollflächig im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Fischerhut im eigenen Design, sublimiert oder aus Bio-Baumwolle.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "bucket-hat-94",
+      "name": "Bucket Hat 94",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear"
+      ],
+      "kurz": "Sublimierter Fischerhut mit verstärkten Premium-Nähten.",
+      "bilder": [
+        "img/produkte/bucket-hat-94.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Bucket Hat 94"
+        },
+        {
+          "label": "Material",
+          "wert": "100 % Polyester"
+        },
+        {
+          "label": "Design",
+          "wert": "Vollflächig im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Fischerhut im eigenen Design, sublimiert oder aus Bio-Baumwolle.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "bucket-hat-96",
+      "name": "Bucket Hat 96",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Glatter, sublimierter Fischerhut.",
+      "bilder": [
+        "img/produkte/bucket-hat-96.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Bucket Hat 96"
+        },
+        {
+          "label": "Material",
+          "wert": "100 % Polyester"
+        },
+        {
+          "label": "Design",
+          "wert": "Vollflächig im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Fischerhut im eigenen Design, sublimiert oder aus Bio-Baumwolle.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "bucket-hat-97",
+      "name": "Bucket Hat 97",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear"
+      ],
+      "kurz": "Glatter, sublimierter Fischerhut.",
+      "bilder": [
+        "img/produkte/bucket-hat-97.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Bucket Hat 97"
+        },
+        {
+          "label": "Material",
+          "wert": "100 % Polyester"
+        },
+        {
+          "label": "Design",
+          "wert": "Vollflächig im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Fischerhut im eigenen Design, sublimiert oder aus Bio-Baumwolle.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "bucket-hat-98",
+      "name": "Bucket Hat 98",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear"
+      ],
+      "kurz": "Sublimierter Fischerhut aus strukturiertem Gewebe.",
+      "bilder": [
+        "img/produkte/bucket-hat-98.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Bucket Hat 98"
+        },
+        {
+          "label": "Material",
+          "wert": "100 % Polyester"
+        },
+        {
+          "label": "Design",
+          "wert": "Vollflächig im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Fischerhut im eigenen Design, sublimiert oder aus Bio-Baumwolle.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "bucket-hat-99",
+      "name": "Bucket Hat 99",
+      "kategorie": "kopfbedeckung",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Schwerer Fischerhut aus Bio-Baumwolle, veredelt mit Transferdruck.",
+      "bilder": [
+        "img/produkte/bucket-hat-99.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Bucket Hat 99"
+        },
+        {
+          "label": "Material",
+          "wert": "Bio-Baumwolle"
+        },
+        {
+          "label": "Design",
+          "wert": "Transferdruck"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "transfer"
+      ],
+      "text": "Fischerhut im eigenen Design, sublimiert oder aus Bio-Baumwolle.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "schal-10",
+      "name": "HD-Schal",
+      "kategorie": "schals",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Strickschal aus zwei Lagen, die unterschiedlich gestaltet sein können.",
+      "bilder": [
+        "img/produkte/schal-10.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Schal 10"
+        },
+        {
+          "label": "Material",
+          "wert": "95 % Polyacryl · 5 % Elasthan"
+        },
+        {
+          "label": "Masse",
+          "wert": "140 × 18 cm"
+        },
+        {
+          "label": "Farben",
+          "wert": "bis zu 8 Farben"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "Farben, Logo und Design bestimmst du, wir setzen es um. Weitere Modelle und Designs auf Anfrage.",
+      "konfigurator": "schal",
+      "highlights": []
+    },
+    {
+      "id": "schal-15",
+      "name": "Classic-Schal",
+      "kategorie": "schals",
+      "bereiche": [
+        "sportswear",
+        "retail"
+      ],
+      "kurz": "Jacquard-Strickschal aus zwei Teilen, die unterschiedlich gestaltet sein können.",
+      "bilder": [
+        "img/produkte/schal-15.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Schal 15"
+        },
+        {
+          "label": "Material",
+          "wert": "100 % Polyacryl"
+        },
+        {
+          "label": "Masse",
+          "wert": "140 × 18 cm"
+        },
+        {
+          "label": "Farben",
+          "wert": "bis zu 8 Farben"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "Farben, Logo und Design bestimmst du, wir setzen es um. Weitere Modelle und Designs auf Anfrage.",
+      "konfigurator": "schal",
+      "highlights": []
+    },
+    {
+      "id": "schal-45",
+      "name": "Web-Schal",
+      "kategorie": "schals",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Einlagiger, hochauflösend gewebter Schal mit Fransen und Seitennaht.",
+      "bilder": [
+        "img/produkte/schal-45.jpg"
+      ],
+      "mindestmenge": "200 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Schal 45"
+        },
+        {
+          "label": "Material",
+          "wert": "100 % Polyacryl"
+        },
+        {
+          "label": "Masse",
+          "wert": "130 × 20 cm"
+        },
+        {
+          "label": "Farben",
+          "wert": "bis zu 8 Farben"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "jacquard"
+      ],
+      "text": "Farben, Logo und Design bestimmst du, wir setzen es um. Weitere Modelle und Designs auf Anfrage.",
+      "konfigurator": "schal",
+      "highlights": []
+    },
+    {
+      "id": "schal-75",
+      "name": "Polyester-Schal",
+      "kategorie": "schals",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Beidseitig sublimierter Schal. In verschiedenen Stoffen erhältlich, auch aus SEAQUAL-zertifiziertem Material.",
+      "bilder": [
+        "img/produkte/schal-75.jpg"
+      ],
+      "mindestmenge": "50 Stück",
+      "daten": [
+        {
+          "label": "Art.-Nr.",
+          "wert": "Schal 75"
+        },
+        {
+          "label": "Material",
+          "wert": "100 % Polyester"
+        },
+        {
+          "label": "Masse",
+          "wert": "140 × 18 cm"
+        },
+        {
+          "label": "Farben",
+          "wert": "keine Farbbegrenzung"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Farben, Logo und Design bestimmst du, wir setzen es um. Weitere Modelle und Designs auf Anfrage.",
+      "konfigurator": "schal",
+      "highlights": []
+    },
+    {
+      "id": "fussballtrikot",
+      "name": "Fussballtrikot",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimiertes Kurzarm-Fussballtrikot mit Rundausschnitt. Wahlweise V- oder Rundausschnitt, Raglan- oder normale Ärmel. Auch als Damenversion erhältlich.",
+      "bilder": [
+        "img/produkte/fussballtrikot.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100 % Polyester"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 56 × 73 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Ausschnitt",
+          "optionen": [
+            "Rundausschnitt",
+            "V-Ausschnitt"
+          ]
+        },
+        {
+          "name": "Ärmel",
+          "optionen": [
+            "Raglanärmel",
+            "Normale Ärmel"
+          ]
+        },
+        {
+          "name": "Schnitt",
+          "optionen": [
+            "Herren",
+            "Damen"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": "trikot",
+      "highlights": []
+    },
+    {
+      "id": "fussballshorts",
+      "name": "Fussballshorts",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimierte Fussballshorts mit Gummibund und Kordelzug.",
+      "bilder": [
+        "img/produkte/fussballshorts.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100 % Polyester"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 55 × 56 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "rugbytrikot",
+      "name": "Rugbytrikot",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimiertes Rugbytrikot mit kurzen Ärmeln. Wahlweise Raglan- oder normale Ärmel, V- oder Rundausschnitt.",
+      "bilder": [
+        "img/produkte/rugbytrikot.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "235 g/m² · 100 % Polyester"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 54 × 70 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Ausschnitt",
+          "optionen": [
+            "Rundausschnitt",
+            "V-Ausschnitt"
+          ]
+        },
+        {
+          "name": "Ärmel",
+          "optionen": [
+            "Raglanärmel",
+            "Normale Ärmel"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "rugbyshorts",
+      "name": "Rugbyshorts",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimierte Rugbyshorts mit Gummibund und Kordelzug.",
+      "bilder": [
+        "img/produkte/rugbyshorts.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "235 g/m² · 100 % Polyester"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 60 × 47 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "basketballtrikot",
+      "name": "Basketballtrikot",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Ärmelloses, sublimiertes Basketballtrikot mit Rundausschnitt. Auch mit V-Ausschnitt und als Wendetrikot möglich.",
+      "bilder": [
+        "img/produkte/basketballtrikot.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100 % Polyester"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 56 × 73 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Ausschnitt",
+          "optionen": [
+            "Rundausschnitt",
+            "V-Ausschnitt"
+          ]
+        },
+        {
+          "name": "Ausführung",
+          "optionen": [
+            "Einseitig",
+            "Wendetrikot"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "basketballshorts",
+      "name": "Basketballshorts",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Weite, lange sublimierte Basketballshorts mit Gummibund und Kordelzug.",
+      "bilder": [
+        "img/produkte/basketballshorts.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100 % Polyester"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 57 × 65 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "leichtathletik-top",
+      "name": "Leichtathletik-Top",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Top mit Futter und Gummiband unter der Brust. Sublimierbar, wahlweise mit oder ohne Cups.",
+      "bilder": [
+        "img/produkte/leichtathletik-top.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "300 g/m² · 85 % Polyester · 15 % Elasthan"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 44 × 35 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Cups",
+          "optionen": [
+            "Mit Cups",
+            "Ohne Cups"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "leichtathletik-shorts",
+      "name": "Leichtathletik-Shorts",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimierte Shorts mit Innenfutter, elastischem Bund und seitlichem Schlitz. Bund auf Wunsch sublimiert.",
+      "bilder": [
+        "img/produkte/leichtathletik-shorts.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100 % Polyester"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 54 × 35 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "tennis-top",
+      "name": "Tennis-Top",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimiertes ärmelloses Top mit Einfassung. Für Damen und Herren erhältlich.",
+      "bilder": [
+        "img/produkte/tennis-top.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "215 g/m² · 97 % Polyester · 3 % Elasthan"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 55 × 75 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Schnitt",
+          "optionen": [
+            "Herren",
+            "Damen"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "tennisrock",
+      "name": "Tennisrock",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Kurzer sublimierter Tennisrock mit elastischem Bund.",
+      "bilder": [
+        "img/produkte/tennisrock.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "215 g/m² · 97 % Polyester · 3 % Elasthan"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 56 × 44 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "leibchen",
+      "name": "Leibchen",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimiertes Leibchen zur Teamunterscheidung. Ärmellos, mit Einfassung an Armausschnitten und Saum.",
+      "bilder": [
+        "img/produkte/leibchen.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "100 g/m² · 100 % Polyester"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 54 × 70 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "halswaermer",
+      "name": "Halswärmer",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimierter Halswärmer als Schlauchtuch.",
+      "bilder": [
+        "img/produkte/halswaermer.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "215 g/m² · 97 % Polyester · 3 % Elasthan"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 27 × 30 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "langarmshirt",
+      "name": "Langarmshirt",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimiertes Langarmshirt mit Raglanärmeln und Rundausschnitt. Wahlweise V-Ausschnitt, normale Ärmel oder Reissverschluss am Kragen.",
+      "bilder": [
+        "img/produkte/langarmshirt.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "300 g/m² · 85 % Polyester · 15 % Elasthan"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 56 × 73 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Ausschnitt",
+          "optionen": [
+            "Rundausschnitt",
+            "V-Ausschnitt",
+            "Reissverschluss am Kragen"
+          ]
+        },
+        {
+          "name": "Ärmel",
+          "optionen": [
+            "Raglanärmel",
+            "Normale Ärmel"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "sportshorts",
+      "name": "Shorts",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimierte Sportshorts mit Innenfutter, elastischem Bund und seitlichem Schlitz.",
+      "bilder": [
+        "img/produkte/sportshorts.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100 % Polyester"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 54 × 35 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "trainingsjacke",
+      "name": "Trainingsjacke",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimierte Trainingsjacke mit Raglanärmeln, durchgehendem Reissverschluss und zwei seitlichen Reissverschlusstaschen. Optional mit Kapuze, normalen Ärmeln, Bündchen oder Kordelzug.",
+      "bilder": [
+        "img/produkte/trainingsjacke.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "280 g/m² · 97 % Polyester · 3 % Elasthan"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 55 × 75 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Optionen",
+          "optionen": [
+            "Mit Kapuze",
+            "Normale Ärmel",
+            "Bündchen",
+            "Kordelzug"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "leggings-herren",
+      "name": "Herren-Leggings",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimierte Leggings für Herren.",
+      "bilder": [
+        "img/produkte/leggings-herren.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "300 g/m² · 85 % Polyester · 15 % Elasthan"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse L: 49 × 102 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "leggings-damen",
+      "name": "Damen-Leggings",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Sublimierte Damen-Leggings mit elastischem Mesh-Bund, ebenfalls sublimiert.",
+      "bilder": [
+        "img/produkte/leggings-damen.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "300 g/m² · 85 % Polyester · 15 % Elasthan"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse S: 49 × 102 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [],
+      "veredelung": [
+        "sublimation"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "basic-t-shirt",
+      "name": "Basic-T-Shirt",
+      "kategorie": "sportbekleidung",
+      "bereiche": [
+        "sportswear"
+      ],
+      "kurz": "Kurzarm-T-Shirt mit aufgenähtem Patch. Wahlweise Rund- oder V-Ausschnitt, Raglan- oder normale Ärmel. Auch als Damenversion erhältlich.",
+      "bilder": [
+        "img/produkte/basic-t-shirt.jpg"
+      ],
+      "mindestmenge": "10 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "135 g/m² · 100 % Polyester"
+        },
+        {
+          "label": "Masse",
+          "wert": "Grösse M: 55 × 73 cm"
+        },
+        {
+          "label": "Druck",
+          "wert": "Vollflächiger Sublimationsdruck im eigenen Design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Ausschnitt",
+          "optionen": [
+            "Rundausschnitt",
+            "V-Ausschnitt"
+          ]
+        },
+        {
+          "name": "Ärmel",
+          "optionen": [
+            "Raglanärmel",
+            "Normale Ärmel"
+          ]
+        },
+        {
+          "name": "Schnitt",
+          "optionen": [
+            "Herren",
+            "Damen"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation",
+        "patch"
+      ],
+      "text": "Sublimiert im eigenen Design, für Vereine, Teams und Events.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gastro-aufsteller",
+      "name": "Aufsteller & Tafeln",
+      "kategorie": "gastro",
+      "bereiche": [
+        "workwear"
+      ],
+      "kurz": "Kreidetafeln aus Massivholz, mit deinem Logo graviert oder bedruckt.",
+      "bilder": [
+        "img/produkte/gastro-kundenstopper.jpg",
+        "img/produkte/gastro-tischaufsteller.jpg"
+      ],
+      "mindestmenge": "1 Stück",
+      "daten": [
+        {
+          "label": "Logo",
+          "wert": "Graviert oder gedruckt"
+        },
+        {
+          "label": "Rahmen",
+          "wert": "Holzbeize oder 8 RAL-Farben"
+        },
+        {
+          "label": "Einsatz",
+          "wert": "Auch wetterfest für draussen"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Modell",
+          "optionen": [
+            "Kundenstopper: Massivholz mit Logo-Kopf, beidseitig beschreibbar",
+            "Tischaufsteller: Kreidetafel in A4 oder A5 mit Holzsockel"
+          ]
+        }
+      ],
+      "veredelung": [
+        "gravur",
+        "druck"
+      ],
+      "text": "Der erste Eindruck vor der Tür und auf dem Tisch.",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gastro-speisekarten",
+      "name": "Speisekarten",
+      "kategorie": "gastro",
+      "bereiche": [
+        "workwear"
+      ],
+      "kurz": "Speisekarten, die zum Lokal passen: aus Altholz, Sperrholz oder bedruckt, mit Lederrücken und eingraviertem Logo.",
+      "bilder": [
+        "img/produkte/gastro-speisekarten-mappen.jpg",
+        "img/produkte/gastro-speisekarten-altholz.jpg",
+        "img/produkte/gastro-klemmbretter.jpg"
+      ],
+      "mindestmenge": "1 Stück",
+      "daten": [
+        {
+          "label": "Material",
+          "wert": "Altholz, Sperrholz oder bedruckte Mappen"
+        },
+        {
+          "label": "Holztöne",
+          "wert": "6 Holztöne zur Auswahl"
+        },
+        {
+          "label": "Format",
+          "wert": "A4 oder nach Wunsch"
+        },
+        {
+          "label": "Logo",
+          "wert": "Lasergravur"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Modell",
+          "optionen": [
+            "Speisekarten-Mappe",
+            "Altholz mit Lederrücken",
+            "Klemmbrett für Tageskarte und Rechnung"
+          ]
+        }
+      ],
+      "veredelung": [
+        "gravur",
+        "druck"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gastro-tisch",
+      "name": "Tischschilder & Tischnummern",
+      "kategorie": "gastro",
+      "bereiche": [
+        "workwear"
+      ],
+      "kurz": "Reservierungsschilder, Reserved-Aufsteller und Tischnummern im eigenen Design.",
+      "bilder": [
+        "img/produkte/gastro-reservierungsschild.jpg",
+        "img/produkte/gastro-reserved.jpg",
+        "img/produkte/gastro-tischnummern.jpg"
+      ],
+      "mindestmenge": "1 Stück",
+      "daten": [
+        {
+          "label": "Sprache",
+          "wert": "In jeder Sprache möglich"
+        },
+        {
+          "label": "Kreidefeld",
+          "wert": "Zum Beschriften, z. B. mit der Uhrzeit"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Modell",
+          "optionen": [
+            "Reservierungsschild mit Kreidefeld",
+            "Tischaufsteller „Reserved“",
+            "Tischnummern"
+          ]
+        }
+      ],
+      "veredelung": [
+        "gravur",
+        "druck"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gastro-besteckboxen",
+      "name": "Besteckboxen",
+      "kategorie": "gastro",
+      "bereiche": [
+        "workwear"
+      ],
+      "kurz": "Besteckkörbe, Besteckboxen und Tischboxen in Form und Farbe nach Wunsch.",
+      "bilder": [
+        "img/produkte/gastro-besteckbox.jpg",
+        "img/produkte/gastro-besteckkorb.jpg",
+        "img/produkte/gastro-tischboxen.jpg"
+      ],
+      "mindestmenge": "1 Stück",
+      "daten": [
+        {
+          "label": "Logo",
+          "wert": "Graviert"
+        },
+        {
+          "label": "Form und Farbe",
+          "wert": "Nach Wunsch"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Modell",
+          "optionen": [
+            "Besteckkorb mit Griffmulden und Fächern",
+            "Besteckbox mit graviertem Logo",
+            "Tischbox für Besteck, Servietten und Karten"
+          ]
+        }
+      ],
+      "veredelung": [
+        "gravur"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gastro-servierbretter",
+      "name": "Servier- und Probierbretter",
+      "kategorie": "gastro",
+      "bereiche": [
+        "workwear"
+      ],
+      "kurz": "Servierbretter, Pizzabretter und Probierbretter mit deinem Logo eingebrannt.",
+      "bilder": [
+        "img/produkte/gastro-servierbrett.jpg",
+        "img/produkte/gastro-pizzabrett.jpg",
+        "img/produkte/gastro-sonderform.jpg",
+        "img/produkte/gastro-probierbrett.jpg",
+        "img/produkte/gastro-langes-servierbrett.jpg"
+      ],
+      "mindestmenge": "1 Stück",
+      "daten": [
+        {
+          "label": "Holz",
+          "wert": "Buche, Eiche oder Akazie"
+        },
+        {
+          "label": "Logo",
+          "wert": "Lasergravur"
+        },
+        {
+          "label": "Form und Grösse",
+          "wert": "Nach Wunsch, jede Kontur möglich"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Modell",
+          "optionen": [
+            "Servierbrett mit Saftrille",
+            "Pizza- und Brotbrett mit Griff",
+            "Brett in Sonderform",
+            "Probierbrett für Bier, Wein und Shots",
+            "Langes Servierbrett für Tapas und Antipasti"
+          ]
+        }
+      ],
+      "veredelung": [
+        "gravur"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "gastro-flaschentraeger",
+      "name": "Flaschenträger & Weinkisten",
+      "kategorie": "gastro",
+      "bereiche": [
+        "workwear",
+        "retail"
+      ],
+      "kurz": "Flaschenträger und Weinkisten aus Holz, für Theke und Geschenk.",
+      "bilder": [
+        "img/produkte/gastro-weinkiste.jpg",
+        "img/produkte/gastro-flaschentraeger.jpg"
+      ],
+      "mindestmenge": "1 Stück",
+      "daten": [
+        {
+          "label": "Logo",
+          "wert": "Lasergravur"
+        },
+        {
+          "label": "Einsatz",
+          "wert": "Auch als Geschenkverpackung"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Modell",
+          "optionen": [
+            "Flaschenträger mit Flaschenöffner",
+            "Weinkiste aus geflammtem Holz"
+          ]
+        }
+      ],
+      "veredelung": [
+        "gravur"
+      ],
+      "text": "",
+      "konfigurator": null,
+      "highlights": []
+    },
+    {
+      "id": "smart-armbaender",
+      "name": "Smart-Armbänder",
+      "kategorie": "accessoires",
+      "bereiche": [
+        "sportswear",
+        "workwear"
+      ],
+      "kurz": "Eintrittskarte, Werbefläche und Ausweis in einem: mit RFID, Barcode oder Seriennummer.",
+      "bilder": [
+        "img/produkte/smart-armband-rfid.jpg",
+        "img/produkte/smart-armband-barcode.jpg",
+        "img/produkte/smart-armband-gumring.jpg",
+        "img/produkte/smart-armband-rfid-tag.jpg",
+        "img/produkte/smart-armband-barcode-tag.jpg",
+        "img/produkte/smart-armband-seriennummer.jpg",
+        "img/produkte/smart-armband-verschluss.jpg"
+      ],
+      "mindestmenge": null,
+      "daten": [
+        {
+          "label": "Einsatz",
+          "wert": "Zutrittskontrolle, Promotion, Identifikation"
+        },
+        {
+          "label": "Verschluss",
+          "wert": "Patentierte Verschlüsse aus portugiesischer Produktion"
+        },
+        {
+          "label": "Design",
+          "wert": "Bandfarbe, Druck und Verschluss nach deinem Corporate Design"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Variante",
+          "optionen": [
+            "Seamless RFID: Tag nahtlos auf der Bandrückseite",
+            "Seamless Barcode: Barcode per Transfer direkt aufs Band",
+            "Smart Gumring: elastisch mit RFID, auch in Kindergrösse",
+            "RFID-Tag: Kunststoff-Tag mit Chip",
+            "Barcode-Tag: Kunststoff-Tag mit Barcode",
+            "Seriennummer: fortlaufend aufs Band gedruckt"
+          ]
+        }
+      ],
+      "veredelung": [
+        "sublimation",
+        "transfer"
+      ],
+      "text": "Für Festivals, Konzerte, Messen und Sportevents. Wir wählen mit dir die passende Technik, gestalten das Band in deinem Design und liefern rechtzeitig vor deinem Event.",
+      "konfigurator": null,
+      "highlights": [
+        "RFID, Barcode oder Seriennummer",
+        "Sicherer Verschluss",
+        "Grosse Auswahl an Bandfarben"
+      ]
+    },
+    {
+      "id": "sneaker-kick-off",
+      "name": "Sneaker Kick Off",
+      "kategorie": "schuhe",
+      "bereiche": [
+        "sportswear",
+        "workwear",
+        "personal-brand"
+      ],
+      "kurz": "Der klassische Low-Top-Sneaker als Basis für dein Design, entworfen und gefertigt in der EU.",
+      "bilder": [
+        "img/produkte/sneaker-kick-off.jpg",
+        "img/produkte/sneaker-kick-off-zunge.jpg",
+        "img/produkte/sneaker-kick-off-ferse.jpg",
+        "img/produkte/sneaker-farben.jpg"
+      ],
+      "mindestmenge": null,
+      "daten": [
+        {
+          "label": "Farben",
+          "wert": "Über 250 Kombinationen möglich"
+        },
+        {
+          "label": "Branding",
+          "wert": "Logo an Seite, Zunge und Ferse"
+        },
+        {
+          "label": "Produktion",
+          "wert": "Design und Fertigung in der EU"
+        },
+        {
+          "label": "Material",
+          "wert": "Mit Umwelt- und Gesundheitszertifizierungen"
+        },
+        {
+          "label": "Einsatz",
+          "wert": "Team, Mitarbeitende, Fans, Events, Merchandise-Shop"
+        }
+      ],
+      "varianten": [
+        {
+          "name": "Frei kombinierbar",
+          "optionen": [
+            "Obermaterial",
+            "Fersenkappe",
+            "Schnürsenkel"
+          ]
+        }
+      ],
+      "veredelung": [],
+      "text": "Du sagst uns, wofür der Sneaker gedacht ist. Wir legen gemeinsam Farben, Materialien und Logopositionen fest und erstellen eine Visualisierung. Nach deiner Freigabe, auf Wunsch mit Muster, wird er in der EU produziert und an deine Wunschadresse geliefert.",
+      "konfigurator": null,
+      "highlights": [
+        "Über 250 Farbkombinationen",
+        "Gefertigt in der EU",
+        "Zertifizierte Materialien"
+      ]
+    }
+  ],
+  "referenzen": [
+    {
+      "id": "brandrise",
+      "name": "BRANDRISE",
+      "url": "https://brandrise.ch",
+      "bereich": "personal-brand",
+      "claim": "Swiss Streetwear. Ehrlich. Limitiert. Echt.",
+      "text": "Brandrise ist Schweizer Streetwear: T-Shirts mit Sätzen, die man selbst jeden Tag denkt, in Schweizerdeutsch und mit viel Humor. Jeder Drop ist bewusst klein gehalten.",
+      "fakten": [
+        [
+          "Gegründet",
+          "2026"
+        ],
+        [
+          "Produkte",
+          "T-Shirts in limitierten Drops"
+        ],
+        [
+          "Besonderheit",
+          "Sprüche auf Schweizerdeutsch, 100 % Bio-Baumwolle"
+        ]
+      ],
+      "bilder": [
+        "img/site/panel-retail.jpg",
+        "img/site/panel-personal-brand.jpg",
+        "https://brandrise.ch/cdn/shop/files/USADO_hf_20260807_165146_8b5b567b-c70d-45e7-afc5-2e1da5004dd0_800x.png?v=1789142249",
+        "https://brandrise.ch/cdn/shop/files/2_6b28a7b2-ff1c-4bef-8ff2-e8edfacd5caf_800x.png?v=1789377155",
+        "https://brandrise.ch/cdn/shop/files/3_5706da0c-5cd6-4f8d-a219-8796f6e4986e_800x.png?v=1789377155"
+      ],
+      "logo": null,
+      "suba": "Beratung zur Idee, Produktentwicklung, Workshops und Produktion"
+    },
+    {
+      "id": "nido55",
+      "name": "NIDO55",
+      "url": "https://nido55.com",
+      "bereich": "personal-brand",
+      "claim": "Partnerlooks, Kinder- und Erwachsenenmode & Accessoires.",
+      "text": "Nido55 ist das kreative Nest zweier Freundinnen und Mamas: eigene Motive auf Partnerlooks, Kinder- und Erwachsenenmode, Städteshirts und Accessoires. Nido heisst auf Spanisch Nest, die 55 steht für Mainz.",
+      "fakten": [
+        [
+          "Gegründet",
+          "2025"
+        ],
+        [
+          "Produkte",
+          "Partnerlooks, Baby-, Kinder- und Erwachsenenmode, Taschen"
+        ],
+        [
+          "Besonderheit",
+          "Eigene, selbst gezeichnete Motive"
+        ]
+      ],
+      "bilder": [
+        "img/referenzen/nido55-strand-partnerlook.jpg",
+        "img/referenzen/nido55-weck-worscht-milch.jpg",
+        "img/referenzen/nido55-bajo-el-mar.jpg",
+        "img/referenzen/nido55-turnbeutel-woi.jpg",
+        "img/referenzen/nido55-tasche-tukan.jpg"
+      ],
+      "logo": null,
+      "suba": "Unser Produktionsnetzwerk, Workshops zu Produkten und Veredelung, Produktion"
+    }
+  ],
+  "personal_brand_schritte": [
+    [
+      "Idee und Konzept",
+      "Wir hören zu, schärfen deine Idee und überlegen gemeinsam, wofür deine Marke stehen soll."
+    ],
+    [
+      "Design und Branding",
+      "Logo, Motive, Farben: unsere Grafiker setzen deine Ideen um oder bereiten deine Entwürfe druckfertig auf."
+    ],
+    [
+      "Vorschau & Freigabe",
+      "Je nach Projekt bekommst du eine technische Zeichnung, ein Foto vom Muster oder ein physisches Muster und gibst es frei."
+    ],
+    [
+      "Produktion",
+      "Veredelung in unserer eigenen Produktion oder Full Custom bei unseren Partnern, ab kleinen Stückzahlen."
+    ],
+    [
+      "Label und Verpackung",
+      "Eigene Etiketten, Hangtags und Verpackung machen aus einem Shirt deine Marke."
+    ],
+    [
+      "Lieferung zu dir",
+      "Die fertige Ware kommt zu dir. Läuft ein Produkt gut, produzieren wir schnell nach."
+    ]
+  ],
+  "corporate": {
+    "intro": {
+      "titel": "Deine Marke in jedem Detail",
+      "text": "Deine Gäste und Kunden erleben deine Marke nicht nur am Logo. Sie spüren sie im Hemd an der Rezeption, im Handtuch im Zimmer und in der Tasse beim Frühstück. Wir statten Hotels, Gastronomie und Unternehmen mit allem aus, was sie tragen, berühren und benutzen. Alles aus einer Hand, mit einem Ansprechpartner."
+    },
+    "sortiment": [
+      {
+        "titel": "Corporate Wear",
+        "text": "Poloshirts, Hemden, Jacken, Schürzen und Uniformen für Empfang, Service, Küche und Team. Mit Stickerei oder Druck.",
+        "bild": "img/site/co-corporate-wear.jpg",
+        "link": "produkt.html?id=poloshirts&bereich=workwear",
+        "linktext": "Poloshirts ansehen"
+      },
+      {
+        "titel": "Hotel- und Spa-Textilien",
+        "text": "Handtücher, Badetücher und Kissen mit deinem Logo, gewebt, gestickt oder bedruckt. Für Zimmer, Spa und Pool.",
+        "bild": "img/site/co-hotel-textilien.jpg",
+        "link": "produkt.html?id=handtuch&bereich=workwear",
+        "linktext": "Handtuch ansehen"
+      },
+      {
+        "titel": "Keramik und Tassen",
+        "text": "Von der veredelten Standardtasse über Spezialanfertigungen aus Portugal bis zum handgemachten Geschirr aus Kolumbien.",
+        "bild": "img/site/co-keramik.jpg",
+        "link": "#keramik",
+        "linktext": "Zur Keramik"
+      },
+      {
+        "titel": "Gastro und Display",
+        "text": "Kundenstopper, Speisekarten, Tischnummern, Besteckboxen und Servierbretter aus Holz, mit deinem Logo. Auf Anfrage.",
+        "bild": "img/site/co-gastro.jpg",
+        "link": "#anfrage",
+        "linktext": "Anfragen"
+      }
+    ],
+    "keramik_wege": [
+      {
+        "titel": "Veredelte Rohware",
+        "ort": "Aus unserem Sortiment",
+        "text": "Bestehende Tassen und Becher, veredelt mit Gravur, Druck oder Sublimation. Die schnelle und günstige Lösung, schon ab kleinen Mengen.",
+        "punkte": [
+          "Gravur, Druck oder Sublimation",
+          "Kurze Lieferzeit",
+          "Ab kleinen Mengen"
+        ]
+      },
+      {
+        "titel": "Spezialanfertigung",
+        "ort": "Portugal",
+        "text": "Tassen und Geschirr nach deinen Vorgaben, gefertigt von unserem Partner in Portugal. Eigene Form, eigene Farbe, eigene Glasur, gleichmässig in Serie.",
+        "punkte": [
+          "Eigene Form und Farbe",
+          "Logo in der Glasur",
+          "Gleichmässige Serienqualität"
+        ]
+      },
+      {
+        "titel": "Handgemacht",
+        "ort": "Kolumbien",
+        "text": "Jedes Stück wird in einer Keramik-Manufaktur in Bogotá von Hand gedreht und bemalt. Für Hotels und Restaurants, die ihren Gästen etwas Besonderes auf den Tisch stellen wollen.",
+        "punkte": [
+          "Handgedreht und handbemalt",
+          "Jedes Stück ein Unikat",
+          "Eigene Formen und Farbtöne"
+        ]
+      }
+    ],
+    "manufaktur": {
+      "titel": "Handgemacht in Kolumbien",
+      "kicker": "Keramik-Manufaktur · Bogotá",
+      "text": "Unsere Partnermanufaktur in Bogotá verbindet traditionelles Kunsthandwerk mit modernem Design. Teller, Tassen, Bowls und Vasen entstehen aus natürlichen Materialien, von Hand gedreht und bemalt. So wird jedes Stück zu einem Teil deiner Geschichte. Wenn ein Gast handgemachtes Geschirr in die Hand nimmt, bleibt das in Erinnerung.",
+      "bilder": [
+        "img/keramik/bowl-pinselstrich.jpg",
+        "img/keramik/schale-welle.jpg",
+        "img/keramik/leuchte.jpg"
+      ],
+      "fakten": [
+        [
+          "Herkunft",
+          "Manufaktur in Bogotá, Kolumbien"
+        ],
+        [
+          "Herstellung",
+          "Handgedreht und handbemalt"
+        ],
+        [
+          "Formen",
+          "Teller, Tassen, Bowls, Vasen oder jede Form, die du dir wünschst"
+        ],
+        [
+          "Oberfläche",
+          "Matt oder glänzend, einfarbig oder kombiniert"
+        ],
+        [
+          "Eigene Farbtöne",
+          "Auf Anfrage, mit Testbrand"
+        ]
+      ],
+      "designs": [
+        {
+          "name": "Landschaft halb",
+          "text": "Pinselstriche, die an Berge, Himmel und Natur Kolumbiens erinnern.",
+          "bild": "img/keramik/design-landschaft-halb.jpg"
+        },
+        {
+          "name": "Wolke halb",
+          "text": "Weiche, organische Formen, inspiriert von Wolken und Meereswellen.",
+          "bild": "img/keramik/design-wolke-halb.jpg"
+        },
+        {
+          "name": "Doppelte Landschaft blau",
+          "text": "Kühle Töne und feine Striche, inspiriert von Gletschern und Bergen.",
+          "bild": "img/keramik/design-doppelte-landschaft-blau.jpg"
+        },
+        {
+          "name": "Doppelte Landschaft grün",
+          "text": "Grüne Schichten wie die Berg- und Waldlandschaften Kolumbiens.",
+          "bild": "img/keramik/design-doppelte-landschaft-gruen.jpg"
+        },
+        {
+          "name": "Pinselstrich blau",
+          "text": "Minimalistisch, ein einziger Strich nach japanischer Technik.",
+          "bild": "img/keramik/design-pinselstrich-blau.jpg"
+        },
+        {
+          "name": "Pinselstrich schwarz",
+          "text": "Freier, kräftiger Strich. Elegant und zeitgemäss.",
+          "bild": "img/keramik/design-pinselstrich-schwarz.jpg"
+        }
+      ],
+      "kombis": [
+        [
+          "Landschaft in Farbe",
+          "img/keramik/kombi-landschaft-tasse.jpg"
+        ],
+        [
+          "Halb und halb, gesprenkelt",
+          "img/keramik/kombi-halb-gesprenkelt.jpg"
+        ],
+        [
+          "Halb und halb, gerade",
+          "img/keramik/kombi-halb-gerade.jpg"
+        ],
+        [
+          "Landschaft ganz",
+          "img/keramik/kombi-landschaft-ganz.jpg"
+        ],
+        [
+          "Flecken",
+          "img/keramik/kombi-flecken.jpg"
+        ],
+        [
+          "Wolke ganz",
+          "img/keramik/kombi-wolke-ganz.jpg"
+        ]
+      ],
+      "farben": [
+        [
+          "Gelb",
+          "matt",
+          "img/keramik/farbe-gelb-matt.jpg"
+        ],
+        [
+          "Sand hell",
+          "matt",
+          "img/keramik/farbe-sand-hell-matt.jpg"
+        ],
+        [
+          "Natur",
+          "matt",
+          "img/keramik/farbe-natur-matt.jpg"
+        ],
+        [
+          "Senf",
+          "matt",
+          "img/keramik/farbe-senf-matt.jpg"
+        ],
+        [
+          "Grüngrau",
+          "matt",
+          "img/keramik/farbe-gruengrau-matt.jpg"
+        ],
+        [
+          "Schwarz",
+          "matt",
+          "img/keramik/farbe-schwarz-matt.jpg"
+        ],
+        [
+          "Blau",
+          "matt",
+          "img/keramik/farbe-blau-matt.jpg"
+        ],
+        [
+          "Weinrot",
+          "matt",
+          "img/keramik/farbe-weinrot-matt.jpg"
+        ],
+        [
+          "Rotbraun",
+          "matt",
+          "img/keramik/farbe-rotbraun-matt.jpg"
+        ],
+        [
+          "Kaffee gesprenkelt",
+          "matt",
+          "img/keramik/farbe-kaffee-gesprenkelt-matt.jpg"
+        ],
+        [
+          "Aquamarin",
+          "matt",
+          "img/keramik/farbe-aquamarin-matt.jpg"
+        ],
+        [
+          "Tiefschwarz",
+          "matt",
+          "img/keramik/farbe-schwarz-d17-matt.jpg"
+        ],
+        [
+          "Schokolade",
+          "",
+          "img/keramik/farbe-schokolade.jpg"
+        ],
+        [
+          "Weiss",
+          "glänzend",
+          "img/keramik/farbe-weiss-glaenzend.jpg"
+        ],
+        [
+          "Weinrot",
+          "glänzend",
+          "img/keramik/farbe-weinrot-glaenzend.jpg"
+        ],
+        [
+          "Blau",
+          "glänzend",
+          "img/keramik/farbe-blau-glaenzend.jpg"
+        ],
+        [
+          "Lachs",
+          "glänzend",
+          "img/keramik/farbe-lachs-glaenzend.jpg"
+        ]
+      ],
+      "hinweis": "Jede Glasur reagiert beim Brennen ein wenig anders. Grüntöne können leicht ins Blaue gehen, und kleine Unterschiede in Ton und Textur machen jedes Stück einzigartig. Mattes Weiss ist etwas empfindlicher gegen Kratzer. Die Farben hier sind erst der Anfang: Mit einem Testbrand kommen wir deinem Wunschton nahe."
+    }
+  },
+  "retail": {
+    "intro": {
+      "titel": "Vom Trend ins Regal",
+      "text": "Im Souvenirbereich sind wir vor allem mit Textilien stark: T-Shirts, Hoodies, Caps, Beanies, Taschen und Socken mit Motiven für Städte und Regionen. Weil wir selbst produzieren, selbst gestalten und ein grosses europäisches Netzwerk haben, reagieren wir schnell, auch bei kleinen Stückzahlen."
+    },
+    "staerken": [
+      [
+        "Eigene Produktion in Deutschland",
+        "In unserer eigenen Produktionsstätte veredeln wir schnell und flexibel. Muster und Nachproduktionen ohne lange Wege."
+      ],
+      [
+        "Europäisches Produktionsnetzwerk",
+        "Partner in Polen, Portugal und der Türkei. So finden wir für jedes Produkt und jede Menge die passende Fertigung."
+      ],
+      [
+        "Schnell bei Trends",
+        "Neue Motive und Produkte sind schnell umgesetzt. Du kannst auf Trends, Saisons und Events reagieren, statt ein Jahr vorauszuplanen."
+      ],
+      [
+        "Kleine Stückzahlen",
+        "Testen statt Lager füllen: Wir produzieren auch kleine Serien und liefern nach, wenn ein Motiv läuft."
+      ],
+      [
+        "Eigene Grafik und Produktentwicklung",
+        "Unsere Grafiker und Produktentwickler entwerfen Motive, Kollektionen und Produkte mit dir oder für dich."
+      ],
+      [
+        "Handelsfähig nach allen Vorgaben",
+        "Textilkennzeichnung, Pflegeetiketten, EAN-Barcodes, Hangtags und Verpackung: Deine Ware kommt so, wie der Handel und das Gesetz sie verlangen."
+      ]
+    ],
+    "ablauf": [
+      [
+        "Idee oder Trend",
+        "Du bringst ein Thema, eine Stadt oder einen Trend. Oder wir schlagen Motive vor."
+      ],
+      [
+        "Design und Produkt",
+        "Wir entwickeln Motive und wählen mit dir Produkte, Farben und Qualitäten."
+      ],
+      [
+        "Vorschau & Freigabe",
+        "Je nach Projekt bekommst du eine technische Zeichnung, ein Foto vom Muster oder ein physisches Muster."
+      ],
+      [
+        "Produktion",
+        "In unserer Produktion in Deutschland oder bei unseren europäischen Partnern, passend zu Menge und Termin."
+      ],
+      [
+        "Handelsfertig",
+        "Etiketten, EAN-Barcodes, Hangtags und Verpackung nach den gesetzlichen Vorgaben und den Anforderungen deines Handels."
+      ],
+      [
+        "Lieferung",
+        "An dein Lager oder direkt an deine Verkaufsstellen. Läuft ein Motiv, produzieren wir schnell nach."
+      ]
+    ],
+    "galerie": [
+      {
+        "bild": "img/retail/schwiiz-26-produktentwicklung.jpg",
+        "titel": "Produktentwicklung: Schwiiz 26",
+        "text": "Vom Konzept zum technischen Datenblatt: Design, Farben nach Pantone, Platzierung, Material, Grössen und Druckverfahren.",
+        "weit": true
+      },
+      {
+        "bild": "img/retail/el-burro-mainz-shirts.jpg",
+        "titel": "Merchandise für das El Burro in Mainz",
+        "text": "Team- und Verkaufsshirts aus Bio-Baumwolle, direkt im Lokal verkauft."
+      },
+      {
+        "bild": "img/retail/tassen-handelsfertig-ean.jpg",
+        "titel": "Handelsfertig verpackt",
+        "text": "Jede Tasse mit Artikelbezeichnung und EAN-Barcode, sicher in Gefachkartons."
+      },
+      {
+        "bild": "img/retail/eigene-produktion-brandrise.jpg",
+        "titel": "Aus unserer Produktion",
+        "text": "Veredelt in unserer eigenen Produktion in Deutschland, hier ein Shirt für Brandrise."
+      },
+      {
+        "bild": "img/referenzen/nido55-turnbeutel-woi.jpg",
+        "titel": "Städte-Motive für Mainz",
+        "text": "Eigene Motive wie „Weck, Worscht & Woi“ für NIDO55, auf Turnbeuteln, Pullovern und Bodys."
+      }
+    ],
+    "motive": [
+      {
+        "bild": "img/retail/motive/burro-family-tee.jpg",
+        "ort": "El Burro Mainz"
+      },
+      {
+        "bild": "img/retail/motive/austria-foto.jpg",
+        "ort": "Österreich"
+      },
+      {
+        "bild": "img/retail/motive/austria-flagge-tee.jpg",
+        "ort": "Österreich"
+      },
+      {
+        "bild": "img/retail/motive/berlin-baer-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/berlin-script-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/berg-lugano-tee.jpg",
+        "ort": "Lugano"
+      },
+      {
+        "bild": "img/retail/motive/i-love-wien-tee.jpg",
+        "ort": "Wien"
+      },
+      {
+        "bild": "img/retail/motive/vienna-illustration.jpg",
+        "ort": "Wien"
+      },
+      {
+        "bild": "img/retail/motive/university-hamburg-hoodie.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/kuh-switzerland-hoodie.jpg",
+        "ort": "Schweiz"
+      },
+      {
+        "bild": "img/retail/motive/moin-moin-anker.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/trabi-tee.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/zuerich-gold-hoodie.jpg",
+        "ort": "Zürich"
+      },
+      {
+        "bild": "img/retail/motive/vienna-college-hoodie.jpg",
+        "ort": "Wien"
+      },
+      {
+        "bild": "img/retail/motive/germany-90-tee.jpg",
+        "ort": "Deutschland"
+      },
+      {
+        "bild": "img/retail/motive/vienna-university-hoodie.jpg",
+        "ort": "Wien"
+      },
+      {
+        "bild": "img/retail/motive/hh-040.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/lugano-herz-tee.jpg",
+        "ort": "Lugano"
+      },
+      {
+        "bild": "img/retail/motive/brandenburger-tor-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/berlin-baer-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/i-love-austria-tee.jpg",
+        "ort": "Österreich"
+      },
+      {
+        "bild": "img/retail/motive/moin-tee.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/currywurst-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/university-muenchen-tee.jpg",
+        "ort": "München"
+      },
+      {
+        "bild": "img/retail/motive/team-suisse-tee.jpg",
+        "ort": "Schweiz"
+      },
+      {
+        "bild": "img/retail/motive/austria-gold-hoodie.jpg",
+        "ort": "Österreich"
+      },
+      {
+        "bild": "img/retail/motive/hamburg-streifen-tee.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/i-love-switzerland-hoodie.jpg",
+        "ort": "Schweiz"
+      },
+      {
+        "bild": "img/retail/motive/wien-prater-tee.jpg",
+        "ort": "Wien"
+      },
+      {
+        "bild": "img/retail/motive/berlin-gold-tee.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/burro-con-amor-hoodie.jpg",
+        "ort": "El Burro Mainz"
+      },
+      {
+        "bild": "img/retail/motive/blau-weiss-garde-tee.jpg",
+        "ort": "Verein"
+      },
+      {
+        "bild": "img/retail/motive/i-love-muenchen-hoodie.jpg",
+        "ort": "München"
+      },
+      {
+        "bild": "img/retail/motive/mzrt-tee.jpg",
+        "ort": "Salzburg"
+      },
+      {
+        "bild": "img/retail/motive/brezel-tee.jpg",
+        "ort": "Bayern"
+      },
+      {
+        "bild": "img/retail/motive/i-love-hamburg-tee.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/vienna-skyline.jpg",
+        "ort": "Wien"
+      },
+      {
+        "bild": "img/retail/motive/hamburg-skyline.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/i-love-berlin-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/austria-ski.jpg",
+        "ort": "Österreich"
+      },
+      {
+        "bild": "img/retail/motive/berlin-skyline-hoodie.jpg",
+        "ort": "Berlin"
+      },
+      {
+        "bild": "img/retail/motive/vienna-script-hoodie.jpg",
+        "ort": "Wien"
+      },
+      {
+        "bild": "img/retail/motive/moin-anker.jpg",
+        "ort": "Hamburg"
+      },
+      {
+        "bild": "img/retail/motive/anker.jpg",
+        "ort": "Hamburg"
+      }
+    ]
+  }
+}

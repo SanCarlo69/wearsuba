@@ -1,0 +1,12 @@
+{
+  "_hinweis": "Verkaufspreise pro Schal in EUR je Staffel (ab Stückzahl). Nur Verkaufspreise, keine Einkaufspreise! Leer lassen = Preis auf Anfrage.",
+  "staffeln": [50, 100, 200, 300, 500, 750, 1000],
+  "versand": null,
+  "kurs": null,
+  "modelle": {
+    "HD-Schal":        { "einrichtung": null, "vk": { "50": 7.4, "100": 6.8, "200": 6.5, "300": 6.4, "500": 6.1, "750": 6.0, "1000": 5.9 } },
+    "Classic-Schal":   { "einrichtung": null, "vk": { "50": 7.2, "100": 6.6, "200": 6.3, "300": 6.2, "500": 5.9, "750": 5.8, "1000": 5.7 } },
+    "Web-Schal":       { "einrichtung": null, "vk": { "200": 4.2, "300": 3.99, "500": 3.9, "750": 3.8, "1000": 3.7 } },
+    "Polyester-Schal": { "einrichtung": null, "vk": { "50": 7.1, "100": 6.5, "200": 6.1, "300": 6.0, "500": 5.8, "750": 5.7, "1000": 5.6 } }
+  }
+}
