@@ -12,7 +12,7 @@
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
-<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="assets/consent.js"></script>
 <link rel="stylesheet" href="assets/fonts.css">
 <script>/* Neue Seite immer oben öffnen */try{history.scrollRestoration="manual"}catch(e){}addEventListener("pageshow",function(){if(!location.hash)window.scrollTo(0,0)});</script>
 </head>
@@ -103,31 +103,6 @@
       </div>
     </div>
 
-    <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var form = e.target;
-      var btn = document.getElementById('submitBtn');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(function(response) {
-        if (response.ok) {
-          form.style.display = 'none';
-          document.getElementById('formSuccess').style.display = 'block';
-        } else {
-          btn.textContent = 'Error – please try again';
-          btn.disabled = false;
-        }
-      }).catch(function() {
-        btn.textContent = 'Error – please try again';
-        btn.disabled = false;
-      });
-    });
-    </script>
   </div>
 </section>
 
@@ -138,6 +113,7 @@
 
 <script src="assets/i18n-en.js"></script>
 <script src="assets/suba.js"></script>
+<script src="assets/spamschutz.js"></script>
 <script>SUBA.init("home");</script>
 
 </body>

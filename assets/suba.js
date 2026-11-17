@@ -554,7 +554,7 @@
       var go = function () {
         $$("[data-suba-nav]").forEach(function (el) { el.outerHTML = navHTML(el.getAttribute("data-variant")); });
         $$("[data-suba-footer]").forEach(function (el) { el.outerHTML = footerHTML(); });
-        initHead(); initCookies(); initReveal();
+        initHead(); initReveal();
         ({ home: home, katalog: katalog, produkt: produkt, konfiguratoren: konfiguratoren }[page] || function () {})();
       };
       /* Daten zuerst laden, damit der Kopf den Bereichsnamen kennt; bei Fehler trotzdem starten. */
